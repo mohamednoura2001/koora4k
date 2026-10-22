@@ -1,0 +1,28 @@
+{
+  "name": "كورة فور كي – Koora4K | مباريات اليوم بث مباشر 4K",
+  "short_name": "Koora4K",
+  "description": "مشاهدة مباريات اليوم بث مباشر بجودة 4K UHD بدون تقطيع عبر موقع كورة فور كي Koora4K.com",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#090d16",
+  "theme_color": "#071310",
+  "lang": "ar",
+  "dir": "rtl",
+  "categories": ["sports", "entertainment", "news"],
+  "icons": [
+    {
+      "src": "/assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/logo-emblem.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ]
+}
