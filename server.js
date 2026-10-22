@@ -1713,3 +1713,5 @@ setInterval(async () => {
 server.listen(PORT, () => {
   console.log(`⚽ KooraHD Pro Live Auto-Sync Server running at http://localhost:${PORT}`);
 });
+
+module.exports = server;
