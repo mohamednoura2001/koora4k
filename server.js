@@ -1701,17 +1701,19 @@ ${videoUrls}
   });
 });
 
-// إطلاق المزامنة التلقائية الدورية مع إشعار محركات البحث
-performLiveSync().then(() => {
-  pingSearchEngines();
-});
-setInterval(async () => {
-  await performLiveSync();
-  await pingSearchEngines();
-}, 45 * 1000);
+// إطلاق المزامنة التلقائية الدورية والاستماع للمنفذ في البيئات العادية (خارج Vercel)
+if (!process.env.VERCEL) {
+  performLiveSync().then(() => {
+    pingSearchEngines();
+  });
+  setInterval(async () => {
+    await performLiveSync();
+    await pingSearchEngines();
+  }, 45 * 1000);
 
-server.listen(PORT, () => {
-  console.log(`⚽ KooraHD Pro Live Auto-Sync Server running at http://localhost:${PORT}`);
-});
+  server.listen(PORT, () => {
+    console.log(`⚽ KooraHD Pro Live Auto-Sync Server running at http://localhost:${PORT}`);
+  });
+}
 
 module.exports = server;
