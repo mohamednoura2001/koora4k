@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 110" width="460" height="110">
+  <defs>
+    <!-- Ultra-Sleek Broadcast Gradients -->
+    <linearGradient id="emeraldBlade" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="45%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#047857"/>
+    </linearGradient>
+    <linearGradient id="goldPrism" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="35%" stop-color="#f59e0b"/>
+      <stop offset="75%" stop-color="#d97706"/>
+      <stop offset="100%" stop-color="#92400e"/>
+    </linearGradient>
+    <linearGradient id="darkObsidian" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#050811"/>
+    </linearGradient>
+    <linearGradient id="crimsonLive" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f87171"/>
+      <stop offset="50%" stop-color="#ef4444"/>
+      <stop offset="100%" stop-color="#991b1b"/>
+    </linearGradient>
+    <linearGradient id="chromeText" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="65%" stop-color="#f1f5f9"/>
+      <stop offset="100%" stop-color="#94a3b8"/>
+    </linearGradient>
+    <filter id="neonGlow" x="-25%" y="-25%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#10b981" flood-opacity="0.45"/>
+    </filter>
+    <filter id="goldShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#f59e0b" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- RIGHT SIDE: 3D Broadcast Emblem (Hexagonal Stadium Prism + Speed Blades + 4K Monogram) -->
+  <g transform="translate(345, 7)" filter="url(#neonGlow)">
+    <!-- Outer Dynamic Slanted Hex-Shield -->
+    <polygon points="52,2 96,18 96,68 52,94 8,68 8,18" fill="url(#darkObsidian)" stroke="url(#emeraldBlade)" stroke-width="3"/>
+    <!-- Inner Bevel Highlight -->
+    <polygon points="52,8 90,22 90,64 52,87 14,64 14,22" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1.2"/>
+
+    <!-- Dynamic Broadcast Speed Blades -->
+    <path d="M18 28 L52 14 L86 28 L76 42 L52 30 L28 42 Z" fill="url(#emeraldBlade)" opacity="0.9"/>
+    
+    <!-- Stylized Champions Star / Football Core -->
+    <circle cx="52" cy="44" r="18" fill="#060c17" stroke="url(#emeraldBlade)" stroke-width="2"/>
+    <path d="M52 29 L56.5 38 L66 39.5 L59 46 L61 55.5 L52 51 L43 55.5 L45 46 L38 39.5 L47.5 38 Z" fill="url(#chromeText)"/>
+
+    <!-- Slanted Metallic Gold 4K Broadcast Prism Ribbon -->
+    <g transform="translate(10, 58)" filter="url(#goldShadow)">
+      <polygon points="6,0 84,0 78,28 0,28" fill="url(#goldPrism)" stroke="#fef08a" stroke-width="1.2"/>
+      <text x="42" y="21" font-family="'JetBrains Mono', 'Arial Black', sans-serif" font-weight="900" font-style="italic" font-size="21" fill="#050b14" text-anchor="middle" letter-spacing="1">4K</text>
+    </g>
+
+    <!-- Live Broadcast Pulse Beacon -->
+    <circle cx="88" cy="16" r="8" fill="#050811"/>
+    <circle cx="88" cy="16" r="5.5" fill="url(#crimsonLive)"/>
+    <circle cx="86.5" cy="14.5" r="1.8" fill="#ffffff"/>
+  </g>
+
+  <!-- LEFT/CENTER SIDE: Broadcast Network Lockup (Arabic + English TV Network Style) -->
+  <g transform="translate(12, 12)">
+    <!-- Top Broadcast Network Pill -->
+    <g transform="translate(158, 0)">
+      <polygon points="8,0 172,0 166,20 2,20" fill="rgba(16, 185, 129, 0.16)" stroke="#10b981" stroke-width="1"/>
+      <circle cx="156" cy="10" r="3.5" fill="#ef4444"/>
+      <text x="82" y="14" font-family="'JetBrains Mono', sans-serif" font-weight="800" font-size="9.5" fill="#34d399" text-anchor="middle" letter-spacing="1.5">ULTRA HD SPORTS NETWORK</text>
+    </g>
+
+    <!-- Main Arabic Brand Title -->
+    <text x="330" y="57" font-family="'Cairo', sans-serif" font-weight="900" font-size="37" fill="url(#chromeText)" text-anchor="end">كورة فور كي</text>
+
+    <!-- Bottom Slanted English Network Bar: KOORA [4K] .COM -->
+    <g transform="translate(24, 66)">
+      <!-- KOORA Box -->
+      <polygon points="185,0 306,0 300,24 179,24" fill="url(#emeraldBlade)"/>
+      <text x="242" y="17.5" font-family="'JetBrains Mono', 'Arial Black', sans-serif" font-weight="900" font-style="italic" font-size="16" fill="#03120c" text-anchor="middle" letter-spacing="2">KOORA</text>
+
+      <!-- 4K UHD Box -->
+      <polygon points="118,0 181,0 175,24 112,24" fill="url(#goldPrism)"/>
+      <text x="146" y="17.5" font-family="'JetBrains Mono', 'Arial Black', sans-serif" font-weight="900" font-style="italic" font-size="16" fill="#050b14" text-anchor="middle" letter-spacing="1">4K</text>
+
+      <!-- .COM LIVE Box -->
+      <polygon points="10,0 114,0 108,24 4,24" fill="#111c2d" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+      <text x="59" y="16.5" font-family="'JetBrains Mono', sans-serif" font-weight="800" font-size="12" fill="#f8fafc" text-anchor="middle" letter-spacing="1.2">.COM • LIVE</text>
+    </g>
+  </g>
+</svg>
