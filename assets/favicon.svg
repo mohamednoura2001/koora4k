@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 110" width="110" height="110">
+  <defs>
+    <linearGradient id="emeraldBlade" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="50%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#047857"/>
+    </linearGradient>
+    <linearGradient id="goldPrism" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="40%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+    <linearGradient id="darkObsidian" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#050811"/>
+    </linearGradient>
+    <linearGradient id="chromeText" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="70%" stop-color="#e2e8f0"/>
+      <stop offset="100%" stop-color="#94a3b8"/>
+    </linearGradient>
+  </defs>
+
+  <g transform="translate(3, 5)">
+    <!-- Outer Dynamic Hex-Shield -->
+    <polygon points="52,2 96,18 96,68 52,94 8,68 8,18" fill="url(#darkObsidian)" stroke="url(#emeraldBlade)" stroke-width="3.5"/>
+    <polygon points="52,8 90,22 90,64 52,87 14,64 14,22" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1.2"/>
+
+    <!-- Speed Blades -->
+    <path d="M18 28 L52 14 L86 28 L76 42 L52 30 L28 42 Z" fill="url(#emeraldBlade)"/>
+
+    <!-- Champions Star Core -->
+    <circle cx="52" cy="44" r="18" fill="#060c17" stroke="url(#emeraldBlade)" stroke-width="2.2"/>
+    <path d="M52 29 L56.5 38 L66 39.5 L59 46 L61 55.5 L52 51 L43 55.5 L45 46 L38 39.5 L47.5 38 Z" fill="url(#chromeText)"/>
+
+    <!-- Slanted Gold 4K Prism -->
+    <g transform="translate(10, 58)">
+      <polygon points="6,0 84,0 78,28 0,28" fill="url(#goldPrism)" stroke="#fef08a" stroke-width="1.5"/>
+      <text x="42" y="21" font-family="'JetBrains Mono', 'Arial Black', sans-serif" font-weight="900" font-style="italic" font-size="21" fill="#050b14" text-anchor="middle" letter-spacing="1">4K</text>
+    </g>
+
+    <!-- Live Dot -->
+    <circle cx="88" cy="16" r="8.5" fill="#050811"/>
+    <circle cx="88" cy="16" r="6" fill="#ef4444"/>
+    <circle cx="86" cy="14" r="2" fill="#ffffff"/>
+  </g>
+</svg>
