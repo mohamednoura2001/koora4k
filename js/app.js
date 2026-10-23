@@ -515,6 +515,24 @@ function updatePageSeoMeta(title, description, matchId = null) {
 
 function handleDeepLinksFromUrl() {
   try {
+    const path = window.location.pathname.toLowerCase();
+    if (path === "/privacy-policy") {
+      switchSection("privacy");
+      return;
+    } else if (path === "/about-us") {
+      switchSection("about");
+      return;
+    } else if (path === "/contact-us") {
+      switchSection("contact");
+      return;
+    } else if (path === "/terms") {
+      switchSection("terms");
+      return;
+    } else if (path === "/dmca") {
+      switchSection("dmca");
+      return;
+    }
+
     const params = new URLSearchParams(window.location.search);
     const matchId = params.get("match");
     const q = params.get("q");
@@ -888,7 +906,12 @@ function switchSection(sectionName) {
     standings: document.getElementById("standingsSection"),
     highlights: document.getElementById("highlightsSection"),
     news: document.getElementById("newsSection"),
-    admin: document.getElementById("adminSection")
+    admin: document.getElementById("adminSection"),
+    privacy: document.getElementById("privacySection"),
+    about: document.getElementById("aboutSection"),
+    contact: document.getElementById("contactSection"),
+    terms: document.getElementById("termsSection"),
+    dmca: document.getElementById("dmcaSection")
   };
 
   Object.entries(sections).forEach(([key, el]) => {
