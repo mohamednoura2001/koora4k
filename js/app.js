@@ -946,9 +946,24 @@ function formatScoreHtml(homeScore, awayScore) {
 }
 
 function getTeamLogoUrl(name, customUrl) {
-  if (customUrl && customUrl.trim() !== "") return customUrl.trim();
-  if (window.CLUB_LOGOS && window.CLUB_LOGOS[name]) return window.CLUB_LOGOS[name];
-  if (window.FALLBACK_CLUB_CREST) return window.FALLBACK_CLUB_CREST(name);
+  const cleanName = (name || "").trim();
+  // 1. أولاً: إذا كان اسم الفريق مسجلاً في قاموس الشعارات، يتم اعتماده دائماً
+  if (cleanName && window.CLUB_LOGOS && window.CLUB_LOGOS[cleanName]) {
+    return window.CLUB_LOGOS[cleanName];
+  }
+  // 2. حظر تسرب شعار ريال مدريد (86) أو برشلونة (81) لأي فريق آخر
+  if (customUrl && typeof customUrl === "string" && customUrl.trim() !== "") {
+    const trimmed = customUrl.trim();
+    if (trimmed.includes("/86.png") && cleanName !== "ريال مدريد") {
+      return (window.CLUB_LOGOS && window.CLUB_LOGOS[cleanName]) || (window.FALLBACK_CLUB_CREST ? window.FALLBACK_CLUB_CREST(cleanName) : "");
+    }
+    if (trimmed.includes("/81.png") && cleanName !== "برشلونة") {
+      return (window.CLUB_LOGOS && window.CLUB_LOGOS[cleanName]) || (window.FALLBACK_CLUB_CREST ? window.FALLBACK_CLUB_CREST(cleanName) : "");
+    }
+    return trimmed;
+  }
+  // 3. درع احترافي مخصص كروي في حالة عدم وجود رابط
+  if (window.FALLBACK_CLUB_CREST) return window.FALLBACK_CLUB_CREST(cleanName);
   return "";
 }
 
