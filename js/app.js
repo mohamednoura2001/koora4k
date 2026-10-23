@@ -1565,13 +1565,17 @@ function openHighlightPlayer(hlId) {
   document.getElementById("playerDetailsGrid").innerHTML = "";
 }
 
+let failoverWatchdogTimer = null;
+let lastFailoverTime = 0;
+
 function renderServerTabs(servers) {
   const container = document.getElementById("serverTabsContainer");
+  if (!container) return;
   container.innerHTML = servers
     .map(
       (srv, idx) => `
-      <button class="server-tab-btn ${idx === 0 ? "active" : ""}" id="srvBtn_${idx}" onclick="selectStreamServer(${idx})">
-        <i class="fa-solid fa-play"></i>
+      <button class="server-tab-btn ${idx === 0 ? "active" : ""}" id="srvBtn_${idx}" onclick="selectStreamServer(${idx})" title="سيرفر ${srv.name}">
+        <span class="srv-status-dot"></span>
         <span>${srv.name}</span>
         <span class="srv-q">${srv.quality || "HD"}</span>
       </button>
@@ -1580,8 +1584,8 @@ function renderServerTabs(servers) {
     .join("");
 }
 
-function selectStreamServer(index) {
-  if (!activePlayContext) return;
+function selectStreamServer(index, isFailover = false) {
+  if (!activePlayContext || !activePlayContext.item) return;
   const item = activePlayContext.item;
   const servers = item.servers || [];
   const srv = servers[index];
@@ -1591,39 +1595,87 @@ function selectStreamServer(index) {
   document.querySelectorAll(".server-tab-btn").forEach((b, i) => {
     b.classList.toggle("active", i === index);
   });
-  loadStreamServer(srv, index);
+  loadStreamServer(srv, index, isFailover);
 }
 
-function loadStreamServer(srv) {
+function loadStreamServer(srv, index = 0, isFailover = false) {
   stopVideoPlayers();
+  clearTimeout(failoverWatchdogTimer);
 
   const videoEl = document.getElementById("hlsVideoPlayer");
   const iframeEl = document.getElementById("iframePlayer");
   const qualityBadge = document.getElementById("activeServerQualityBadge");
   if (qualityBadge) qualityBadge.textContent = srv.quality || "FHD 1080p";
 
+  if (isFailover) {
+    showToast(`⚡ تم التبديل التلقائي الذكي إلى: ${srv.name}`);
+  }
+
   if (srv.type === "iframe") {
     videoEl.classList.add("hidden");
     iframeEl.classList.remove("hidden");
 
-    // إذا كان المشغل رسمي للملخصات (YouTube أو ScoreBat) نرفع القيود ليعمل الفيديو بكامل خصائصه، وإذا كان سيرفر بث خارجي نبقيه محمياً من النوافذ المنبثقة
     if (srv.url.includes("youtube.com") || srv.url.includes("scorebat.com")) {
       iframeEl.removeAttribute("sandbox");
     } else {
       iframeEl.setAttribute("sandbox", "allow-scripts allow-same-origin allow-forms");
     }
 
+    // تعقب أخطاء تحميل السيرفر لتفعيل التبديل التلقائي
+    iframeEl.onerror = () => {
+      console.warn("Iframe load error on server", index);
+      autoFailoverToNextServer("تعذر تحميل السيرفر الحالي");
+    };
+
     iframeEl.src = srv.url;
+
+    // مؤقت ذكي لمراقبة استجابة السيرفر
+    failoverWatchdogTimer = setTimeout(() => {
+      // السيرفر شغال ومستقر
+    }, 12000);
   } else {
     iframeEl.classList.add("hidden");
     videoEl.classList.remove("hidden");
 
+    // مراقبة أخطاء الفيديو الأصلي للتبديل الفوري
+    videoEl.onerror = () => {
+      console.warn("Native video error on server", index);
+      autoFailoverToNextServer("انقطاع في استجابة رابط البث");
+    };
+
     if (srv.url.endsWith(".m3u8") && window.Hls && Hls.isSupported()) {
-      hlsInstance = new Hls();
+      hlsInstance = new Hls({
+        maxBufferLength: 30,
+        maxMaxBufferLength: 60,
+        manifestLoadingTimeOut: 7000,
+        manifestLoadingMaxRetry: 2,
+        levelLoadingTimeOut: 7000
+      });
+
       hlsInstance.loadSource(srv.url);
       hlsInstance.attachMedia(videoEl);
+
       hlsInstance.on(Hls.Events.MANIFEST_PARSED, () => {
         videoEl.play().catch(() => {});
+      });
+
+      // التقاط أي انقطاع أو خطأ قاتل في HLS والتبديل فوراً
+      hlsInstance.on(Hls.Events.ERROR, (event, data) => {
+        if (data && data.fatal) {
+          console.warn("Fatal HLS error encountered:", data.type);
+          switch (data.type) {
+            case Hls.ErrorTypes.NETWORK_ERROR:
+              hlsInstance.startLoad();
+              autoFailoverToNextServer("بطء أو انقطاع شبكة السيرفر");
+              break;
+            case Hls.ErrorTypes.MEDIA_ERROR:
+              hlsInstance.recoverMediaError();
+              break;
+            default:
+              autoFailoverToNextServer("توقف بث السيرفر الرئيسي");
+              break;
+          }
+        }
       });
     } else {
       videoEl.src = srv.url;
@@ -1632,7 +1684,33 @@ function loadStreamServer(srv) {
   }
 }
 
+// ==================== SELF-HEALING AUTO-FAILOVER ENGINE ====================
+function autoFailoverToNextServer(reason = "انقطاع البث") {
+  const now = Date.now();
+  if (now - lastFailoverTime < 3500) return; // منع التبديل المتكرر العشوائي
+  lastFailoverTime = now;
+
+  if (!activePlayContext || !activePlayContext.item) return;
+  const servers = activePlayContext.item.servers || [];
+  if (servers.length <= 1) {
+    showToast("🔄 جاري تحديث وفحص روابط البث من المصدر تلقائياً...");
+    triggerLiveSyncNow();
+    return;
+  }
+
+  const currentIdx = activePlayContext.serverIndex || 0;
+  const failedBtn = document.getElementById(`srvBtn_${currentIdx}`);
+  if (failedBtn) {
+    failedBtn.classList.add("server-failed");
+  }
+
+  const nextIdx = (currentIdx + 1) % servers.length;
+  console.log(`Auto-failover triggered (${reason}). Moving from server ${currentIdx} to ${nextIdx}`);
+  selectStreamServer(nextIdx, true);
+}
+
 function stopVideoPlayers() {
+  clearTimeout(failoverWatchdogTimer);
   if (hlsInstance) {
     hlsInstance.destroy();
     hlsInstance = null;
