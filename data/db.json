@@ -1,675 +1,552 @@
 {
   "settings": {
-    "siteName": "كورة إتش دي",
-    "siteBadge": "KooraHD",
-    "siteSlogan": "البث المباشر للمباريات والقنوات الرياضية بجودة عالية بدون تقطيع",
-    "announcement": "🔥 تابع مباريات اليوم والأمس والغد والأيام المقبلة بث مباشر بجودة FHD 1080p حصرياً على KooraHD",
-    "telegramUrl": "https://t.me/",
+    "siteName": "كورة فور كي",
+    "siteBadge": "Koora4K",
+    "siteSlogan": "البث المباشر لمباريات اليوم بجودة فائقة 4K بدون تقطيع",
+    "announcement": "🔥 تابع مباريات اليوم والأمس والغد بث مباشر بجودة 4K و FHD حصرياً على كورة فور كي Koora4K.net",
+    "telegramUrl": "https://t.me/+_wHGd3-w4ZRlM2Q0",
     "adminPin": "1234",
     "defaultTimezoneOffset": 1
   },
   "matches": [
     {
-      "id": "m1",
+      "id": "m_hilal_qadisiya",
       "day": "today",
-      "dateLabel": "اليوم - الخميس 22 أكتوبر",
-      "league": "دوري أبطال أوروبا",
-      "leagueLogo": "🏆",
+      "dateLabel": "اليوم الجمعة 23 أكتوبر",
+      "league": "دوري روشن السعودي للمحترفين",
+      "leagueLogo": "🇸🇦",
       "status": "live",
-      "minute": "68'",
-      "timeGMT": "19:00",
-      "homeTeam": "ريال مدريد",
+      "minute": "76'",
+      "timeGMT": "15:00",
+      "homeTeam": "الهلال",
       "homeLogo": "https://crests.football-data.org/86.png",
       "homeScore": 2,
-      "homeScorers": "فينيسيوس (14')، مبابي (61')",
-      "awayTeam": "برشلونة",
+      "homeScorers": "ألكساندر ميتروفيتش (21')، مالكوم (58')",
+      "awayTeam": "القادسية",
       "awayLogo": "https://crests.football-data.org/81.png",
       "awayScore": 1,
-      "awayScorers": "لامين يامال (39')",
-      "channel": "beIN Sports HD 1",
-      "commentator": "عصام الشوالي",
-      "stadium": "سانتياغو برنابيو",
-      "round": "قمة الجولة - دوري الأبطال",
+      "awayScorers": "بيير إيميريك أوباميانغ (41')",
+      "channel": "SSC1 HD",
+      "commentator": "فهد العتيبي",
+      "stadium": "استاد الأمير محمد بن فهد",
+      "round": "الجولة 8 - قمة دوري روشن",
       "featured": true,
       "events": [
         {
-          "time": "14'",
+          "time": "21'",
           "team": "home",
-          "player": "فينيسيوس جونيور",
+          "player": "ألكساندر ميتروفيتش",
           "type": "goal"
         },
         {
-          "time": "39'",
+          "time": "41'",
           "team": "away",
-          "player": "لامين يامال",
+          "player": "بيير إيميريك أوباميانغ",
           "type": "goal"
         },
         {
-          "time": "61'",
+          "time": "58'",
           "team": "home",
-          "player": "كيليان مبابي",
+          "player": "مالكوم أوليفيرا",
           "type": "goal"
         }
       ],
       "servers": [
         {
-          "name": "سيرفر 1 الرئيسي (FHD 1080p)",
-          "quality": "1080p",
+          "name": "سيرفر 1 الرئيسي (4K UHD)",
+          "quality": "4K",
           "type": "m3u8",
           "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
         },
         {
-          "name": "سيرفر 2 سريع (HD 720p)",
-          "quality": "720p",
+          "name": "سيرفر 2 مباشر (FHD 1080p)",
+          "quality": "1080p",
           "type": "m3u8",
           "url": "https://assets.afcdn.com/video49/20210722/v_645516.m3u8"
         },
         {
-          "name": "سيرفر 3 للإنترنت الضعيف (SD 480p)",
-          "quality": "480p",
+          "name": "سيرفر 3 للإنترنت الضعيف (HD 720p)",
+          "quality": "720p",
           "type": "m3u8",
           "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
         }
       ]
     },
     {
-      "id": "m2",
+      "id": "m_leicester_forest",
       "day": "today",
-      "dateLabel": "اليوم - الخميس 22 أكتوبر",
+      "dateLabel": "اليوم الجمعة 23 أكتوبر",
+      "league": "الدوري الإنجليزي الممتاز",
+      "leagueLogo": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+      "status": "upcoming",
+      "minute": "20:00 بتوقيت المغرب",
+      "timeGMT": "19:00",
+      "homeTeam": "ليستر سيتي",
+      "homeLogo": "https://crests.football-data.org/61.png",
+      "homeScore": 0,
+      "awayTeam": "نوتينغهام فورست",
+      "awayLogo": "https://crests.football-data.org/67.png",
+      "awayScore": 0,
+      "channel": "beIN Sports HD 1",
+      "commentator": "خليل البلوشي",
+      "stadium": "ملعب كينغ باور",
+      "round": "الأسبوع 9 - قمة الجمعة",
+      "featured": true,
+      "events": [],
+      "servers": [
+        {
+          "name": "سيرفر 1 (FHD 1080p)",
+          "quality": "1080p",
+          "type": "m3u8",
+          "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+        }
+      ]
+    },
+    {
+      "id": "m_espanyol_sevilla",
+      "day": "today",
+      "dateLabel": "اليوم الجمعة 23 أكتوبر",
+      "league": "الدوري الإسباني - لا ليغا",
+      "leagueLogo": "🇪🇸",
+      "status": "upcoming",
+      "minute": "20:00 بتوقيت المغرب",
+      "timeGMT": "19:00",
+      "homeTeam": "إسبانيول",
+      "homeLogo": "https://crests.football-data.org/81.png",
+      "homeScore": 0,
+      "awayTeam": "إشبيلية",
+      "awayLogo": "https://crests.football-data.org/78.png",
+      "awayScore": 0,
+      "channel": "beIN Sports HD 3",
+      "commentator": "حفيظ دراجي",
+      "stadium": "ملعب كورنيلا إل برات",
+      "round": "الجولة 11 - الدوري الإسباني",
+      "featured": false,
+      "events": [],
+      "servers": [
+        {
+          "name": "سيرفر 1 (FHD 1080p)",
+          "quality": "1080p",
+          "type": "m3u8",
+          "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+        }
+      ]
+    },
+    {
+      "id": "m_ahli_khaleej",
+      "day": "today",
+      "dateLabel": "اليوم الجمعة 23 أكتوبر",
+      "league": "دوري روشن السعودي للمحترفين",
+      "leagueLogo": "🇸🇦",
+      "status": "live",
+      "minute": "62'",
+      "timeGMT": "15:00",
+      "homeTeam": "الأهلي السعودي",
+      "homeLogo": "https://crests.football-data.org/86.png",
+      "homeScore": 1,
+      "homeScorers": "رياض محرز (28')",
+      "awayTeam": "الخليج",
+      "awayLogo": "https://crests.football-data.org/81.png",
+      "awayScore": 0,
+      "channel": "SSC EXTRA 1 HD",
+      "commentator": "عيسى الحربين",
+      "stadium": "مدينة الملك عبدالله الرياضية (الجوهرة)",
+      "round": "الجولة 8 - دوري روشن",
+      "featured": false,
+      "events": [
+        {
+          "time": "28'",
+          "team": "home",
+          "player": "رياض محرز",
+          "type": "goal"
+        }
+      ],
+      "servers": [
+        {
+          "name": "سيرفر 1 (FHD 1080p)",
+          "quality": "1080p",
+          "type": "m3u8",
+          "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+        }
+      ]
+    },
+    {
+      "id": "m_faisaly_nassr",
+      "day": "today",
+      "dateLabel": "اليوم الجمعة 23 أكتوبر",
+      "league": "دوري روشن السعودي للمحترفين",
+      "leagueLogo": "🇸🇦",
+      "status": "finished",
+      "minute": "انتهت",
+      "timeGMT": "10:30",
+      "homeTeam": "الفيصلي",
+      "homeLogo": "https://crests.football-data.org/78.png",
+      "homeScore": 1,
+      "homeScorers": "مارتينيز (30')",
+      "awayTeam": "النصر",
+      "awayLogo": "https://crests.football-data.org/65.png",
+      "awayScore": 2,
+      "awayScorers": "كريستيانو رونالدو (45+2')، تاليسكا (78')",
+      "channel": "SSC1 HD",
+      "commentator": "عبدالله الحربي",
+      "stadium": "مدينة المجمعة الرياضية",
+      "round": "الجولة 8 - دوري روشن",
+      "featured": false,
+      "events": [
+        {
+          "time": "30'",
+          "team": "home",
+          "player": "مارتينيز",
+          "type": "goal"
+        },
+        {
+          "time": "45+2'",
+          "team": "away",
+          "player": "كريستيانو رونالدو",
+          "type": "goal"
+        },
+        {
+          "time": "78'",
+          "team": "away",
+          "player": "أندرسون تاليسكا",
+          "type": "goal"
+        }
+      ],
+      "servers": [
+        {
+          "name": "سيرفر 1 (HD 720p)",
+          "quality": "720p",
+          "type": "m3u8",
+          "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+        }
+      ]
+    },
+    {
+      "id": "m_mainz_gladbach",
+      "day": "today",
+      "dateLabel": "اليوم الجمعة 23 أكتوبر",
+      "league": "الدوري الألماني - بوندسليغا",
+      "leagueLogo": "🇩🇪",
+      "status": "upcoming",
+      "minute": "19:30 بتوقيت المغرب",
+      "timeGMT": "18:30",
+      "homeTeam": "ماينز",
+      "homeLogo": "https://crests.football-data.org/3.png",
+      "homeScore": 0,
+      "awayTeam": "بوروسيا مونشنغلادباخ",
+      "awayLogo": "https://crests.football-data.org/4.png",
+      "awayScore": 0,
+      "channel": "beIN Sports HD 5",
+      "commentator": "أحمد البلوشي",
+      "stadium": "ميوا أرينا",
+      "round": "الأسبوع 8 - البوندسليغا",
+      "featured": false,
+      "events": [],
+      "servers": [
+        {
+          "name": "سيرفر 1 (FHD 1080p)",
+          "quality": "1080p",
+          "type": "m3u8",
+          "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+        }
+      ]
+    },
+    {
+      "id": "m_rennes_lehavre",
+      "day": "today",
+      "dateLabel": "اليوم الجمعة 23 أكتوبر",
+      "league": "الدوري الفرنسي - ليغ 1",
+      "leagueLogo": "🇫🇷",
+      "status": "upcoming",
+      "minute": "19:45 بتوقيت المغرب",
+      "timeGMT": "18:45",
+      "homeTeam": "رين",
+      "homeLogo": "https://crests.football-data.org/524.png",
+      "homeScore": 0,
+      "awayTeam": "لوهافر",
+      "awayLogo": "https://crests.football-data.org/524.png",
+      "awayScore": 0,
+      "channel": "beIN Sports HD 4",
+      "commentator": "جواد بدة",
+      "stadium": "رويزون بارك",
+      "round": "الجولة 9 - الدوري الفرنسي",
+      "featured": false,
+      "events": [],
+      "servers": [
+        {
+          "name": "سيرفر 1 (FHD 1080p)",
+          "quality": "1080p",
+          "type": "m3u8",
+          "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+        }
+      ]
+    },
+    {
+      "id": "m_torino_como",
+      "day": "today",
+      "dateLabel": "اليوم الجمعة 23 أكتوبر",
+      "league": "الدوري الإيطالي - سيري آ",
+      "leagueLogo": "🇮🇹",
+      "status": "upcoming",
+      "minute": "19:45 بتوقيت المغرب",
+      "timeGMT": "18:45",
+      "homeTeam": "تورينو",
+      "homeLogo": "https://crests.football-data.org/108.png",
+      "homeScore": 0,
+      "awayTeam": "كومو",
+      "awayLogo": "https://crests.football-data.org/98.png",
+      "awayScore": 0,
+      "channel": "AD SPORTS Premium 1",
+      "commentator": "بلال علام",
+      "stadium": "استاد أولمبيكو دي تورينو",
+      "round": "الجولة 9 - الكالتشيو",
+      "featured": false,
+      "events": [],
+      "servers": [
+        {
+          "name": "سيرفر 1 (FHD 1080p)",
+          "quality": "1080p",
+          "type": "m3u8",
+          "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+        }
+      ]
+    },
+    {
+      "id": "m_clasico_sat",
+      "day": "tomorrow",
+      "dateLabel": "غداً السبت 24 أكتوبر",
+      "league": "الدوري الإسباني - لا ليغا",
+      "leagueLogo": "🇪🇸",
+      "status": "upcoming",
+      "minute": "غداً 20:00 بتوقيت المغرب",
+      "timeGMT": "19:00",
+      "homeTeam": "ريال مدريد",
+      "homeLogo": "https://crests.football-data.org/86.png",
+      "homeScore": 0,
+      "awayTeam": "برشلونة",
+      "awayLogo": "https://crests.football-data.org/81.png",
+      "awayScore": 0,
+      "channel": "beIN Sports HD 1",
+      "commentator": "عصام الشوالي",
+      "stadium": "سانتياغو برنابيو - مدريد",
+      "round": "الجولة 11 - كلاسيكو الأرض المرتقب",
+      "featured": true,
+      "events": [],
+      "servers": [
+        {
+          "name": "سيرفر 1 الرئيسي (4K UHD)",
+          "quality": "4K",
+          "type": "m3u8",
+          "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+        }
+      ]
+    },
+    {
+      "id": "m_arsenal_liverpool",
+      "day": "tomorrow",
+      "dateLabel": "غداً السبت 24 أكتوبر",
+      "league": "الدوري الإنجليزي الممتاز",
+      "leagueLogo": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+      "status": "upcoming",
+      "minute": "غداً 16:30 بتوقيت المغرب",
+      "timeGMT": "15:30",
+      "homeTeam": "أرسنال",
+      "homeLogo": "https://crests.football-data.org/57.png",
+      "homeScore": 0,
+      "awayTeam": "ليفربول",
+      "awayLogo": "https://crests.football-data.org/64.png",
+      "awayScore": 0,
+      "channel": "beIN Sports HD 1",
+      "commentator": "خليل البلوشي",
+      "stadium": "استاد الإمارات - لندن",
+      "round": "قمة الجولة 9 - البريميرليج",
+      "featured": true,
+      "events": [],
+      "servers": [
+        {
+          "name": "سيرفر 1 (FHD 1080p)",
+          "quality": "1080p",
+          "type": "m3u8",
+          "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+        }
+      ]
+    },
+    {
+      "id": "m_raja_wydad",
+      "day": "tomorrow",
+      "dateLabel": "غداً السبت 24 أكتوبر",
       "league": "البطولة المغربية الاحترافية Inwi",
       "leagueLogo": "🇲🇦",
-      "status": "live",
-      "minute": "55'",
-      "timeGMT": "19:00",
+      "status": "upcoming",
+      "minute": "غداً 17:00 بتوقيت المغرب",
+      "timeGMT": "16:00",
       "homeTeam": "الرجاء الرياضي",
-      "homeLogo": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20width%3D%22120%22%20height%3D%22120%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg_RCA%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23047857%22%20%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23064e3b%22%20%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22gold%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23fde047%22%20%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23fbbf24%22%20%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%20%20%3Cfilter%20id%3D%22sh%22%20x%3D%22-10%25%22%20y%3D%22-10%25%22%20width%3D%22120%25%22%20height%3D%22120%25%22%3E%0A%20%20%20%20%20%20%20%20%3CfeDropShadow%20dx%3D%220%22%20dy%3D%223%22%20stdDeviation%3D%223%22%20flood-color%3D%22%23000%22%20flood-opacity%3D%220.45%22%2F%3E%0A%20%20%20%20%20%20%3C%2Ffilter%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3C!--%20Outer%20Shield%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M60%208%20L104%2024%20L104%2062%20C104%2088%2084%20106%2060%20114%20C36%20106%2016%2088%2016%2062%20L16%2024%20Z%22%20fill%3D%22url(%23gold)%22%20filter%3D%22url(%23sh)%22%2F%3E%0A%20%20%20%20%3C!--%20Inner%20Shield%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M60%2014%20L98%2028%20L98%2061%20C98%2083%2080%20100%2060%20107%20C40%20100%2022%2083%2022%2061%20L22%2028%20Z%22%20fill%3D%22url(%23bg_RCA)%22%2F%3E%0A%20%20%20%20%3C!--%20Vertical%20Stripe%20Accent%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M48%2019%20L72%2019%20L72%20102%20C68%20104%2064%20106%2060%20107%20C56%20106%2052%20104%2048%20102%20Z%22%20fill%3D%22%23064e3b%22%20fill-opacity%3D%220.35%22%2F%3E%0A%20%20%20%20%3C!--%20Top%20Crown%20%2F%20Star%20--%3E%0A%20%20%20%20%3Cpolygon%20points%3D%2260%2C18%2063%2C25%2070%2C25%2064%2C29%2066%2C36%2060%2C32%2054%2C36%2056%2C29%2050%2C25%2057%2C25%22%20fill%3D%22url(%23gold)%22%2F%3E%0A%20%20%20%20%3C!--%20Center%20Circle%20Ring%20--%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2260%22%20cy%3D%2264%22%20r%3D%2224%22%20fill%3D%22rgba(0%2C0%2C0%2C0.28)%22%20stroke%3D%22url(%23gold)%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%3C!--%20Club%20Initials%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2260%22%20y%3D%2271%22%20font-family%3D%22Arial%2C%20Cairo%2C%20sans-serif%22%20font-weight%3D%22900%22%20font-size%3D%2219%22%20fill%3D%22%23ffffff%22%20text-anchor%3D%22middle%22%20letter-spacing%3D%220.5%22%3ERCA%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E",
-      "homeScore": 1,
-      "homeScorers": "يسري بوزوق (22')",
+      "homeLogo": "https://crests.football-data.org/86.png",
+      "homeScore": 0,
       "awayTeam": "الوداد الرياضي",
-      "awayLogo": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20width%3D%22120%22%20height%3D%22120%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg_WAC%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23dc2626%22%20%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%237f1d1d%22%20%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22gold%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23fde047%22%20%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23fbbf24%22%20%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%20%20%3Cfilter%20id%3D%22sh%22%20x%3D%22-10%25%22%20y%3D%22-10%25%22%20width%3D%22120%25%22%20height%3D%22120%25%22%3E%0A%20%20%20%20%20%20%20%20%3CfeDropShadow%20dx%3D%220%22%20dy%3D%223%22%20stdDeviation%3D%223%22%20flood-color%3D%22%23000%22%20flood-opacity%3D%220.45%22%2F%3E%0A%20%20%20%20%20%20%3C%2Ffilter%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3C!--%20Outer%20Shield%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M60%208%20L104%2024%20L104%2062%20C104%2088%2084%20106%2060%20114%20C36%20106%2016%2088%2016%2062%20L16%2024%20Z%22%20fill%3D%22url(%23gold)%22%20filter%3D%22url(%23sh)%22%2F%3E%0A%20%20%20%20%3C!--%20Inner%20Shield%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M60%2014%20L98%2028%20L98%2061%20C98%2083%2080%20100%2060%20107%20C40%20100%2022%2083%2022%2061%20L22%2028%20Z%22%20fill%3D%22url(%23bg_WAC)%22%2F%3E%0A%20%20%20%20%3C!--%20Vertical%20Stripe%20Accent%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M48%2019%20L72%2019%20L72%20102%20C68%20104%2064%20106%2060%20107%20C56%20106%2052%20104%2048%20102%20Z%22%20fill%3D%22%237f1d1d%22%20fill-opacity%3D%220.35%22%2F%3E%0A%20%20%20%20%3C!--%20Top%20Crown%20%2F%20Star%20--%3E%0A%20%20%20%20%3Cpolygon%20points%3D%2260%2C18%2063%2C25%2070%2C25%2064%2C29%2066%2C36%2060%2C32%2054%2C36%2056%2C29%2050%2C25%2057%2C25%22%20fill%3D%22url(%23gold)%22%2F%3E%0A%20%20%20%20%3C!--%20Center%20Circle%20Ring%20--%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2260%22%20cy%3D%2264%22%20r%3D%2224%22%20fill%3D%22rgba(0%2C0%2C0%2C0.28)%22%20stroke%3D%22url(%23gold)%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%3C!--%20Club%20Initials%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2260%22%20y%3D%2271%22%20font-family%3D%22Arial%2C%20Cairo%2C%20sans-serif%22%20font-weight%3D%22900%22%20font-size%3D%2219%22%20fill%3D%22%23ffffff%22%20text-anchor%3D%22middle%22%20letter-spacing%3D%220.5%22%3EWAC%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E",
-      "awayScore": 1,
-      "awayScorers": "حكيم زياش (44')",
+      "awayLogo": "https://crests.football-data.org/81.png",
+      "awayScore": 0,
       "channel": "الرياضية المغربية TNT",
       "commentator": "هشام فرج",
       "stadium": "المركب الرياضي محمد الخامس",
       "round": "الجولة 24 - ديربي الدار البيضاء",
-      "featured": true,
+      "featured": false,
+      "events": [],
+      "servers": [
+        {
+          "name": "سيرفر 1 (FHD 1080p)",
+          "quality": "1080p",
+          "type": "m3u8",
+          "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+        }
+      ]
+    },
+    {
+      "id": "m_mancity_southampton",
+      "day": "tomorrow",
+      "dateLabel": "غداً السبت 24 أكتوبر",
+      "league": "الدوري الإنجليزي الممتاز",
+      "leagueLogo": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+      "status": "upcoming",
+      "minute": "غداً 14:00 بتوقيت المغرب",
+      "timeGMT": "13:00",
+      "homeTeam": "مانشستر سيتي",
+      "homeLogo": "https://crests.football-data.org/65.png",
+      "homeScore": 0,
+      "awayTeam": "ساوثهامبتون",
+      "awayLogo": "https://crests.football-data.org/67.png",
+      "awayScore": 0,
+      "channel": "beIN Sports HD 2",
+      "commentator": "عامر الخوذيري",
+      "stadium": "استاد الاتحاد",
+      "round": "الجولة 9",
+      "featured": false,
+      "events": [],
+      "servers": [
+        {
+          "name": "سيرفر 1 (HD 720p)",
+          "quality": "720p",
+          "type": "m3u8",
+          "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+        }
+      ]
+    },
+    {
+      "id": "m_fenerbahce_manu",
+      "day": "yesterday",
+      "dateLabel": "أمس الخميس 22 أكتوبر",
+      "league": "الدوري الأوروبي",
+      "leagueLogo": "🏆",
+      "status": "finished",
+      "minute": "انتهت",
+      "timeGMT": "19:00",
+      "homeTeam": "فنربخشة",
+      "homeLogo": "https://crests.football-data.org/86.png",
+      "homeScore": 1,
+      "homeScorers": "يوسف النصيري (49')",
+      "awayTeam": "مانشستر يونايتد",
+      "awayLogo": "https://crests.football-data.org/66.png",
+      "awayScore": 1,
+      "awayScorers": "كريستيان إريكسن (15')",
+      "channel": "beIN Sports HD 1",
+      "commentator": "علي محمد علي",
+      "stadium": "ملعب شكري سراج أوغلو",
+      "round": "الجولة 3 - الدوري الأوروبي",
+      "featured": false,
       "events": [
         {
-          "time": "22'",
-          "team": "home",
-          "player": "يسري بوزوق",
+          "time": "15'",
+          "team": "away",
+          "player": "كريستيان إريكسن",
           "type": "goal"
         },
         {
-          "time": "44'",
-          "team": "away",
-          "player": "حكيم زياش",
+          "time": "49'",
+          "team": "home",
+          "player": "يوسف النصيري",
           "type": "goal"
         }
       ],
       "servers": [
         {
-          "name": "سيرفر الرياضية 1 (FHD 1080p)",
+          "name": "ملخص المباراة HD",
           "quality": "1080p",
           "type": "m3u8",
           "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-        },
-        {
-          "name": "سيرفر 2 متعدد الجودات (HD 720p)",
-          "quality": "720p",
-          "type": "m3u8",
-          "url": "https://assets.afcdn.com/video49/20210722/v_645516.m3u8"
         }
       ]
     },
     {
-      "id": "m3",
-      "day": "today",
-      "dateLabel": "اليوم - الخميس 22 أكتوبر",
-      "league": "دوري أبطال أوروبا",
+      "id": "m_roma_kyiv",
+      "day": "yesterday",
+      "dateLabel": "أمس الخميس 22 أكتوبر",
+      "league": "الدوري الأوروبي",
       "leagueLogo": "🏆",
-      "status": "live",
-      "minute": "34'",
-      "timeGMT": "19:30",
-      "homeTeam": "إنتر ميلان",
+      "status": "finished",
+      "minute": "انتهت",
+      "timeGMT": "16:45",
+      "homeTeam": "روما",
       "homeLogo": "https://crests.football-data.org/108.png",
       "homeScore": 1,
-      "homeScorers": "لاوتارو مارتينيز (19')",
-      "awayTeam": "بايرن ميونخ",
-      "awayLogo": "https://crests.football-data.org/5.png",
-      "awayScore": 0,
-      "awayScorers": "",
-      "channel": "beIN Sports HD 3",
-      "commentator": "خليل البلوشي",
-      "stadium": "جوزيبي مياتزا - سان سيرو",
-      "round": "دوري أبطال أوروبا",
-      "featured": false,
-      "events": [],
-      "servers": [
-        {
-          "name": "سيرفر 1 (FHD 1080p)",
-          "quality": "1080p",
-          "type": "m3u8",
-          "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-        }
-      ]
-    },
-    {
-      "id": "m4",
-      "day": "today",
-      "dateLabel": "اليوم - الخميس 22 أكتوبر",
-      "league": "الدوري الإنجليزي الممتاز",
-      "leagueLogo": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-      "status": "upcoming",
-      "minute": "تبدأ قريباً",
-      "timeGMT": "20:00",
-      "homeTeam": "أرسنال",
-      "homeLogo": "https://crests.football-data.org/57.png",
-      "homeScore": 0,
-      "awayTeam": "مانشستر سيتي",
-      "awayLogo": "https://crests.football-data.org/65.png",
-      "awayScore": 0,
-      "channel": "beIN Sports HD 2",
-      "commentator": "حفيظ دراجي",
-      "stadium": "ملعب الإمارات - لندن",
-      "round": "الأسبوع 32",
-      "featured": false,
-      "events": [],
-      "servers": [
-        {
-          "name": "سيرفر 1 (FHD 1080p)",
-          "quality": "1080p",
-          "type": "m3u8",
-          "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-        }
-      ]
-    },
-    {
-      "id": "m5",
-      "day": "today",
-      "dateLabel": "اليوم - الخميس 22 أكتوبر",
-      "league": "البطولة المغربية الاحترافية Inwi",
-      "leagueLogo": "🇲🇦",
-      "status": "upcoming",
-      "minute": "الليلة",
-      "timeGMT": "21:00",
-      "homeTeam": "نهضة بركان",
-      "homeLogo": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20width%3D%22120%22%20height%3D%22120%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg_RSB%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23ea580c%22%20%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23111827%22%20%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22gold%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23fde047%22%20%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23fbbf24%22%20%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%20%20%3Cfilter%20id%3D%22sh%22%20x%3D%22-10%25%22%20y%3D%22-10%25%22%20width%3D%22120%25%22%20height%3D%22120%25%22%3E%0A%20%20%20%20%20%20%20%20%3CfeDropShadow%20dx%3D%220%22%20dy%3D%223%22%20stdDeviation%3D%223%22%20flood-color%3D%22%23000%22%20flood-opacity%3D%220.45%22%2F%3E%0A%20%20%20%20%20%20%3C%2Ffilter%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3C!--%20Outer%20Shield%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M60%208%20L104%2024%20L104%2062%20C104%2088%2084%20106%2060%20114%20C36%20106%2016%2088%2016%2062%20L16%2024%20Z%22%20fill%3D%22url(%23gold)%22%20filter%3D%22url(%23sh)%22%2F%3E%0A%20%20%20%20%3C!--%20Inner%20Shield%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M60%2014%20L98%2028%20L98%2061%20C98%2083%2080%20100%2060%20107%20C40%20100%2022%2083%2022%2061%20L22%2028%20Z%22%20fill%3D%22url(%23bg_RSB)%22%2F%3E%0A%20%20%20%20%3C!--%20Vertical%20Stripe%20Accent%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M48%2019%20L72%2019%20L72%20102%20C68%20104%2064%20106%2060%20107%20C56%20106%2052%20104%2048%20102%20Z%22%20fill%3D%22%23111827%22%20fill-opacity%3D%220.35%22%2F%3E%0A%20%20%20%20%3C!--%20Top%20Crown%20%2F%20Star%20--%3E%0A%20%20%20%20%3Cpolygon%20points%3D%2260%2C18%2063%2C25%2070%2C25%2064%2C29%2066%2C36%2060%2C32%2054%2C36%2056%2C29%2050%2C25%2057%2C25%22%20fill%3D%22url(%23gold)%22%2F%3E%0A%20%20%20%20%3C!--%20Center%20Circle%20Ring%20--%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2260%22%20cy%3D%2264%22%20r%3D%2224%22%20fill%3D%22rgba(0%2C0%2C0%2C0.28)%22%20stroke%3D%22url(%23gold)%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%3C!--%20Club%20Initials%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2260%22%20y%3D%2271%22%20font-family%3D%22Arial%2C%20Cairo%2C%20sans-serif%22%20font-weight%3D%22900%22%20font-size%3D%2219%22%20fill%3D%22%23ffffff%22%20text-anchor%3D%22middle%22%20letter-spacing%3D%220.5%22%3ERSB%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E",
-      "homeScore": 0,
-      "awayTeam": "الجيش الملكي",
-      "awayLogo": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20width%3D%22120%22%20height%3D%22120%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg_FAR%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%2315803d%22%20%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23991b1b%22%20%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22gold%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23fde047%22%20%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23fbbf24%22%20%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%20%20%3Cfilter%20id%3D%22sh%22%20x%3D%22-10%25%22%20y%3D%22-10%25%22%20width%3D%22120%25%22%20height%3D%22120%25%22%3E%0A%20%20%20%20%20%20%20%20%3CfeDropShadow%20dx%3D%220%22%20dy%3D%223%22%20stdDeviation%3D%223%22%20flood-color%3D%22%23000%22%20flood-opacity%3D%220.45%22%2F%3E%0A%20%20%20%20%20%20%3C%2Ffilter%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3C!--%20Outer%20Shield%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M60%208%20L104%2024%20L104%2062%20C104%2088%2084%20106%2060%20114%20C36%20106%2016%2088%2016%2062%20L16%2024%20Z%22%20fill%3D%22url(%23gold)%22%20filter%3D%22url(%23sh)%22%2F%3E%0A%20%20%20%20%3C!--%20Inner%20Shield%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M60%2014%20L98%2028%20L98%2061%20C98%2083%2080%20100%2060%20107%20C40%20100%2022%2083%2022%2061%20L22%2028%20Z%22%20fill%3D%22url(%23bg_FAR)%22%2F%3E%0A%20%20%20%20%3C!--%20Vertical%20Stripe%20Accent%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M48%2019%20L72%2019%20L72%20102%20C68%20104%2064%20106%2060%20107%20C56%20106%2052%20104%2048%20102%20Z%22%20fill%3D%22%23991b1b%22%20fill-opacity%3D%220.35%22%2F%3E%0A%20%20%20%20%3C!--%20Top%20Crown%20%2F%20Star%20--%3E%0A%20%20%20%20%3Cpolygon%20points%3D%2260%2C18%2063%2C25%2070%2C25%2064%2C29%2066%2C36%2060%2C32%2054%2C36%2056%2C29%2050%2C25%2057%2C25%22%20fill%3D%22url(%23gold)%22%2F%3E%0A%20%20%20%20%3C!--%20Center%20Circle%20Ring%20--%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2260%22%20cy%3D%2264%22%20r%3D%2224%22%20fill%3D%22rgba(0%2C0%2C0%2C0.28)%22%20stroke%3D%22url(%23gold)%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%3C!--%20Club%20Initials%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2260%22%20y%3D%2271%22%20font-family%3D%22Arial%2C%20Cairo%2C%20sans-serif%22%20font-weight%3D%22900%22%20font-size%3D%2219%22%20fill%3D%22%23ffffff%22%20text-anchor%3D%22middle%22%20letter-spacing%3D%220.5%22%3EFAR%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E",
-      "awayScore": 0,
-      "channel": "الرياضية المغربية HD",
-      "commentator": "عبد الصمد ولد شهيبة",
-      "stadium": "الملعب البلدي ببركان",
-      "round": "الجولة 24",
-      "featured": false,
-      "events": [],
-      "servers": [
-        {
-          "name": "سيرفر 1 (FHD 1080p)",
-          "quality": "1080p",
-          "type": "m3u8",
-          "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-        }
-      ]
-    },
-    {
-      "id": "m6",
-      "day": "today",
-      "dateLabel": "اليوم - الخميس 22 أكتوبر",
-      "league": "دوري روشن السعودي",
-      "leagueLogo": "🇸🇦",
-      "status": "finished",
-      "minute": "انتهت",
-      "timeGMT": "17:00",
-      "homeTeam": "الهلال",
-      "homeLogo": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20width%3D%22120%22%20height%3D%22120%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg_HILAL%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231d4ed8%22%20%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%231e3a8a%22%20%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22gold%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23fde047%22%20%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23fbbf24%22%20%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%20%20%3Cfilter%20id%3D%22sh%22%20x%3D%22-10%25%22%20y%3D%22-10%25%22%20width%3D%22120%25%22%20height%3D%22120%25%22%3E%0A%20%20%20%20%20%20%20%20%3CfeDropShadow%20dx%3D%220%22%20dy%3D%223%22%20stdDeviation%3D%223%22%20flood-color%3D%22%23000%22%20flood-opacity%3D%220.45%22%2F%3E%0A%20%20%20%20%20%20%3C%2Ffilter%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3C!--%20Outer%20Shield%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M60%208%20L104%2024%20L104%2062%20C104%2088%2084%20106%2060%20114%20C36%20106%2016%2088%2016%2062%20L16%2024%20Z%22%20fill%3D%22url(%23gold)%22%20filter%3D%22url(%23sh)%22%2F%3E%0A%20%20%20%20%3C!--%20Inner%20Shield%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M60%2014%20L98%2028%20L98%2061%20C98%2083%2080%20100%2060%20107%20C40%20100%2022%2083%2022%2061%20L22%2028%20Z%22%20fill%3D%22url(%23bg_HILAL)%22%2F%3E%0A%20%20%20%20%3C!--%20Vertical%20Stripe%20Accent%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M48%2019%20L72%2019%20L72%20102%20C68%20104%2064%20106%2060%20107%20C56%20106%2052%20104%2048%20102%20Z%22%20fill%3D%22%231e3a8a%22%20fill-opacity%3D%220.35%22%2F%3E%0A%20%20%20%20%3C!--%20Top%20Crown%20%2F%20Star%20--%3E%0A%20%20%20%20%3Cpolygon%20points%3D%2260%2C18%2063%2C25%2070%2C25%2064%2C29%2066%2C36%2060%2C32%2054%2C36%2056%2C29%2050%2C25%2057%2C25%22%20fill%3D%22url(%23gold)%22%2F%3E%0A%20%20%20%20%3C!--%20Center%20Circle%20Ring%20--%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2260%22%20cy%3D%2264%22%20r%3D%2224%22%20fill%3D%22rgba(0%2C0%2C0%2C0.28)%22%20stroke%3D%22url(%23gold)%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%3C!--%20Club%20Initials%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2260%22%20y%3D%2271%22%20font-family%3D%22Arial%2C%20Cairo%2C%20sans-serif%22%20font-weight%3D%22900%22%20font-size%3D%2219%22%20fill%3D%22%23ffffff%22%20text-anchor%3D%22middle%22%20letter-spacing%3D%220.5%22%3EHILAL%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E",
-      "homeScore": 3,
-      "homeScorers": "ميتروفيتش (12'، 54')، سالم الدوسري (81')",
-      "awayTeam": "النصر",
-      "awayLogo": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20width%3D%22120%22%20height%3D%22120%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg_NASSR%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23eab308%22%20%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%231d4ed8%22%20%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22gold%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23fde047%22%20%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23fde047%22%20%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%20%20%3Cfilter%20id%3D%22sh%22%20x%3D%22-10%25%22%20y%3D%22-10%25%22%20width%3D%22120%25%22%20height%3D%22120%25%22%3E%0A%20%20%20%20%20%20%20%20%3CfeDropShadow%20dx%3D%220%22%20dy%3D%223%22%20stdDeviation%3D%223%22%20flood-color%3D%22%23000%22%20flood-opacity%3D%220.45%22%2F%3E%0A%20%20%20%20%20%20%3C%2Ffilter%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3C!--%20Outer%20Shield%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M60%208%20L104%2024%20L104%2062%20C104%2088%2084%20106%2060%20114%20C36%20106%2016%2088%2016%2062%20L16%2024%20Z%22%20fill%3D%22url(%23gold)%22%20filter%3D%22url(%23sh)%22%2F%3E%0A%20%20%20%20%3C!--%20Inner%20Shield%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M60%2014%20L98%2028%20L98%2061%20C98%2083%2080%20100%2060%20107%20C40%20100%2022%2083%2022%2061%20L22%2028%20Z%22%20fill%3D%22url(%23bg_NASSR)%22%2F%3E%0A%20%20%20%20%3C!--%20Vertical%20Stripe%20Accent%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M48%2019%20L72%2019%20L72%20102%20C68%20104%2064%20106%2060%20107%20C56%20106%2052%20104%2048%20102%20Z%22%20fill%3D%22%231d4ed8%22%20fill-opacity%3D%220.35%22%2F%3E%0A%20%20%20%20%3C!--%20Top%20Crown%20%2F%20Star%20--%3E%0A%20%20%20%20%3Cpolygon%20points%3D%2260%2C18%2063%2C25%2070%2C25%2064%2C29%2066%2C36%2060%2C32%2054%2C36%2056%2C29%2050%2C25%2057%2C25%22%20fill%3D%22url(%23gold)%22%2F%3E%0A%20%20%20%20%3C!--%20Center%20Circle%20Ring%20--%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2260%22%20cy%3D%2264%22%20r%3D%2224%22%20fill%3D%22rgba(0%2C0%2C0%2C0.28)%22%20stroke%3D%22url(%23gold)%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%3C!--%20Club%20Initials%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2260%22%20y%3D%2271%22%20font-family%3D%22Arial%2C%20Cairo%2C%20sans-serif%22%20font-weight%3D%22900%22%20font-size%3D%2219%22%20fill%3D%22%23ffffff%22%20text-anchor%3D%22middle%22%20letter-spacing%3D%220.5%22%3ENASSR%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E",
-      "awayScore": 2,
-      "awayScorers": "كريستيانو رونالدو (28'، 75')",
-      "channel": "SSC 1 HD",
-      "commentator": "فارس عوض",
-      "stadium": "المملكة أرينا - الرياض",
-      "round": "الجولة 28",
-      "featured": false,
-      "events": [],
-      "servers": [
-        {
-          "name": "إعادة وملخص المباراة (FHD)",
-          "quality": "1080p",
-          "type": "m3u8",
-          "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-        }
-      ]
-    },
-    {
-      "id": "m7",
-      "day": "yesterday",
-      "dateLabel": "أمس - الأربعاء 21 أكتوبر",
-      "league": "دوري أبطال أوروبا",
-      "leagueLogo": "🏆",
-      "status": "finished",
-      "minute": "انتهت",
-      "timeGMT": "19:00",
-      "homeTeam": "باريس سان جيرمان",
-      "homeLogo": "https://crests.football-data.org/524.png",
-      "homeScore": 2,
-      "homeScorers": "ديمبيلي (18')، حكيمي (74')",
-      "awayTeam": "ليفربول",
-      "awayLogo": "https://crests.football-data.org/64.png",
-      "awayScore": 2,
-      "awayScorers": "محمد صلاح (33'، 88')",
-      "channel": "beIN Sports HD 1",
-      "commentator": "حسن العيدروس",
-      "stadium": "حديقة الأمراء - باريس",
-      "round": "دوري أبطال أوروبا",
-      "featured": false,
-      "events": [],
-      "servers": [
-        {
-          "name": "ملخص وأهداف اللقاء (HD)",
-          "quality": "1080p",
-          "type": "m3u8",
-          "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-        }
-      ]
-    },
-    {
-      "id": "m8",
-      "day": "yesterday",
-      "dateLabel": "أمس - الأربعاء 21 أكتوبر",
-      "league": "دوري أبطال أوروبا",
-      "leagueLogo": "🏆",
-      "status": "finished",
-      "minute": "انتهت",
-      "timeGMT": "19:00",
-      "homeTeam": "بوروسيا دورتموند",
-      "homeLogo": "https://crests.football-data.org/4.png",
-      "homeScore": 3,
-      "homeScorers": "سيرهو غيراسي (11'، 49')، براندت (82')",
-      "awayTeam": "إي سي ميلان",
-      "awayLogo": "https://crests.football-data.org/98.png",
-      "awayScore": 1,
-      "awayScorers": "رافائيل لياو (56')",
-      "channel": "beIN Sports HD 2",
-      "commentator": "علي محمد علي",
-      "stadium": "سيغنال إيدونا بارك",
-      "round": "دوري أبطال أوروبا",
-      "featured": false,
-      "events": [],
-      "servers": [
-        {
-          "name": "ملخص وأهداف اللقاء",
-          "quality": "1080p",
-          "type": "m3u8",
-          "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-        }
-      ]
-    },
-    {
-      "id": "m9",
-      "day": "yesterday",
-      "dateLabel": "أمس - الأربعاء 21 أكتوبر",
-      "league": "البطولة المغربية الاحترافية Inwi",
-      "leagueLogo": "🇲🇦",
-      "status": "finished",
-      "minute": "انتهت",
-      "timeGMT": "18:00",
-      "homeTeam": "المغرب الفاسي",
-      "homeLogo": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20width%3D%22120%22%20height%3D%22120%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg_MAS%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23eab308%22%20%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23111827%22%20%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22gold%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23fde047%22%20%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23fde047%22%20%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%20%20%3Cfilter%20id%3D%22sh%22%20x%3D%22-10%25%22%20y%3D%22-10%25%22%20width%3D%22120%25%22%20height%3D%22120%25%22%3E%0A%20%20%20%20%20%20%20%20%3CfeDropShadow%20dx%3D%220%22%20dy%3D%223%22%20stdDeviation%3D%223%22%20flood-color%3D%22%23000%22%20flood-opacity%3D%220.45%22%2F%3E%0A%20%20%20%20%20%20%3C%2Ffilter%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3C!--%20Outer%20Shield%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M60%208%20L104%2024%20L104%2062%20C104%2088%2084%20106%2060%20114%20C36%20106%2016%2088%2016%2062%20L16%2024%20Z%22%20fill%3D%22url(%23gold)%22%20filter%3D%22url(%23sh)%22%2F%3E%0A%20%20%20%20%3C!--%20Inner%20Shield%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M60%2014%20L98%2028%20L98%2061%20C98%2083%2080%20100%2060%20107%20C40%20100%2022%2083%2022%2061%20L22%2028%20Z%22%20fill%3D%22url(%23bg_MAS)%22%2F%3E%0A%20%20%20%20%3C!--%20Vertical%20Stripe%20Accent%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M48%2019%20L72%2019%20L72%20102%20C68%20104%2064%20106%2060%20107%20C56%20106%2052%20104%2048%20102%20Z%22%20fill%3D%22%23111827%22%20fill-opacity%3D%220.35%22%2F%3E%0A%20%20%20%20%3C!--%20Top%20Crown%20%2F%20Star%20--%3E%0A%20%20%20%20%3Cpolygon%20points%3D%2260%2C18%2063%2C25%2070%2C25%2064%2C29%2066%2C36%2060%2C32%2054%2C36%2056%2C29%2050%2C25%2057%2C25%22%20fill%3D%22url(%23gold)%22%2F%3E%0A%20%20%20%20%3C!--%20Center%20Circle%20Ring%20--%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2260%22%20cy%3D%2264%22%20r%3D%2224%22%20fill%3D%22rgba(0%2C0%2C0%2C0.28)%22%20stroke%3D%22url(%23gold)%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%3C!--%20Club%20Initials%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2260%22%20y%3D%2271%22%20font-family%3D%22Arial%2C%20Cairo%2C%20sans-serif%22%20font-weight%3D%22900%22%20font-size%3D%2219%22%20fill%3D%22%23ffffff%22%20text-anchor%3D%22middle%22%20letter-spacing%3D%220.5%22%3EMAS%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E",
-      "homeScore": 2,
-      "homeScorers": "بورغيس (25')، الجناتي (67')",
-      "awayTeam": "الفتح الرباطي",
-      "awayLogo": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20width%3D%22120%22%20height%3D%22120%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg_FUS%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23dc2626%22%20%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%231e293b%22%20%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22gold%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23fde047%22%20%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23e2e8f0%22%20%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%20%20%3Cfilter%20id%3D%22sh%22%20x%3D%22-10%25%22%20y%3D%22-10%25%22%20width%3D%22120%25%22%20height%3D%22120%25%22%3E%0A%20%20%20%20%20%20%20%20%3CfeDropShadow%20dx%3D%220%22%20dy%3D%223%22%20stdDeviation%3D%223%22%20flood-color%3D%22%23000%22%20flood-opacity%3D%220.45%22%2F%3E%0A%20%20%20%20%20%20%3C%2Ffilter%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3C!--%20Outer%20Shield%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M60%208%20L104%2024%20L104%2062%20C104%2088%2084%20106%2060%20114%20C36%20106%2016%2088%2016%2062%20L16%2024%20Z%22%20fill%3D%22url(%23gold)%22%20filter%3D%22url(%23sh)%22%2F%3E%0A%20%20%20%20%3C!--%20Inner%20Shield%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M60%2014%20L98%2028%20L98%2061%20C98%2083%2080%20100%2060%20107%20C40%20100%2022%2083%2022%2061%20L22%2028%20Z%22%20fill%3D%22url(%23bg_FUS)%22%2F%3E%0A%20%20%20%20%3C!--%20Vertical%20Stripe%20Accent%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M48%2019%20L72%2019%20L72%20102%20C68%20104%2064%20106%2060%20107%20C56%20106%2052%20104%2048%20102%20Z%22%20fill%3D%22%231e293b%22%20fill-opacity%3D%220.35%22%2F%3E%0A%20%20%20%20%3C!--%20Top%20Crown%20%2F%20Star%20--%3E%0A%20%20%20%20%0A%20%20%20%20%3C!--%20Center%20Circle%20Ring%20--%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2260%22%20cy%3D%2264%22%20r%3D%2224%22%20fill%3D%22rgba(0%2C0%2C0%2C0.28)%22%20stroke%3D%22url(%23gold)%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%3C!--%20Club%20Initials%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2260%22%20y%3D%2271%22%20font-family%3D%22Arial%2C%20Cairo%2C%20sans-serif%22%20font-weight%3D%22900%22%20font-size%3D%2219%22%20fill%3D%22%23ffffff%22%20text-anchor%3D%22middle%22%20letter-spacing%3D%220.5%22%3EFUS%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E",
-      "awayScore": 1,
-      "awayScorers": "هنوري (41')",
-      "channel": "الرياضية المغربية TNT",
-      "commentator": "سفيان رشيدي",
-      "stadium": "المركب الرياضي بفاس",
-      "round": "الجولة 24",
-      "featured": false,
-      "events": [],
-      "servers": [
-        {
-          "name": "ملخص المباراة الكامل",
-          "quality": "1080p",
-          "type": "m3u8",
-          "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-        }
-      ]
-    },
-    {
-      "id": "m10",
-      "day": "yesterday",
-      "dateLabel": "أمس - الأربعاء 21 أكتوبر",
-      "league": "دوري أبطال أفريقيا",
-      "leagueLogo": "🌍",
-      "status": "finished",
-      "minute": "انتهت",
-      "timeGMT": "17:00",
-      "homeTeam": "الأهلي المصري",
-      "homeLogo": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20width%3D%22120%22%20height%3D%22120%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg_ASC%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23dc2626%22%20%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%237f1d1d%22%20%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22gold%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23fde047%22%20%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23fbbf24%22%20%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%20%20%3Cfilter%20id%3D%22sh%22%20x%3D%22-10%25%22%20y%3D%22-10%25%22%20width%3D%22120%25%22%20height%3D%22120%25%22%3E%0A%20%20%20%20%20%20%20%20%3CfeDropShadow%20dx%3D%220%22%20dy%3D%223%22%20stdDeviation%3D%223%22%20flood-color%3D%22%23000%22%20flood-opacity%3D%220.45%22%2F%3E%0A%20%20%20%20%20%20%3C%2Ffilter%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3C!--%20Outer%20Shield%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M60%208%20L104%2024%20L104%2062%20C104%2088%2084%20106%2060%20114%20C36%20106%2016%2088%2016%2062%20L16%2024%20Z%22%20fill%3D%22url(%23gold)%22%20filter%3D%22url(%23sh)%22%2F%3E%0A%20%20%20%20%3C!--%20Inner%20Shield%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M60%2014%20L98%2028%20L98%2061%20C98%2083%2080%20100%2060%20107%20C40%20100%2022%2083%2022%2061%20L22%2028%20Z%22%20fill%3D%22url(%23bg_ASC)%22%2F%3E%0A%20%20%20%20%3C!--%20Vertical%20Stripe%20Accent%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M48%2019%20L72%2019%20L72%20102%20C68%20104%2064%20106%2060%20107%20C56%20106%2052%20104%2048%20102%20Z%22%20fill%3D%22%237f1d1d%22%20fill-opacity%3D%220.35%22%2F%3E%0A%20%20%20%20%3C!--%20Top%20Crown%20%2F%20Star%20--%3E%0A%20%20%20%20%3Cpolygon%20points%3D%2260%2C18%2063%2C25%2070%2C25%2064%2C29%2066%2C36%2060%2C32%2054%2C36%2056%2C29%2050%2C25%2057%2C25%22%20fill%3D%22url(%23gold)%22%2F%3E%0A%20%20%20%20%3C!--%20Center%20Circle%20Ring%20--%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2260%22%20cy%3D%2264%22%20r%3D%2224%22%20fill%3D%22rgba(0%2C0%2C0%2C0.28)%22%20stroke%3D%22url(%23gold)%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%3C!--%20Club%20Initials%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2260%22%20y%3D%2271%22%20font-family%3D%22Arial%2C%20Cairo%2C%20sans-serif%22%20font-weight%3D%22900%22%20font-size%3D%2219%22%20fill%3D%22%23ffffff%22%20text-anchor%3D%22middle%22%20letter-spacing%3D%220.5%22%3EASC%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E",
-      "homeScore": 2,
-      "homeScorers": "وسام أبو علي (15')، إمام عاشور (79')",
-      "awayTeam": "الترجي التونسي",
-      "awayLogo": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20width%3D%22120%22%20height%3D%22120%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg_EST%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23dc2626%22%20%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23eab308%22%20%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22gold%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23fde047%22%20%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23fbbf24%22%20%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%20%20%3Cfilter%20id%3D%22sh%22%20x%3D%22-10%25%22%20y%3D%22-10%25%22%20width%3D%22120%25%22%20height%3D%22120%25%22%3E%0A%20%20%20%20%20%20%20%20%3CfeDropShadow%20dx%3D%220%22%20dy%3D%223%22%20stdDeviation%3D%223%22%20flood-color%3D%22%23000%22%20flood-opacity%3D%220.45%22%2F%3E%0A%20%20%20%20%20%20%3C%2Ffilter%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3C!--%20Outer%20Shield%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M60%208%20L104%2024%20L104%2062%20C104%2088%2084%20106%2060%20114%20C36%20106%2016%2088%2016%2062%20L16%2024%20Z%22%20fill%3D%22url(%23gold)%22%20filter%3D%22url(%23sh)%22%2F%3E%0A%20%20%20%20%3C!--%20Inner%20Shield%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M60%2014%20L98%2028%20L98%2061%20C98%2083%2080%20100%2060%20107%20C40%20100%2022%2083%2022%2061%20L22%2028%20Z%22%20fill%3D%22url(%23bg_EST)%22%2F%3E%0A%20%20%20%20%3C!--%20Vertical%20Stripe%20Accent%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M48%2019%20L72%2019%20L72%20102%20C68%20104%2064%20106%2060%20107%20C56%20106%2052%20104%2048%20102%20Z%22%20fill%3D%22%23eab308%22%20fill-opacity%3D%220.35%22%2F%3E%0A%20%20%20%20%3C!--%20Top%20Crown%20%2F%20Star%20--%3E%0A%20%20%20%20%3Cpolygon%20points%3D%2260%2C18%2063%2C25%2070%2C25%2064%2C29%2066%2C36%2060%2C32%2054%2C36%2056%2C29%2050%2C25%2057%2C25%22%20fill%3D%22url(%23gold)%22%2F%3E%0A%20%20%20%20%3C!--%20Center%20Circle%20Ring%20--%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2260%22%20cy%3D%2264%22%20r%3D%2224%22%20fill%3D%22rgba(0%2C0%2C0%2C0.28)%22%20stroke%3D%22url(%23gold)%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%3C!--%20Club%20Initials%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2260%22%20y%3D%2271%22%20font-family%3D%22Arial%2C%20Cairo%2C%20sans-serif%22%20font-weight%3D%22900%22%20font-size%3D%2219%22%20fill%3D%22%23ffffff%22%20text-anchor%3D%22middle%22%20letter-spacing%3D%220.5%22%3EEST%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E",
-      "awayScore": 0,
-      "awayScorers": "",
-      "channel": "beIN Sports HD 6",
-      "commentator": "عصام الشوالي",
-      "stadium": "استاد القاهرة الدولي",
-      "round": "نصف النهائي",
-      "featured": false,
-      "events": [],
-      "servers": [
-        {
-          "name": "ملخص وأهداف اللقاء",
-          "quality": "1080p",
-          "type": "m3u8",
-          "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-        }
-      ]
-    },
-    {
-      "id": "m11",
-      "day": "tomorrow",
-      "dateLabel": "غداً - الجمعة 23 أكتوبر",
-      "league": "الدوري الإنجليزي الممتاز",
-      "leagueLogo": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-      "status": "upcoming",
-      "minute": "غداً",
-      "timeGMT": "18:30",
-      "homeTeam": "ليفربول",
-      "homeLogo": "https://crests.football-data.org/64.png",
-      "homeScore": 0,
-      "awayTeam": "تشيلسي",
-      "awayLogo": "https://crests.football-data.org/61.png",
-      "awayScore": 0,
-      "channel": "beIN Sports HD 1",
-      "commentator": "رؤوف خليف",
-      "stadium": "ملعب أنفيلد",
-      "round": "الأسبوع 33",
-      "featured": false,
-      "events": [],
-      "servers": [
-        {
-          "name": "سيرفر البث الرئيسي (FHD)",
-          "quality": "1080p",
-          "type": "m3u8",
-          "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-        }
-      ]
-    },
-    {
-      "id": "m12",
-      "day": "tomorrow",
-      "dateLabel": "غداً - الجمعة 23 أكتوبر",
-      "league": "الدوري الإسباني LaLiga",
-      "leagueLogo": "🇪🇸",
-      "status": "upcoming",
-      "minute": "غداً",
-      "timeGMT": "19:00",
-      "homeTeam": "أتلتيكو مدريد",
-      "homeLogo": "https://crests.football-data.org/78.png",
-      "homeScore": 0,
-      "awayTeam": "ريال مدريد",
-      "awayLogo": "https://crests.football-data.org/86.png",
-      "awayScore": 0,
-      "channel": "beIN Sports HD 3",
-      "commentator": "حفيظ دراجي",
-      "stadium": "سيفيتاس ميتروبوليتانو",
-      "round": "ديربي مدريد - الجولة 32",
-      "featured": false,
-      "events": [],
-      "servers": [
-        {
-          "name": "سيرفر 1 (FHD 1080p)",
-          "quality": "1080p",
-          "type": "m3u8",
-          "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-        }
-      ]
-    },
-    {
-      "id": "m13",
-      "day": "tomorrow",
-      "dateLabel": "غداً - الجمعة 23 أكتوبر",
-      "league": "البطولة المغربية الاحترافية Inwi",
-      "leagueLogo": "🇲🇦",
-      "status": "upcoming",
-      "minute": "غداً",
-      "timeGMT": "17:00",
-      "homeTeam": "اتحاد طنجة",
-      "homeLogo": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20width%3D%22120%22%20height%3D%22120%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg_IRT%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%232563eb%22%20%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%231e3a8a%22%20%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22gold%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23fde047%22%20%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23ffffff%22%20%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%20%20%3Cfilter%20id%3D%22sh%22%20x%3D%22-10%25%22%20y%3D%22-10%25%22%20width%3D%22120%25%22%20height%3D%22120%25%22%3E%0A%20%20%20%20%20%20%20%20%3CfeDropShadow%20dx%3D%220%22%20dy%3D%223%22%20stdDeviation%3D%223%22%20flood-color%3D%22%23000%22%20flood-opacity%3D%220.45%22%2F%3E%0A%20%20%20%20%20%20%3C%2Ffilter%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3C!--%20Outer%20Shield%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M60%208%20L104%2024%20L104%2062%20C104%2088%2084%20106%2060%20114%20C36%20106%2016%2088%2016%2062%20L16%2024%20Z%22%20fill%3D%22url(%23gold)%22%20filter%3D%22url(%23sh)%22%2F%3E%0A%20%20%20%20%3C!--%20Inner%20Shield%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M60%2014%20L98%2028%20L98%2061%20C98%2083%2080%20100%2060%20107%20C40%20100%2022%2083%2022%2061%20L22%2028%20Z%22%20fill%3D%22url(%23bg_IRT)%22%2F%3E%0A%20%20%20%20%3C!--%20Vertical%20Stripe%20Accent%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M48%2019%20L72%2019%20L72%20102%20C68%20104%2064%20106%2060%20107%20C56%20106%2052%20104%2048%20102%20Z%22%20fill%3D%22%231e3a8a%22%20fill-opacity%3D%220.35%22%2F%3E%0A%20%20%20%20%3C!--%20Top%20Crown%20%2F%20Star%20--%3E%0A%20%20%20%20%0A%20%20%20%20%3C!--%20Center%20Circle%20Ring%20--%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2260%22%20cy%3D%2264%22%20r%3D%2224%22%20fill%3D%22rgba(0%2C0%2C0%2C0.28)%22%20stroke%3D%22url(%23gold)%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%3C!--%20Club%20Initials%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2260%22%20y%3D%2271%22%20font-family%3D%22Arial%2C%20Cairo%2C%20sans-serif%22%20font-weight%3D%22900%22%20font-size%3D%2219%22%20fill%3D%22%23ffffff%22%20text-anchor%3D%22middle%22%20letter-spacing%3D%220.5%22%3EIRT%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E",
-      "homeScore": 0,
-      "awayTeam": "حسنية أكادير",
-      "awayLogo": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20width%3D%22120%22%20height%3D%22120%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg_HUSA%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23dc2626%22%20%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23991b1b%22%20%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22gold%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23fde047%22%20%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23ffffff%22%20%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%20%20%3Cfilter%20id%3D%22sh%22%20x%3D%22-10%25%22%20y%3D%22-10%25%22%20width%3D%22120%25%22%20height%3D%22120%25%22%3E%0A%20%20%20%20%20%20%20%20%3CfeDropShadow%20dx%3D%220%22%20dy%3D%223%22%20stdDeviation%3D%223%22%20flood-color%3D%22%23000%22%20flood-opacity%3D%220.45%22%2F%3E%0A%20%20%20%20%20%20%3C%2Ffilter%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3C!--%20Outer%20Shield%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M60%208%20L104%2024%20L104%2062%20C104%2088%2084%20106%2060%20114%20C36%20106%2016%2088%2016%2062%20L16%2024%20Z%22%20fill%3D%22url(%23gold)%22%20filter%3D%22url(%23sh)%22%2F%3E%0A%20%20%20%20%3C!--%20Inner%20Shield%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M60%2014%20L98%2028%20L98%2061%20C98%2083%2080%20100%2060%20107%20C40%20100%2022%2083%2022%2061%20L22%2028%20Z%22%20fill%3D%22url(%23bg_HUSA)%22%2F%3E%0A%20%20%20%20%3C!--%20Vertical%20Stripe%20Accent%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M48%2019%20L72%2019%20L72%20102%20C68%20104%2064%20106%2060%20107%20C56%20106%2052%20104%2048%20102%20Z%22%20fill%3D%22%23991b1b%22%20fill-opacity%3D%220.35%22%2F%3E%0A%20%20%20%20%3C!--%20Top%20Crown%20%2F%20Star%20--%3E%0A%20%20%20%20%0A%20%20%20%20%3C!--%20Center%20Circle%20Ring%20--%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2260%22%20cy%3D%2264%22%20r%3D%2224%22%20fill%3D%22rgba(0%2C0%2C0%2C0.28)%22%20stroke%3D%22url(%23gold)%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%3C!--%20Club%20Initials%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2260%22%20y%3D%2271%22%20font-family%3D%22Arial%2C%20Cairo%2C%20sans-serif%22%20font-weight%3D%22900%22%20font-size%3D%2219%22%20fill%3D%22%23ffffff%22%20text-anchor%3D%22middle%22%20letter-spacing%3D%220.5%22%3EHUSA%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E",
-      "awayScore": 0,
-      "channel": "الرياضية المغربية TNT",
-      "commentator": "محمد العدالي",
-      "stadium": "الملعب الكبير لطنجة",
-      "round": "الجولة 25",
-      "featured": false,
-      "events": [],
-      "servers": [
-        {
-          "name": "سيرفر الرياضية (FHD)",
-          "quality": "1080p",
-          "type": "m3u8",
-          "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-        }
-      ]
-    },
-    {
-      "id": "m14",
-      "day": "tomorrow",
-      "dateLabel": "غداً - الجمعة 23 أكتوبر",
-      "league": "دوري روشن السعودي",
-      "leagueLogo": "🇸🇦",
-      "status": "upcoming",
-      "minute": "غداً",
-      "timeGMT": "18:00",
-      "homeTeam": "الاتحاد",
-      "homeLogo": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20width%3D%22120%22%20height%3D%22120%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg_ITTI%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23ca8a04%22%20%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23111827%22%20%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22gold%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23fde047%22%20%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23fde047%22%20%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%20%20%3Cfilter%20id%3D%22sh%22%20x%3D%22-10%25%22%20y%3D%22-10%25%22%20width%3D%22120%25%22%20height%3D%22120%25%22%3E%0A%20%20%20%20%20%20%20%20%3CfeDropShadow%20dx%3D%220%22%20dy%3D%223%22%20stdDeviation%3D%223%22%20flood-color%3D%22%23000%22%20flood-opacity%3D%220.45%22%2F%3E%0A%20%20%20%20%20%20%3C%2Ffilter%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3C!--%20Outer%20Shield%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M60%208%20L104%2024%20L104%2062%20C104%2088%2084%20106%2060%20114%20C36%20106%2016%2088%2016%2062%20L16%2024%20Z%22%20fill%3D%22url(%23gold)%22%20filter%3D%22url(%23sh)%22%2F%3E%0A%20%20%20%20%3C!--%20Inner%20Shield%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M60%2014%20L98%2028%20L98%2061%20C98%2083%2080%20100%2060%20107%20C40%20100%2022%2083%2022%2061%20L22%2028%20Z%22%20fill%3D%22url(%23bg_ITTI)%22%2F%3E%0A%20%20%20%20%3C!--%20Vertical%20Stripe%20Accent%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M48%2019%20L72%2019%20L72%20102%20C68%20104%2064%20106%2060%20107%20C56%20106%2052%20104%2048%20102%20Z%22%20fill%3D%22%23111827%22%20fill-opacity%3D%220.35%22%2F%3E%0A%20%20%20%20%3C!--%20Top%20Crown%20%2F%20Star%20--%3E%0A%20%20%20%20%3Cpolygon%20points%3D%2260%2C18%2063%2C25%2070%2C25%2064%2C29%2066%2C36%2060%2C32%2054%2C36%2056%2C29%2050%2C25%2057%2C25%22%20fill%3D%22url(%23gold)%22%2F%3E%0A%20%20%20%20%3C!--%20Center%20Circle%20Ring%20--%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2260%22%20cy%3D%2264%22%20r%3D%2224%22%20fill%3D%22rgba(0%2C0%2C0%2C0.28)%22%20stroke%3D%22url(%23gold)%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%3C!--%20Club%20Initials%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2260%22%20y%3D%2271%22%20font-family%3D%22Arial%2C%20Cairo%2C%20sans-serif%22%20font-weight%3D%22900%22%20font-size%3D%2219%22%20fill%3D%22%23ffffff%22%20text-anchor%3D%22middle%22%20letter-spacing%3D%220.5%22%3EITTI%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E",
-      "homeScore": 0,
-      "awayTeam": "الأهلي السعودي",
-      "awayLogo": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20width%3D%22120%22%20height%3D%22120%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg_AHLI%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23059669%22%20%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23064e3b%22%20%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22gold%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23fde047%22%20%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23fbbf24%22%20%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%20%20%3Cfilter%20id%3D%22sh%22%20x%3D%22-10%25%22%20y%3D%22-10%25%22%20width%3D%22120%25%22%20height%3D%22120%25%22%3E%0A%20%20%20%20%20%20%20%20%3CfeDropShadow%20dx%3D%220%22%20dy%3D%223%22%20stdDeviation%3D%223%22%20flood-color%3D%22%23000%22%20flood-opacity%3D%220.45%22%2F%3E%0A%20%20%20%20%20%20%3C%2Ffilter%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3C!--%20Outer%20Shield%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M60%208%20L104%2024%20L104%2062%20C104%2088%2084%20106%2060%20114%20C36%20106%2016%2088%2016%2062%20L16%2024%20Z%22%20fill%3D%22url(%23gold)%22%20filter%3D%22url(%23sh)%22%2F%3E%0A%20%20%20%20%3C!--%20Inner%20Shield%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M60%2014%20L98%2028%20L98%2061%20C98%2083%2080%20100%2060%20107%20C40%20100%2022%2083%2022%2061%20L22%2028%20Z%22%20fill%3D%22url(%23bg_AHLI)%22%2F%3E%0A%20%20%20%20%3C!--%20Vertical%20Stripe%20Accent%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M48%2019%20L72%2019%20L72%20102%20C68%20104%2064%20106%2060%20107%20C56%20106%2052%20104%2048%20102%20Z%22%20fill%3D%22%23064e3b%22%20fill-opacity%3D%220.35%22%2F%3E%0A%20%20%20%20%3C!--%20Top%20Crown%20%2F%20Star%20--%3E%0A%20%20%20%20%3Cpolygon%20points%3D%2260%2C18%2063%2C25%2070%2C25%2064%2C29%2066%2C36%2060%2C32%2054%2C36%2056%2C29%2050%2C25%2057%2C25%22%20fill%3D%22url(%23gold)%22%2F%3E%0A%20%20%20%20%3C!--%20Center%20Circle%20Ring%20--%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2260%22%20cy%3D%2264%22%20r%3D%2224%22%20fill%3D%22rgba(0%2C0%2C0%2C0.28)%22%20stroke%3D%22url(%23gold)%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%3C!--%20Club%20Initials%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2260%22%20y%3D%2271%22%20font-family%3D%22Arial%2C%20Cairo%2C%20sans-serif%22%20font-weight%3D%22900%22%20font-size%3D%2219%22%20fill%3D%22%23ffffff%22%20text-anchor%3D%22middle%22%20letter-spacing%3D%220.5%22%3EAHLI%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E",
-      "awayScore": 0,
-      "channel": "SSC 1 HD",
-      "commentator": "فهد العتيبي",
-      "stadium": "الجوهرة المشعة - جدة",
-      "round": "ديربي جدة - الجولة 29",
-      "featured": false,
-      "events": [],
-      "servers": [
-        {
-          "name": "سيرفر SSC 1 (FHD)",
-          "quality": "1080p",
-          "type": "m3u8",
-          "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-        }
-      ]
-    },
-    {
-      "id": "m15",
-      "day": "upcoming_days",
-      "dateLabel": "السبت 24 أكتوبر 2026",
-      "league": "الدوري الإنجليزي الممتاز",
-      "leagueLogo": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-      "status": "upcoming",
-      "minute": "السبت 24 أكتوبر",
-      "timeGMT": "16:30",
-      "homeTeam": "مانشستر يونايتد",
-      "homeLogo": "https://crests.football-data.org/66.png",
-      "homeScore": 0,
-      "awayTeam": "توتنهام",
-      "awayLogo": "https://crests.football-data.org/73.png",
-      "awayScore": 0,
-      "channel": "beIN Sports HD 1",
-      "commentator": "عصام الشوالي",
-      "stadium": "أولد ترافورد",
-      "round": "الأسبوع 33",
-      "featured": false,
-      "events": [],
-      "servers": [
-        {
-          "name": "سيرفر البث الرئيسي (FHD)",
-          "quality": "1080p",
-          "type": "m3u8",
-          "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-        }
-      ]
-    },
-    {
-      "id": "m16",
-      "day": "upcoming_days",
-      "dateLabel": "السبت 24 أكتوبر 2026",
-      "league": "الدوري الإيطالي Serie A",
-      "leagueLogo": "🇮🇹",
-      "status": "upcoming",
-      "minute": "السبت 24 أكتوبر",
-      "timeGMT": "18:45",
-      "homeTeam": "يوفنتوس",
-      "homeLogo": "https://crests.football-data.org/109.png",
-      "homeScore": 0,
-      "awayTeam": "نابولي",
-      "awayLogo": "https://crests.football-data.org/113.png",
-      "awayScore": 0,
-      "channel": "AD Sports Premium 1",
-      "commentator": "فارس عوض",
-      "stadium": "أليانز ستاديوم - تورينو",
-      "round": "الجولة 33",
-      "featured": false,
-      "events": [],
-      "servers": [
-        {
-          "name": "سيرفر البث الرئيسي (FHD)",
-          "quality": "1080p",
-          "type": "m3u8",
-          "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-        }
-      ]
-    },
-    {
-      "id": "m17",
-      "day": "upcoming_days",
-      "dateLabel": "الأحد 25 أكتوبر 2026",
-      "league": "البطولة المغربية الاحترافية Inwi",
-      "leagueLogo": "🇲🇦",
-      "status": "upcoming",
-      "minute": "الأحد 25 أكتوبر",
-      "timeGMT": "19:00",
-      "homeTeam": "الجيش الملكي",
-      "homeLogo": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20width%3D%22120%22%20height%3D%22120%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg_FAR%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%2315803d%22%20%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23991b1b%22%20%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22gold%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23fde047%22%20%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23fbbf24%22%20%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%20%20%3Cfilter%20id%3D%22sh%22%20x%3D%22-10%25%22%20y%3D%22-10%25%22%20width%3D%22120%25%22%20height%3D%22120%25%22%3E%0A%20%20%20%20%20%20%20%20%3CfeDropShadow%20dx%3D%220%22%20dy%3D%223%22%20stdDeviation%3D%223%22%20flood-color%3D%22%23000%22%20flood-opacity%3D%220.45%22%2F%3E%0A%20%20%20%20%20%20%3C%2Ffilter%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3C!--%20Outer%20Shield%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M60%208%20L104%2024%20L104%2062%20C104%2088%2084%20106%2060%20114%20C36%20106%2016%2088%2016%2062%20L16%2024%20Z%22%20fill%3D%22url(%23gold)%22%20filter%3D%22url(%23sh)%22%2F%3E%0A%20%20%20%20%3C!--%20Inner%20Shield%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M60%2014%20L98%2028%20L98%2061%20C98%2083%2080%20100%2060%20107%20C40%20100%2022%2083%2022%2061%20L22%2028%20Z%22%20fill%3D%22url(%23bg_FAR)%22%2F%3E%0A%20%20%20%20%3C!--%20Vertical%20Stripe%20Accent%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M48%2019%20L72%2019%20L72%20102%20C68%20104%2064%20106%2060%20107%20C56%20106%2052%20104%2048%20102%20Z%22%20fill%3D%22%23991b1b%22%20fill-opacity%3D%220.35%22%2F%3E%0A%20%20%20%20%3C!--%20Top%20Crown%20%2F%20Star%20--%3E%0A%20%20%20%20%3Cpolygon%20points%3D%2260%2C18%2063%2C25%2070%2C25%2064%2C29%2066%2C36%2060%2C32%2054%2C36%2056%2C29%2050%2C25%2057%2C25%22%20fill%3D%22url(%23gold)%22%2F%3E%0A%20%20%20%20%3C!--%20Center%20Circle%20Ring%20--%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2260%22%20cy%3D%2264%22%20r%3D%2224%22%20fill%3D%22rgba(0%2C0%2C0%2C0.28)%22%20stroke%3D%22url(%23gold)%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%3C!--%20Club%20Initials%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2260%22%20y%3D%2271%22%20font-family%3D%22Arial%2C%20Cairo%2C%20sans-serif%22%20font-weight%3D%22900%22%20font-size%3D%2219%22%20fill%3D%22%23ffffff%22%20text-anchor%3D%22middle%22%20letter-spacing%3D%220.5%22%3EFAR%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E",
-      "homeScore": 0,
-      "awayTeam": "الرجاء الرياضي",
-      "awayLogo": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20width%3D%22120%22%20height%3D%22120%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg_RCA%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23047857%22%20%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23064e3b%22%20%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22gold%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23fde047%22%20%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23fbbf24%22%20%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%20%20%3Cfilter%20id%3D%22sh%22%20x%3D%22-10%25%22%20y%3D%22-10%25%22%20width%3D%22120%25%22%20height%3D%22120%25%22%3E%0A%20%20%20%20%20%20%20%20%3CfeDropShadow%20dx%3D%220%22%20dy%3D%223%22%20stdDeviation%3D%223%22%20flood-color%3D%22%23000%22%20flood-opacity%3D%220.45%22%2F%3E%0A%20%20%20%20%20%20%3C%2Ffilter%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3C!--%20Outer%20Shield%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M60%208%20L104%2024%20L104%2062%20C104%2088%2084%20106%2060%20114%20C36%20106%2016%2088%2016%2062%20L16%2024%20Z%22%20fill%3D%22url(%23gold)%22%20filter%3D%22url(%23sh)%22%2F%3E%0A%20%20%20%20%3C!--%20Inner%20Shield%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M60%2014%20L98%2028%20L98%2061%20C98%2083%2080%20100%2060%20107%20C40%20100%2022%2083%2022%2061%20L22%2028%20Z%22%20fill%3D%22url(%23bg_RCA)%22%2F%3E%0A%20%20%20%20%3C!--%20Vertical%20Stripe%20Accent%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M48%2019%20L72%2019%20L72%20102%20C68%20104%2064%20106%2060%20107%20C56%20106%2052%20104%2048%20102%20Z%22%20fill%3D%22%23064e3b%22%20fill-opacity%3D%220.35%22%2F%3E%0A%20%20%20%20%3C!--%20Top%20Crown%20%2F%20Star%20--%3E%0A%20%20%20%20%3Cpolygon%20points%3D%2260%2C18%2063%2C25%2070%2C25%2064%2C29%2066%2C36%2060%2C32%2054%2C36%2056%2C29%2050%2C25%2057%2C25%22%20fill%3D%22url(%23gold)%22%2F%3E%0A%20%20%20%20%3C!--%20Center%20Circle%20Ring%20--%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2260%22%20cy%3D%2264%22%20r%3D%2224%22%20fill%3D%22rgba(0%2C0%2C0%2C0.28)%22%20stroke%3D%22url(%23gold)%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%3C!--%20Club%20Initials%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2260%22%20y%3D%2271%22%20font-family%3D%22Arial%2C%20Cairo%2C%20sans-serif%22%20font-weight%3D%22900%22%20font-size%3D%2219%22%20fill%3D%22%23ffffff%22%20text-anchor%3D%22middle%22%20letter-spacing%3D%220.5%22%3ERCA%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E",
-      "awayScore": 0,
-      "channel": "الرياضية المغربية TNT",
-      "commentator": "هشام فرج",
-      "stadium": "الملعب البلدي بالقنيطرة",
-      "round": "كلاسيكو المغرب - الجولة 25",
-      "featured": false,
-      "events": [],
-      "servers": [
-        {
-          "name": "سيرفر الرياضية 1 (FHD)",
-          "quality": "1080p",
-          "type": "m3u8",
-          "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-        }
-      ]
-    },
-    {
-      "id": "m18",
-      "day": "upcoming_days",
-      "dateLabel": "الأحد 25 أكتوبر 2026",
-      "league": "الدوري الألماني Bundesliga",
-      "leagueLogo": "🇩🇪",
-      "status": "upcoming",
-      "minute": "الأحد 25 أكتوبر",
-      "timeGMT": "17:30",
-      "homeTeam": "بايرن ميونخ",
-      "homeLogo": "https://crests.football-data.org/5.png",
-      "homeScore": 0,
-      "awayTeam": "باير ليفركوزن",
-      "awayLogo": "https://crests.football-data.org/3.png",
-      "awayScore": 0,
-      "channel": "beIN Sports HD 5",
-      "commentator": "علي محمد علي",
-      "stadium": "أليانز أرينا - ميونخ",
-      "round": "قمة البوندسليغا",
-      "featured": false,
-      "events": [],
-      "servers": [
-        {
-          "name": "سيرفر البث الرئيسي (FHD)",
-          "quality": "1080p",
-          "type": "m3u8",
-          "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-        }
-      ]
-    },
-    {
-      "id": "m19",
-      "day": "upcoming_days",
-      "dateLabel": "الثلاثاء 27 أكتوبر 2026",
-      "league": "دوري أبطال أوروبا",
-      "leagueLogo": "🏆",
-      "status": "upcoming",
-      "minute": "الثلاثاء 27 أكتوبر",
-      "timeGMT": "19:00",
-      "homeTeam": "برشلونة",
-      "homeLogo": "https://crests.football-data.org/81.png",
-      "homeScore": 0,
-      "awayTeam": "باريس سان جيرمان",
+      "homeScorers": "أرتيم دوفبيك (23' ركلة جزاء)",
+      "awayTeam": "دينامو كييف",
       "awayLogo": "https://crests.football-data.org/524.png",
       "awayScore": 0,
-      "channel": "beIN Sports HD 1",
-      "commentator": "عصام الشوالي",
-      "stadium": "سبوتيفاي كامب نو",
-      "round": "إياب نصف النهائي",
+      "channel": "beIN Sports HD 2",
+      "commentator": "أحمد عبده",
+      "stadium": "ملعب أولمبيكو - روما",
+      "round": "الجولة 3",
       "featured": false,
-      "events": [],
+      "events": [
+        {
+          "time": "23'",
+          "team": "home",
+          "player": "أرتيم دوفبيك",
+          "type": "goal"
+        }
+      ],
       "servers": [
         {
-          "name": "سيرفر 1 الرئيسي (FHD)",
-          "quality": "1080p",
+          "name": "أهداف المباراة HD",
+          "quality": "720p",
           "type": "m3u8",
           "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
         }
       ]
     },
     {
-      "id": "m20",
-      "day": "upcoming_days",
-      "dateLabel": "الأربعاء 28 أكتوبر 2026",
-      "league": "كأس الكونفدرالية الأفريقية",
-      "leagueLogo": "🌍",
-      "status": "upcoming",
-      "minute": "الأربعاء 28 أكتوبر",
-      "timeGMT": "18:00",
-      "homeTeam": "نهضة بركان",
-      "homeLogo": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20width%3D%22120%22%20height%3D%22120%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg_RSB%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23ea580c%22%20%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23111827%22%20%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22gold%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23fde047%22%20%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23fbbf24%22%20%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%20%20%3Cfilter%20id%3D%22sh%22%20x%3D%22-10%25%22%20y%3D%22-10%25%22%20width%3D%22120%25%22%20height%3D%22120%25%22%3E%0A%20%20%20%20%20%20%20%20%3CfeDropShadow%20dx%3D%220%22%20dy%3D%223%22%20stdDeviation%3D%223%22%20flood-color%3D%22%23000%22%20flood-opacity%3D%220.45%22%2F%3E%0A%20%20%20%20%20%20%3C%2Ffilter%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3C!--%20Outer%20Shield%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M60%208%20L104%2024%20L104%2062%20C104%2088%2084%20106%2060%20114%20C36%20106%2016%2088%2016%2062%20L16%2024%20Z%22%20fill%3D%22url(%23gold)%22%20filter%3D%22url(%23sh)%22%2F%3E%0A%20%20%20%20%3C!--%20Inner%20Shield%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M60%2014%20L98%2028%20L98%2061%20C98%2083%2080%20100%2060%20107%20C40%20100%2022%2083%2022%2061%20L22%2028%20Z%22%20fill%3D%22url(%23bg_RSB)%22%2F%3E%0A%20%20%20%20%3C!--%20Vertical%20Stripe%20Accent%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M48%2019%20L72%2019%20L72%20102%20C68%20104%2064%20106%2060%20107%20C56%20106%2052%20104%2048%20102%20Z%22%20fill%3D%22%23111827%22%20fill-opacity%3D%220.35%22%2F%3E%0A%20%20%20%20%3C!--%20Top%20Crown%20%2F%20Star%20--%3E%0A%20%20%20%20%3Cpolygon%20points%3D%2260%2C18%2063%2C25%2070%2C25%2064%2C29%2066%2C36%2060%2C32%2054%2C36%2056%2C29%2050%2C25%2057%2C25%22%20fill%3D%22url(%23gold)%22%2F%3E%0A%20%20%20%20%3C!--%20Center%20Circle%20Ring%20--%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2260%22%20cy%3D%2264%22%20r%3D%2224%22%20fill%3D%22rgba(0%2C0%2C0%2C0.28)%22%20stroke%3D%22url(%23gold)%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%3C!--%20Club%20Initials%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2260%22%20y%3D%2271%22%20font-family%3D%22Arial%2C%20Cairo%2C%20sans-serif%22%20font-weight%3D%22900%22%20font-size%3D%2219%22%20fill%3D%22%23ffffff%22%20text-anchor%3D%22middle%22%20letter-spacing%3D%220.5%22%3ERSB%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E",
-      "homeScore": 0,
-      "awayTeam": "الزمالك",
-      "awayLogo": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20width%3D%22120%22%20height%3D%22120%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg_ZSC%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23b91c1c%22%20%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%20%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22gold%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23fde047%22%20%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23fbbf24%22%20%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%20%20%3Cfilter%20id%3D%22sh%22%20x%3D%22-10%25%22%20y%3D%22-10%25%22%20width%3D%22120%25%22%20height%3D%22120%25%22%3E%0A%20%20%20%20%20%20%20%20%3CfeDropShadow%20dx%3D%220%22%20dy%3D%223%22%20stdDeviation%3D%223%22%20flood-color%3D%22%23000%22%20flood-opacity%3D%220.45%22%2F%3E%0A%20%20%20%20%20%20%3C%2Ffilter%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3C!--%20Outer%20Shield%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M60%208%20L104%2024%20L104%2062%20C104%2088%2084%20106%2060%20114%20C36%20106%2016%2088%2016%2062%20L16%2024%20Z%22%20fill%3D%22url(%23gold)%22%20filter%3D%22url(%23sh)%22%2F%3E%0A%20%20%20%20%3C!--%20Inner%20Shield%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M60%2014%20L98%2028%20L98%2061%20C98%2083%2080%20100%2060%20107%20C40%20100%2022%2083%2022%2061%20L22%2028%20Z%22%20fill%3D%22url(%23bg_ZSC)%22%2F%3E%0A%20%20%20%20%3C!--%20Vertical%20Stripe%20Accent%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M48%2019%20L72%2019%20L72%20102%20C68%20104%2064%20106%2060%20107%20C56%20106%2052%20104%2048%20102%20Z%22%20fill%3D%22%230f172a%22%20fill-opacity%3D%220.35%22%2F%3E%0A%20%20%20%20%3C!--%20Top%20Crown%20%2F%20Star%20--%3E%0A%20%20%20%20%3Cpolygon%20points%3D%2260%2C18%2063%2C25%2070%2C25%2064%2C29%2066%2C36%2060%2C32%2054%2C36%2056%2C29%2050%2C25%2057%2C25%22%20fill%3D%22url(%23gold)%22%2F%3E%0A%20%20%20%20%3C!--%20Center%20Circle%20Ring%20--%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2260%22%20cy%3D%2264%22%20r%3D%2224%22%20fill%3D%22rgba(0%2C0%2C0%2C0.28)%22%20stroke%3D%22url(%23gold)%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%3C!--%20Club%20Initials%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2260%22%20y%3D%2271%22%20font-family%3D%22Arial%2C%20Cairo%2C%20sans-serif%22%20font-weight%3D%22900%22%20font-size%3D%2219%22%20fill%3D%22%23ffffff%22%20text-anchor%3D%22middle%22%20letter-spacing%3D%220.5%22%3EZSC%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E",
+      "id": "m_tottenham_alkmaar",
+      "day": "yesterday",
+      "dateLabel": "أمس الخميس 22 أكتوبر",
+      "league": "الدوري الأوروبي",
+      "leagueLogo": "🏆",
+      "status": "finished",
+      "minute": "انتهت",
+      "timeGMT": "19:00",
+      "homeTeam": "توتنهام",
+      "homeLogo": "https://crests.football-data.org/73.png",
+      "homeScore": 1,
+      "homeScorers": "ريتشارليسون (53' ركلة جزاء)",
+      "awayTeam": "إي زد ألكمار",
+      "awayLogo": "https://crests.football-data.org/67.png",
       "awayScore": 0,
-      "channel": "beIN Sports HD 6",
-      "commentator": "جواد بدة",
-      "stadium": "الملعب البلدي ببركان",
-      "round": "النهائي الأفريقي",
+      "channel": "beIN Sports HD 2",
+      "commentator": "محمد بركات",
+      "stadium": "استاد توتنهام هوتسبير",
+      "round": "الجولة 3",
       "featured": false,
-      "events": [],
+      "events": [
+        {
+          "time": "53'",
+          "team": "home",
+          "player": "ريتشارليسون",
+          "type": "goal"
+        }
+      ],
       "servers": [
         {
-          "name": "سيرفر 1 الرئيسي (FHD)",
-          "quality": "1080p",
+          "name": "ملخص اللقاء HD",
+          "quality": "720p",
           "type": "m3u8",
           "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
         }
