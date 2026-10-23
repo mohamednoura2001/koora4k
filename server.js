@@ -1324,13 +1324,46 @@ async function performLiveSync() {
   }
 }
 
-// إشعار فوري لمحركات البحث (Google و Bing) عند تحديث المباريات أو الأخبار لتسريع الأرشفة والظهور في النتائج الأولى
+// إشعار فوري لمحركات البحث (Google و Bing و IndexNow) عند تحديث المباريات أو الأخبار لتسريع الأرشفة والظهور في النتائج الأولى
 async function pingSearchEngines() {
   try {
     const sitemapUrl = "https://koora4k.net/sitemap.xml";
+    const urls = [
+      "https://koora4k.net/",
+      "https://koora4k.net/matches-today",
+      "https://koora4k.net/matches-tomorrow",
+      "https://koora4k.net/matches-yesterday",
+      "https://koora4k.net/standings",
+      "https://koora4k.net/news",
+      "https://koora4k.net/channels",
+      "https://koora4k.net/about-us",
+      "https://koora4k.net/privacy-policy",
+      "https://koora4k.net/terms",
+      "https://koora4k.net/dmca"
+    ];
+
+    const indexNowPayload = JSON.stringify({
+      host: "koora4k.net",
+      key: "a3b1c8f9204e4c2da85f98e1d2c3b4a5",
+      keyLocation: "https://koora4k.net/a3b1c8f9204e4c2da85f98e1d2c3b4a5.txt",
+      urlList: urls
+    });
+
+    const indexNowHeaders = { "Content-Type": "application/json; charset=utf-8" };
+
     await Promise.all([
       fetchWithTimeout(`https://www.google.com/ping?sitemap=${encodeURIComponent(sitemapUrl)}`, 4000).catch(() => {}),
-      fetchWithTimeout(`https://www.bing.com/ping?sitemap=${encodeURIComponent(sitemapUrl)}`, 4000).catch(() => {})
+      fetchWithTimeout(`https://www.bing.com/ping?sitemap=${encodeURIComponent(sitemapUrl)}`, 4000).catch(() => {}),
+      fetchWithTimeout("https://api.indexnow.org/indexnow", 4000, {
+        method: "POST",
+        headers: indexNowHeaders,
+        body: indexNowPayload
+      }).catch(() => {}),
+      fetchWithTimeout("https://www.bing.com/indexnow", 4000, {
+        method: "POST",
+        headers: indexNowHeaders,
+        body: indexNowPayload
+      }).catch(() => {})
     ]);
   } catch (_) {}
 }
@@ -1381,52 +1414,52 @@ function injectDynamicSeoMeta(originalHtml, reqPath, searchParams) {
   // عناوين مخصصة للأقسام الرئيسية لتحقيق الصدارة في الكلمات المفتاحية
   const sectionMetaMap = {
     "/matches-today": {
-      title: "مباريات اليوم بث مباشر بدون تقطيع 4K | جدول مباريات اليوم والقنوات الناقلة – Koora4K",
-      desc: "تابع جدول مباريات اليوم بث مباشر بدون تقطيع بجودة 4K UHD و FHD. القنوات الناقلة والمعلقين وسيرفرات البث لجميع الدوريات الأوروبية والعربية عبر كورة فور كي."
+      title: "كورة 4k – مباريات اليوم بث مباشر بدون تقطيع 4K | Koora4K",
+      desc: "تابع جدول مباريات اليوم بث مباشر بدون تقطيع بجودة 4K UHD و FHD عبر كورة 4k. القنوات الناقلة والمعلقين وسيرفرات البث لجميع الدوريات عبر موقع كورة فور كي Koora4K.net."
     },
     "/matches-tomorrow": {
-      title: "مباريات الغد بث مباشر | جدول مواعيد مباريات الغد والقنوات الناقلة – Koora4K",
-      desc: "تعرف على جدول مباريات الغد في الدوري الإنجليزي والإسباني وأبطال أوروبا والبطولة المغربية ودوري روشن السعودي بتوقيت بلدك مباشرة."
+      title: "كورة 4k – مباريات الغد بث مباشر | جدول مواعيد مباريات الغد والقنوات الناقلة Koora4K",
+      desc: "تعرف على جدول مباريات الغد في الدوري الإنجليزي والإسباني وأبطال أوروبا والبطولة المغربية ودوري روشن السعودي بتوقيت بلدك مباشرة عبر كورة 4k."
     },
     "/matches-yesterday": {
-      title: "نتائج مباريات الأمس وملخصات الأهداف بالفيديو HD – كورة فور كي Koora4K",
-      desc: "شاهد نتائج مباريات الأمس لجميع البطولات العالمية والعربية مع ملخصات وأهداف المباريات الرسمية بالفيديو الكامل بدون تقطيع."
+      title: "كورة 4k – نتائج مباريات الأمس وملخصات الأهداف بالفيديو HD | Koora4K",
+      desc: "شاهد نتائج مباريات الأمس لجميع البطولات العالمية والعربية مع ملخصات وأهداف المباريات الرسمية بالفيديو الكامل بدون تقطيع عبر كورة 4k."
     },
     "/standings": {
-      title: "جدول ترتيب الدوريات العالمية والعربية 2026 – كورة فور كي Koora4K",
-      desc: "ترتيب الدوري الإسباني، الإنجليزي، الإيطالي، الألماني، الفرنسي، البطولة المغربية، ودوري روشن السعودي محدث تلقائياً لحظة بلحظة."
+      title: "كورة 4k – جدول ترتيب الدوريات العالمية والعربية 2026 | Koora4K",
+      desc: "ترتيب الدوري الإسباني، الإنجليزي، الإيطالي، الألماني، الفرنسي، البطولة المغربية، ودوري روشن السعودي محدث تلقائياً لحظة بلحظة عبر كورة 4k."
     },
     "/highlights": {
-      title: "أهداف وملخصات مباريات اليوم HD بدون تقطيع – استوديو Koora4K",
-      desc: "فيديوهات أهداف وملخصات أهم مباريات اليوم والأمس في دوري أبطال أوروبا وكبرى الدوريات العالمية والعربية بجودة عالية Full HD."
+      title: "كورة 4k – أهداف وملخصات مباريات اليوم HD بدون تقطيع | Koora4K",
+      desc: "فيديوهات أهداف وملخصات أهم مباريات اليوم والأمس في دوري أبطال أوروبا وكبرى الدوريات العالمية والعربية بجودة عالية Full HD عبر موقع كورة 4k."
     },
     "/channels": {
-      title: "بث مباشر قنوات beIN Sports و SSC بدون تقطيع 24/7 بجودة 4K – Koora4K",
-      desc: "شاهد قنوات بي إن سبورت وقنوات SSC الرياضية بث مباشر على مدار 24 ساعة بدون انقطاع وبجودات متعددة للجوال والكمبيوتر."
+      title: "كورة 4k – بث مباشر قنوات beIN Sports و SSC بدون تقطيع 24/7 بجودة 4K | Koora4K",
+      desc: "شاهد قنوات بي إن سبورت وقنوات SSC الرياضية بث مباشر على مدار 24 ساعة بدون انقطاع وبجودات متعددة للجوال والكمبيوتر عبر كورة 4k."
     },
     "/news": {
-      title: "آخر أخبار كرة القدم العاجلة والانتقالات العالمية والعربية – كورة فور كي Koora4K",
-      desc: "تغطية إخبارية حصرية على مدار الساعة لآخر أخبار ريال مدريد، برشلونة، ليفربول، الأندية العربية، وسوق الانتقالات الصيفية والشتوية."
+      title: "كورة 4k – آخر أخبار كرة القدم العاجلة والانتقالات العالمية والعربية | Koora4K",
+      desc: "تغطية إخبارية حصرية على مدار الساعة لآخر أخبار ريال مدريد، برشلونة، ليفربول، الأندية العربية، وسوق الانتقالات الصيفية والشتوية عبر كورة 4k."
     },
     "/privacy-policy": {
-      title: "سياسة الخصوصية وملفات تعريف الارتباط | كورة فور كي Koora4K",
-      desc: "سياسة الخصوصية الرسمية لموقع كورة فور كي Koora4K.net والمتوافقة مع معايير Google AdSense واللائحة العامة لحماية البيانات GDPR."
+      title: "سياسة الخصوصية وملفات تعريف الارتباط | كورة 4k Koora4K",
+      desc: "سياسة الخصوصية الرسمية لموقع كورة 4k (Koora4K.net) والمتوافقة مع معايير Google AdSense واللائحة العامة لحماية البيانات GDPR."
     },
     "/about-us": {
-      title: "من نحن | موقع كورة فور كي Koora4K الرياضي",
-      desc: "تعرف على منصة كورة فور كي Koora4K.net، البوابة الرقمية الرائدة لتغطية أخبار كرة القدم، مواعيد المباريات، تحليلات الدوريات، والإحصائيات الحية."
+      title: "من نحن | موقع كورة 4k (Koora4K) الرياضي الرسمي",
+      desc: "تعرف على منصة كورة 4k (Koora4K.net)، البوابة الرقمية الرائدة لتغطية أخبار كرة القدم، مواعيد المباريات، تحليلات الدوريات، والإحصائيات الحية."
     },
     "/contact-us": {
-      title: "اتصل بنا | إدارة وفريق عمل كورة فور كي Koora4K",
-      desc: "تواصل مع فريق إدارة وتحرير موقع كورة فور كي للاستفسارات، الشكاوى، المقترحات، والدعم الفني عبر البريد الإلكتروني أو تليجرام."
+      title: "اتصل بنا | إدارة وفريق عمل كورة 4k Koora4K",
+      desc: "تواصل مع فريق إدارة وتحرير موقع كورة 4k للاستفسارات، الشكاوى، المقترحات، والدعم الفني عبر البريد الإلكتروني أو تليجرام."
     },
     "/terms": {
-      title: "شروط الاستخدام وأحكام الموقع | كورة فور كي Koora4K",
-      desc: "شروط وأحكام استخدام موقع كورة فور كي Koora4K.net وحقوق ومسؤوليات الزوار والمستخدمين وسرية المعلومات."
+      title: "شروط الاستخدام وأحكام الموقع | كورة 4k Koora4K",
+      desc: "شروط وأحكام استخدام موقع كورة 4k (Koora4K.net) وحقوق ومسؤوليات الزوار والمستخدمين وسرية المعلومات."
     },
     "/dmca": {
-      title: "حقوق الملكية الفكرية وإخلاء المسؤولية DMCA | كورة فور كي Koora4K",
-      desc: "إشعار حقوق الطبع والنشر وقانون الألفية للملكية الرقمية وإخلاء المسؤولية القانوني لموقع كورة فور كي."
+      title: "حقوق الملكية الفكرية وإخلاء المسؤولية DMCA | كورة 4k Koora4K",
+      desc: "إشعار حقوق الطبع والنشر وقانون الألفية للملكية الرقمية وإخلاء المسؤولية القانوني لموقع كورة 4k."
     }
   };
 
@@ -1571,6 +1604,11 @@ const server = http.createServer(async (req, res) => {
   if (parsedUrl.pathname === "/ads.txt" && req.method === "GET") {
     res.writeHead(200, { "Content-Type": "text/plain; charset=utf-8" });
     return res.end("google.com, pub-2630978969857880, DIRECT, f08c47fec0942fa0\n");
+  }
+
+  if (parsedUrl.pathname === "/a3b1c8f9204e4c2da85f98e1d2c3b4a5.txt" && req.method === "GET") {
+    res.writeHead(200, { "Content-Type": "text/plain; charset=utf-8" });
+    return res.end("a3b1c8f9204e4c2da85f98e1d2c3b4a5\n");
   }
 
   if (parsedUrl.pathname === "/robots.txt" && req.method === "GET") {
