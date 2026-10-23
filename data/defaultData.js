@@ -88,7 +88,7 @@ window.DEFAULT_KOORA_DATA = {
     siteBadge: "Koora4K",
     siteSlogan: "البث المباشر للمباريات والقنوات الرياضية بجودة 4K بدون تقطيع",
     announcement: "🔥 تابع مباريات اليوم والأمس والغد والأيام المقبلة بث مباشر بجودة 4K و FHD حصرياً على كورة فور كي Koora4K.com",
-    telegramUrl: "https://t.me/",
+    telegramUrl: "https://t.me/+_wHGd3-w4ZRlM2Q0",
     adminPin: "1234",
     defaultTimezoneOffset: 1 // GMT+1 (توقيت المغرب)
   },
