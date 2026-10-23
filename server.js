@@ -578,23 +578,30 @@ async function syncRealStreamServers() {
 function buildServersForMatch(homeTeam, awayTeam, channel, sourceHref, extraServers) {
   const servers = [];
 
+  let beinNum = "1";
+  const chMatch = (channel || "").match(/(\d+)/);
+  if (chMatch && Number(chMatch[1]) <= 8) beinNum = chMatch[1];
+
   const kooraLiveUrl =
     sourceHref && sourceHref.includes("korahlive.online")
       ? sourceHref
       : `https://t.korahlive.online/2026/09/ch1.html?match=${encodeURIComponent(homeTeam)}`;
 
+  // سيرفر 1: سيرفر Koora4K فائق الوضوح
   servers.push({
-    name: "سيرفر 1 الرئيسي (Koora4K UHD)",
-    quality: "4K / FHD",
+    name: "سيرفر 1 الرئيسي (Koora4K 4K)",
+    quality: "4K UHD",
     type: "iframe",
     url: kooraLiveUrl
   });
 
+  const seenUrls = new Set([kooraLiveUrl]);
+
+  // سيرفرات إضافية مستخرجة من محركات البث للفرق
   const teamMatched = [
     ...(extraServers.byTeam[homeTeam] || []),
     ...(extraServers.byTeam[awayTeam] || [])
   ];
-  const seenUrls = new Set([kooraLiveUrl]);
   for (const srv of teamMatched) {
     if (!seenUrls.has(srv.url)) {
       seenUrls.add(srv.url);
@@ -602,10 +609,7 @@ function buildServersForMatch(homeTeam, awayTeam, channel, sourceHref, extraServ
     }
   }
 
-  let beinNum = "1";
-  const chMatch = (channel || "").match(/(\d+)/);
-  if (chMatch && Number(chMatch[1]) <= 5) beinNum = chMatch[1];
-
+  // سيرفر 2: AlbaPlayer المباشر بجودة 1080p
   const albaEmbedUrl =
     beinNum === "1"
       ? "https://pl.matchlivehd.com/albaplayer/1bein1/?serv=1"
@@ -614,26 +618,56 @@ function buildServersForMatch(homeTeam, awayTeam, channel, sourceHref, extraServ
   if (!seenUrls.has(albaEmbedUrl)) {
     seenUrls.add(albaEmbedUrl);
     servers.push({
-      name: `سيرفر مباشر (${channel || "beIN Sports HD"})`,
+      name: `سيرفر 2 المباشر (${channel || "beIN Sports FHD"})`,
       quality: "1080p FHD",
       type: "iframe",
       url: albaEmbedUrl
     });
   }
 
+  // سيرفر 3: YallaShoot المباشر
+  const yallaShootUrl = `https://v6.yshoot-live.com/ch/ch${beinNum}.php`;
+  if (!seenUrls.has(yallaShootUrl)) {
+    seenUrls.add(yallaShootUrl);
+    servers.push({
+      name: "سيرفر 3 (YallaShoot HD)",
+      quality: "1080p",
+      type: "iframe",
+      url: yallaShootUrl
+    });
+  }
+
+  // سيرفر 4: HLS مباشر بأقل تأخير وبدون إعلانات
   servers.push({
-    name: "سيرفر مباشر سريع (HLS بدون إعلانات)",
-    quality: "1080p",
+    name: "سيرفر 4 الصاروخي (HLS بدون تقطيع)",
+    quality: "1080p / 720p",
     type: "m3u8",
     url: extraServers.beinM3u8 || cachedLiveState.liveM3u8Stream
   });
 
-  servers.push({
-    name: "سيرفر احتياطي (متعدد الجودات)",
-    quality: "720p HD",
-    type: "iframe",
-    url: "https://pl.matchlivehd.com/albaplayer/1bein1/?serv=2"
-  });
+  // سيرفر 5: سيرفر AlbaPlayer الاحتياطي متعدد الجودات
+  const albaBackupUrl = "https://pl.matchlivehd.com/albaplayer/1bein1/?serv=2";
+  if (!seenUrls.has(albaBackupUrl)) {
+    seenUrls.add(albaBackupUrl);
+    servers.push({
+      name: "سيرفر 5 الاحتياطي (Alba Multi-Bitrate)",
+      quality: "متعدد الجودات",
+      type: "iframe",
+      url: albaBackupUrl
+    });
+  }
+
+  // سيرفر 6: سيرفر KooraLive البديل
+  const koraLiveBackup = `https://pl.koralive1.cc/bein${beinNum}/`;
+  if (!seenUrls.has(koraLiveBackup)) {
+    seenUrls.add(koraLiveBackup);
+    servers.push({
+      name: "سيرفر 6 للطوارئ (KooraLive HD)",
+      quality: "720p HD",
+      type: "iframe",
+      url: koraLiveBackup
+    });
+  }
 
   return servers;
 }
