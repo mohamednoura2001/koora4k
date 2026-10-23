@@ -12,7 +12,8 @@
           "data/**",
           "index.html",
           "manifest.webmanifest",
-          "sw.js"
+          "sw.js",
+          "ads.txt"
         ]
       }
     }
