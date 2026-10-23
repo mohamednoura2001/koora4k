@@ -1750,7 +1750,14 @@ const server = http.createServer(async (req, res) => {
     }
 
     const manualMatches = (customDb.matches || []).filter((m) => String(m.id).startsWith("m_"));
-    const mergedMatches = [...manualMatches, ...cachedLiveState.matches];
+    const seenMatchIds = new Set();
+    const mergedMatches = [];
+    for (const m of [...manualMatches, ...cachedLiveState.matches]) {
+      if (m && m.id && !seenMatchIds.has(m.id)) {
+        seenMatchIds.add(m.id);
+        mergedMatches.push(m);
+      }
+    }
 
     const manualHighlights = (customDb.highlights || []).filter(
       (h) => String(h.id).startsWith("hl_") && !String(h.id).startsWith("hl_khd_") && !String(h.id).startsWith("hl_sb_")
