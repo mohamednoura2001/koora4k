@@ -1372,6 +1372,26 @@ function injectDynamicSeoMeta(originalHtml, reqPath, searchParams) {
     "/news": {
       title: "آخر أخبار كرة القدم العاجلة والانتقالات العالمية والعربية – كورة فور كي Koora4K",
       desc: "تغطية إخبارية حصرية على مدار الساعة لآخر أخبار ريال مدريد، برشلونة، ليفربول، الأندية العربية، وسوق الانتقالات الصيفية والشتوية."
+    },
+    "/privacy-policy": {
+      title: "سياسة الخصوصية وملفات تعريف الارتباط | كورة فور كي Koora4K",
+      desc: "سياسة الخصوصية الرسمية لموقع كورة فور كي Koora4K.net والمتوافقة مع معايير Google AdSense واللائحة العامة لحماية البيانات GDPR."
+    },
+    "/about-us": {
+      title: "من نحن | موقع كورة فور كي Koora4K الرياضي",
+      desc: "تعرف على منصة كورة فور كي Koora4K.net، البوابة الرقمية الرائدة لتغطية أخبار كرة القدم، مواعيد المباريات، تحليلات الدوريات، والإحصائيات الحية."
+    },
+    "/contact-us": {
+      title: "اتصل بنا | إدارة وفريق عمل كورة فور كي Koora4K",
+      desc: "تواصل مع فريق إدارة وتحرير موقع كورة فور كي للاستفسارات، الشكاوى، المقترحات، والدعم الفني عبر البريد الإلكتروني أو تليجرام."
+    },
+    "/terms": {
+      title: "شروط الاستخدام وأحكام الموقع | كورة فور كي Koora4K",
+      desc: "شروط وأحكام استخدام موقع كورة فور كي Koora4K.net وحقوق ومسؤوليات الزوار والمستخدمين وسرية المعلومات."
+    },
+    "/dmca": {
+      title: "حقوق الملكية الفكرية وإخلاء المسؤولية DMCA | كورة فور كي Koora4K",
+      desc: "إشعار حقوق الطبع والنشر وقانون الألفية للملكية الرقمية وإخلاء المسؤولية القانوني لموقع كورة فور كي."
     }
   };
 
@@ -1557,7 +1577,12 @@ const server = http.createServer(async (req, res) => {
       { loc: "https://koora4k.net/channels", priority: "0.85", freq: "daily" },
       { loc: "https://koora4k.net/standings", priority: "0.85", freq: "hourly" },
       { loc: "https://koora4k.net/highlights", priority: "0.9", freq: "hourly" },
-      { loc: "https://koora4k.net/news", priority: "0.9", freq: "hourly" }
+      { loc: "https://koora4k.net/news", priority: "0.9", freq: "hourly" },
+      { loc: "https://koora4k.net/privacy-policy", priority: "0.7", freq: "monthly" },
+      { loc: "https://koora4k.net/about-us", priority: "0.7", freq: "monthly" },
+      { loc: "https://koora4k.net/contact-us", priority: "0.7", freq: "monthly" },
+      { loc: "https://koora4k.net/terms", priority: "0.7", freq: "monthly" },
+      { loc: "https://koora4k.net/dmca", priority: "0.7", freq: "monthly" }
     ];
 
     const staticUrls = staticPages
@@ -1697,7 +1722,12 @@ ${rssItems}
     "/standings",
     "/highlights",
     "/channels",
-    "/news"
+    "/news",
+    "/privacy-policy",
+    "/about-us",
+    "/contact-us",
+    "/terms",
+    "/dmca"
   ];
 
   const isMatchRoute = parsedUrl.pathname.startsWith("/match/");
