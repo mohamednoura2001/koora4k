@@ -15,7 +15,8 @@ const MIME_TYPES = {
   ".jpg": "image/jpeg",
   ".webp": "image/webp",
   ".svg": "image/svg+xml",
-  ".ico": "image/x-icon"
+  ".ico": "image/x-icon",
+  ".txt": "text/plain; charset=utf-8"
 };
 
 // قاموس ترجمة الأسماء الإنجليزية إلى العربية للمباريات، الترتيب، والملخصات
@@ -1531,6 +1532,11 @@ const server = http.createServer(async (req, res) => {
       }
     });
     return;
+  }
+
+  if (parsedUrl.pathname === "/ads.txt" && req.method === "GET") {
+    res.writeHead(200, { "Content-Type": "text/plain; charset=utf-8" });
+    return res.end("google.com, pub-2630978969857880, DIRECT, f08c47fec0942fa0\n");
   }
 
   if (parsedUrl.pathname === "/robots.txt" && req.method === "GET") {
