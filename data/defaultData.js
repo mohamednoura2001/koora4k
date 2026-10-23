@@ -93,655 +93,550 @@ window.DEFAULT_KOORA_DATA = {
     defaultTimezoneOffset: 1 // GMT+1 (توقيت المغرب)
   },
   matches: [
-    // ==================== مباريات اليوم (TODAY) ====================
-    {
-      id: "m1",
-      day: "today",
-      dateLabel: "اليوم - الخميس 22 أكتوبر",
-      league: "دوري أبطال أوروبا",
-      leagueLogo: "🏆",
-      status: "live",
-      minute: "68'",
-      timeGMT: "19:00",
-      homeTeam: "ريال مدريد",
-      homeLogo: window.CLUB_LOGOS["ريال مدريد"],
-      homeScore: 2,
-      homeScorers: "فينيسيوس (14')، مبابي (61')",
-      awayTeam: "برشلونة",
-      awayLogo: window.CLUB_LOGOS["برشلونة"],
-      awayScore: 1,
-      awayScorers: "لامين يامال (39')",
-      channel: "beIN Sports HD 1",
-      commentator: "عصام الشوالي",
-      stadium: "سانتياغو برنابيو",
-      round: "قمة الجولة - دوري الأبطال",
-      featured: true,
-      events: [
-        { time: "14'", team: "home", player: "فينيسيوس جونيور", type: "goal" },
-        { time: "39'", team: "away", player: "لامين يامال", type: "goal" },
-        { time: "61'", team: "home", player: "كيليان مبابي", type: "goal" }
-      ],
-      servers: [
-        {
-          name: "سيرفر 1 الرئيسي (FHD 1080p)",
-          quality: "1080p",
-          type: "m3u8",
-          url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-        },
-        {
-          name: "سيرفر 2 سريع (HD 720p)",
-          quality: "720p",
-          type: "m3u8",
-          url: "https://assets.afcdn.com/video49/20210722/v_645516.m3u8"
-        },
-        {
-          name: "سيرفر 3 للإنترنت الضعيف (SD 480p)",
-          quality: "480p",
-          type: "m3u8",
-          url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-        }
-      ]
-    },
-    {
-      id: "m2",
-      day: "today",
-      dateLabel: "اليوم - الخميس 22 أكتوبر",
-      league: "البطولة المغربية الاحترافية Inwi",
-      leagueLogo: "🇲🇦",
-      status: "live",
-      minute: "55'",
-      timeGMT: "19:00",
-      homeTeam: "الرجاء الرياضي",
-      homeLogo: window.CLUB_LOGOS["الرجاء الرياضي"],
-      homeScore: 1,
-      homeScorers: "يسري بوزوق (22')",
-      awayTeam: "الوداد الرياضي",
-      awayLogo: window.CLUB_LOGOS["الوداد الرياضي"],
-      awayScore: 1,
-      awayScorers: "حكيم زياش (44')",
-      channel: "الرياضية المغربية TNT",
-      commentator: "هشام فرج",
-      stadium: "المركب الرياضي محمد الخامس",
-      round: "الجولة 24 - ديربي الدار البيضاء",
-      featured: true,
-      events: [
-        { time: "22'", team: "home", player: "يسري بوزوق", type: "goal" },
-        { time: "44'", team: "away", player: "حكيم زياش", type: "goal" }
-      ],
-      servers: [
-        {
-          name: "سيرفر الرياضية 1 (FHD 1080p)",
-          quality: "1080p",
-          type: "m3u8",
-          url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-        },
-        {
-          name: "سيرفر 2 متعدد الجودات (HD 720p)",
-          quality: "720p",
-          type: "m3u8",
-          url: "https://assets.afcdn.com/video49/20210722/v_645516.m3u8"
-        }
-      ]
-    },
-    {
-      id: "m3",
-      day: "today",
-      dateLabel: "اليوم - الخميس 22 أكتوبر",
-      league: "دوري أبطال أوروبا",
-      leagueLogo: "🏆",
-      status: "live",
-      minute: "34'",
-      timeGMT: "19:30",
-      homeTeam: "إنتر ميلان",
-      homeLogo: window.CLUB_LOGOS["إنتر ميلان"],
-      homeScore: 1,
-      homeScorers: "لاوتارو مارتينيز (19')",
-      awayTeam: "بايرن ميونخ",
-      awayLogo: window.CLUB_LOGOS["بايرن ميونخ"],
-      awayScore: 0,
-      awayScorers: "",
-      channel: "beIN Sports HD 3",
-      commentator: "خليل البلوشي",
-      stadium: "جوزيبي مياتزا - سان سيرو",
-      round: "دوري أبطال أوروبا",
-      featured: false,
-      events: [],
-      servers: [
-        {
-          name: "سيرفر 1 (FHD 1080p)",
-          quality: "1080p",
-          type: "m3u8",
-          url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-        }
-      ]
-    },
-    {
-      id: "m4",
-      day: "today",
-      dateLabel: "اليوم - الخميس 22 أكتوبر",
-      league: "الدوري الإنجليزي الممتاز",
-      leagueLogo: "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-      status: "upcoming",
-      minute: "تبدأ قريباً",
-      timeGMT: "20:00",
-      homeTeam: "أرسنال",
-      homeLogo: window.CLUB_LOGOS["أرسنال"],
-      homeScore: 0,
-      awayTeam: "مانشستر سيتي",
-      awayLogo: window.CLUB_LOGOS["مانشستر سيتي"],
-      awayScore: 0,
-      channel: "beIN Sports HD 2",
-      commentator: "حفيظ دراجي",
-      stadium: "ملعب الإمارات - لندن",
-      round: "الأسبوع 32",
-      featured: false,
-      events: [],
-      servers: [
-        {
-          name: "سيرفر 1 (FHD 1080p)",
-          quality: "1080p",
-          type: "m3u8",
-          url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-        }
-      ]
-    },
-    {
-      id: "m5",
-      day: "today",
-      dateLabel: "اليوم - الخميس 22 أكتوبر",
-      league: "البطولة المغربية الاحترافية Inwi",
-      leagueLogo: "🇲🇦",
-      status: "upcoming",
-      minute: "الليلة",
-      timeGMT: "21:00",
-      homeTeam: "نهضة بركان",
-      homeLogo: window.CLUB_LOGOS["نهضة بركان"],
-      homeScore: 0,
-      awayTeam: "الجيش الملكي",
-      awayLogo: window.CLUB_LOGOS["الجيش الملكي"],
-      awayScore: 0,
-      channel: "الرياضية المغربية HD",
-      commentator: "عبد الصمد ولد شهيبة",
-      stadium: "الملعب البلدي ببركان",
-      round: "الجولة 24",
-      featured: false,
-      events: [],
-      servers: [
-        {
-          name: "سيرفر 1 (FHD 1080p)",
-          quality: "1080p",
-          type: "m3u8",
-          url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-        }
-      ]
-    },
-    {
-      id: "m6",
-      day: "today",
-      dateLabel: "اليوم - الخميس 22 أكتوبر",
-      league: "دوري روشن السعودي",
-      leagueLogo: "🇸🇦",
-      status: "finished",
-      minute: "انتهت",
-      timeGMT: "17:00",
-      homeTeam: "الهلال",
-      homeLogo: window.CLUB_LOGOS["الهلال"],
-      homeScore: 3,
-      homeScorers: "ميتروفيتش (12'، 54')، سالم الدوسري (81')",
-      awayTeam: "النصر",
-      awayLogo: window.CLUB_LOGOS["النصر"],
-      awayScore: 2,
-      awayScorers: "كريستيانو رونالدو (28'، 75')",
-      channel: "SSC 1 HD",
-      commentator: "فارس عوض",
-      stadium: "المملكة أرينا - الرياض",
-      round: "الجولة 28",
-      featured: false,
-      events: [],
-      servers: [
-        {
-          name: "إعادة وملخص المباراة (FHD)",
-          quality: "1080p",
-          type: "m3u8",
-          url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-        }
-      ]
-    },
-
-    // ==================== مباريات الأمس (YESTERDAY) ====================
-    {
-      id: "m7",
-      day: "yesterday",
-      dateLabel: "أمس - الأربعاء 21 أكتوبر",
-      league: "دوري أبطال أوروبا",
-      leagueLogo: "🏆",
-      status: "finished",
-      minute: "انتهت",
-      timeGMT: "19:00",
-      homeTeam: "باريس سان جيرمان",
-      homeLogo: window.CLUB_LOGOS["باريس سان جيرمان"],
-      homeScore: 2,
-      homeScorers: "ديمبيلي (18')، حكيمي (74')",
-      awayTeam: "ليفربول",
-      awayLogo: window.CLUB_LOGOS["ليفربول"],
-      awayScore: 2,
-      awayScorers: "محمد صلاح (33'، 88')",
-      channel: "beIN Sports HD 1",
-      commentator: "حسن العيدروس",
-      stadium: "حديقة الأمراء - باريس",
-      round: "دوري أبطال أوروبا",
-      featured: false,
-      events: [],
-      servers: [
-        {
-          name: "ملخص وأهداف اللقاء (HD)",
-          quality: "1080p",
-          type: "m3u8",
-          url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-        }
-      ]
-    },
-    {
-      id: "m8",
-      day: "yesterday",
-      dateLabel: "أمس - الأربعاء 21 أكتوبر",
-      league: "دوري أبطال أوروبا",
-      leagueLogo: "🏆",
-      status: "finished",
-      minute: "انتهت",
-      timeGMT: "19:00",
-      homeTeam: "بوروسيا دورتموند",
-      homeLogo: window.CLUB_LOGOS["بوروسيا دورتموند"],
-      homeScore: 3,
-      homeScorers: "سيرهو غيراسي (11'، 49')، براندت (82')",
-      awayTeam: "إي سي ميلان",
-      awayLogo: window.CLUB_LOGOS["إي سي ميلان"],
-      awayScore: 1,
-      awayScorers: "رافائيل لياو (56')",
-      channel: "beIN Sports HD 2",
-      commentator: "علي محمد علي",
-      stadium: "سيغنال إيدونا بارك",
-      round: "دوري أبطال أوروبا",
-      featured: false,
-      events: [],
-      servers: [
-        {
-          name: "ملخص وأهداف اللقاء",
-          quality: "1080p",
-          type: "m3u8",
-          url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-        }
-      ]
-    },
-    {
-      id: "m9",
-      day: "yesterday",
-      dateLabel: "أمس - الأربعاء 21 أكتوبر",
-      league: "البطولة المغربية الاحترافية Inwi",
-      leagueLogo: "🇲🇦",
-      status: "finished",
-      minute: "انتهت",
-      timeGMT: "18:00",
-      homeTeam: "المغرب الفاسي",
-      homeLogo: window.CLUB_LOGOS["المغرب الفاسي"],
-      homeScore: 2,
-      homeScorers: "بورغيس (25')، الجناتي (67')",
-      awayTeam: "الفتح الرباطي",
-      awayLogo: window.CLUB_LOGOS["الفتح الرباطي"],
-      awayScore: 1,
-      awayScorers: "هنوري (41')",
-      channel: "الرياضية المغربية TNT",
-      commentator: "سفيان رشيدي",
-      stadium: "المركب الرياضي بفاس",
-      round: "الجولة 24",
-      featured: false,
-      events: [],
-      servers: [
-        {
-          name: "ملخص المباراة الكامل",
-          quality: "1080p",
-          type: "m3u8",
-          url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-        }
-      ]
-    },
-    {
-      id: "m10",
-      day: "yesterday",
-      dateLabel: "أمس - الأربعاء 21 أكتوبر",
-      league: "دوري أبطال أفريقيا",
-      leagueLogo: "🌍",
-      status: "finished",
-      minute: "انتهت",
-      timeGMT: "17:00",
-      homeTeam: "الأهلي المصري",
-      homeLogo: window.CLUB_LOGOS["الأهلي المصري"],
-      homeScore: 2,
-      homeScorers: "وسام أبو علي (15')، إمام عاشور (79')",
-      awayTeam: "الترجي التونسي",
-      awayLogo: window.CLUB_LOGOS["الترجي التونسي"],
-      awayScore: 0,
-      awayScorers: "",
-      channel: "beIN Sports HD 6",
-      commentator: "عصام الشوالي",
-      stadium: "استاد القاهرة الدولي",
-      round: "نصف النهائي",
-      featured: false,
-      events: [],
-      servers: [
-        {
-          name: "ملخص وأهداف اللقاء",
-          quality: "1080p",
-          type: "m3u8",
-          url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-        }
-      ]
-    },
-
-    // ==================== مباريات الغد (TOMORROW) ====================
-    {
-      id: "m11",
-      day: "tomorrow",
-      dateLabel: "غداً - الجمعة 23 أكتوبر",
-      league: "الدوري الإنجليزي الممتاز",
-      leagueLogo: "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-      status: "upcoming",
-      minute: "غداً",
-      timeGMT: "18:30",
-      homeTeam: "ليفربول",
-      homeLogo: window.CLUB_LOGOS["ليفربول"],
-      homeScore: 0,
-      awayTeam: "تشيلسي",
-      awayLogo: window.CLUB_LOGOS["تشيلسي"],
-      awayScore: 0,
-      channel: "beIN Sports HD 1",
-      commentator: "رؤوف خليف",
-      stadium: "ملعب أنفيلد",
-      round: "الأسبوع 33",
-      featured: false,
-      events: [],
-      servers: [
-        {
-          name: "سيرفر البث الرئيسي (FHD)",
-          quality: "1080p",
-          type: "m3u8",
-          url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-        }
-      ]
-    },
-    {
-      id: "m12",
-      day: "tomorrow",
-      dateLabel: "غداً - الجمعة 23 أكتوبر",
-      league: "الدوري الإسباني LaLiga",
-      leagueLogo: "🇪🇸",
-      status: "upcoming",
-      minute: "غداً",
-      timeGMT: "19:00",
-      homeTeam: "أتلتيكو مدريد",
-      homeLogo: window.CLUB_LOGOS["أتلتيكو مدريد"],
-      homeScore: 0,
-      awayTeam: "ريال مدريد",
-      awayLogo: window.CLUB_LOGOS["ريال مدريد"],
-      awayScore: 0,
-      channel: "beIN Sports HD 3",
-      commentator: "حفيظ دراجي",
-      stadium: "سيفيتاس ميتروبوليتانو",
-      round: "ديربي مدريد - الجولة 32",
-      featured: false,
-      events: [],
-      servers: [
-        {
-          name: "سيرفر 1 (FHD 1080p)",
-          quality: "1080p",
-          type: "m3u8",
-          url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-        }
-      ]
-    },
-    {
-      id: "m13",
-      day: "tomorrow",
-      dateLabel: "غداً - الجمعة 23 أكتوبر",
-      league: "البطولة المغربية الاحترافية Inwi",
-      leagueLogo: "🇲🇦",
-      status: "upcoming",
-      minute: "غداً",
-      timeGMT: "17:00",
-      homeTeam: "اتحاد طنجة",
-      homeLogo: window.CLUB_LOGOS["اتحاد طنجة"],
-      homeScore: 0,
-      awayTeam: "حسنية أكادير",
-      awayLogo: window.CLUB_LOGOS["حسنية أكادير"],
-      awayScore: 0,
-      channel: "الرياضية المغربية TNT",
-      commentator: "محمد العدالي",
-      stadium: "الملعب الكبير لطنجة",
-      round: "الجولة 25",
-      featured: false,
-      events: [],
-      servers: [
-        {
-          name: "سيرفر الرياضية (FHD)",
-          quality: "1080p",
-          type: "m3u8",
-          url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-        }
-      ]
-    },
-    {
-      id: "m14",
-      day: "tomorrow",
-      dateLabel: "غداً - الجمعة 23 أكتوبر",
-      league: "دوري روشن السعودي",
-      leagueLogo: "🇸🇦",
-      status: "upcoming",
-      minute: "غداً",
-      timeGMT: "18:00",
-      homeTeam: "الاتحاد",
-      homeLogo: window.CLUB_LOGOS["الاتحاد"],
-      homeScore: 0,
-      awayTeam: "الأهلي السعودي",
-      awayLogo: window.CLUB_LOGOS["الأهلي السعودي"],
-      awayScore: 0,
-      channel: "SSC 1 HD",
-      commentator: "فهد العتيبي",
-      stadium: "الجوهرة المشعة - جدة",
-      round: "ديربي جدة - الجولة 29",
-      featured: false,
-      events: [],
-      servers: [
-        {
-          name: "سيرفر SSC 1 (FHD)",
-          quality: "1080p",
-          type: "m3u8",
-          url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-        }
-      ]
-    },
-
-    // ==================== مباريات الأيام المقبلة (UPCOMING DAYS) ====================
-    {
-      id: "m15",
-      day: "upcoming_days",
-      dateLabel: "السبت 24 أكتوبر 2026",
-      league: "الدوري الإنجليزي الممتاز",
-      leagueLogo: "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-      status: "upcoming",
-      minute: "السبت 24 أكتوبر",
-      timeGMT: "16:30",
-      homeTeam: "مانشستر يونايتد",
-      homeLogo: window.CLUB_LOGOS["مانشستر يونايتد"],
-      homeScore: 0,
-      awayTeam: "توتنهام",
-      awayLogo: window.CLUB_LOGOS["توتنهام"],
-      awayScore: 0,
-      channel: "beIN Sports HD 1",
-      commentator: "عصام الشوالي",
-      stadium: "أولد ترافورد",
-      round: "الأسبوع 33",
-      featured: false,
-      events: [],
-      servers: [
-        {
-          name: "سيرفر البث الرئيسي (FHD)",
-          quality: "1080p",
-          type: "m3u8",
-          url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-        }
-      ]
-    },
-    {
-      id: "m16",
-      day: "upcoming_days",
-      dateLabel: "السبت 24 أكتوبر 2026",
-      league: "الدوري الإيطالي Serie A",
-      leagueLogo: "🇮🇹",
-      status: "upcoming",
-      minute: "السبت 24 أكتوبر",
-      timeGMT: "18:45",
-      homeTeam: "يوفنتوس",
-      homeLogo: window.CLUB_LOGOS["يوفنتوس"],
-      homeScore: 0,
-      awayTeam: "نابولي",
-      awayLogo: window.CLUB_LOGOS["نابولي"],
-      awayScore: 0,
-      channel: "AD Sports Premium 1",
-      commentator: "فارس عوض",
-      stadium: "أليانز ستاديوم - تورينو",
-      round: "الجولة 33",
-      featured: false,
-      events: [],
-      servers: [
-        {
-          name: "سيرفر البث الرئيسي (FHD)",
-          quality: "1080p",
-          type: "m3u8",
-          url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-        }
-      ]
-    },
-    {
-      id: "m17",
-      day: "upcoming_days",
-      dateLabel: "الأحد 25 أكتوبر 2026",
-      league: "البطولة المغربية الاحترافية Inwi",
-      leagueLogo: "🇲🇦",
-      status: "upcoming",
-      minute: "الأحد 25 أكتوبر",
-      timeGMT: "19:00",
-      homeTeam: "الجيش الملكي",
-      homeLogo: window.CLUB_LOGOS["الجيش الملكي"],
-      homeScore: 0,
-      awayTeam: "الرجاء الرياضي",
-      awayLogo: window.CLUB_LOGOS["الرجاء الرياضي"],
-      awayScore: 0,
-      channel: "الرياضية المغربية TNT",
-      commentator: "هشام فرج",
-      stadium: "الملعب البلدي بالقنيطرة",
-      round: "كلاسيكو المغرب - الجولة 25",
-      featured: false,
-      events: [],
-      servers: [
-        {
-          name: "سيرفر الرياضية 1 (FHD)",
-          quality: "1080p",
-          type: "m3u8",
-          url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-        }
-      ]
-    },
-    {
-      id: "m18",
-      day: "upcoming_days",
-      dateLabel: "الأحد 25 أكتوبر 2026",
-      league: "الدوري الألماني Bundesliga",
-      leagueLogo: "🇩🇪",
-      status: "upcoming",
-      minute: "الأحد 25 أكتوبر",
-      timeGMT: "17:30",
-      homeTeam: "بايرن ميونخ",
-      homeLogo: window.CLUB_LOGOS["بايرن ميونخ"],
-      homeScore: 0,
-      awayTeam: "باير ليفركوزن",
-      awayLogo: window.CLUB_LOGOS["باير ليفركوزن"],
-      awayScore: 0,
-      channel: "beIN Sports HD 5",
-      commentator: "علي محمد علي",
-      stadium: "أليانز أرينا - ميونخ",
-      round: "قمة البوندسليغا",
-      featured: false,
-      events: [],
-      servers: [
-        {
-          name: "سيرفر البث الرئيسي (FHD)",
-          quality: "1080p",
-          type: "m3u8",
-          url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-        }
-      ]
-    },
-    {
-      id: "m19",
-      day: "upcoming_days",
-      dateLabel: "الثلاثاء 27 أكتوبر 2026",
-      league: "دوري أبطال أوروبا",
-      leagueLogo: "🏆",
-      status: "upcoming",
-      minute: "الثلاثاء 27 أكتوبر",
-      timeGMT: "19:00",
-      homeTeam: "برشلونة",
-      homeLogo: window.CLUB_LOGOS["برشلونة"],
-      homeScore: 0,
-      awayTeam: "باريس سان جيرمان",
-      awayLogo: window.CLUB_LOGOS["باريس سان جيرمان"],
-      awayScore: 0,
-      channel: "beIN Sports HD 1",
-      commentator: "عصام الشوالي",
-      stadium: "سبوتيفاي كامب نو",
-      round: "إياب نصف النهائي",
-      featured: false,
-      events: [],
-      servers: [
-        {
-          name: "سيرفر 1 الرئيسي (FHD)",
-          quality: "1080p",
-          type: "m3u8",
-          url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-        }
-      ]
-    },
-    {
-      id: "m20",
-      day: "upcoming_days",
-      dateLabel: "الأربعاء 28 أكتوبر 2026",
-      league: "كأس الكونفدرالية الأفريقية",
-      leagueLogo: "🌍",
-      status: "upcoming",
-      minute: "الأربعاء 28 أكتوبر",
-      timeGMT: "18:00",
-      homeTeam: "نهضة بركان",
-      homeLogo: window.CLUB_LOGOS["نهضة بركان"],
-      homeScore: 0,
-      awayTeam: "الزمالك",
-      awayLogo: window.CLUB_LOGOS["الزمالك"],
-      awayScore: 0,
-      channel: "beIN Sports HD 6",
-      commentator: "جواد بدة",
-      stadium: "الملعب البلدي ببركان",
-      round: "النهائي الأفريقي",
-      featured: false,
-      events: [],
-      servers: [
-        {
-          name: "سيرفر 1 الرئيسي (FHD)",
-          quality: "1080p",
-          type: "m3u8",
-          url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-        }
-      ]
-    }
-  ],
+  {
+    "id": "m_hilal_qadisiya",
+    "day": "today",
+    "dateLabel": "اليوم الجمعة 23 أكتوبر",
+    "league": "دوري روشن السعودي للمحترفين",
+    "leagueLogo": "🇸🇦",
+    "status": "live",
+    "minute": "76'",
+    "timeGMT": "15:00",
+    "homeTeam": "الهلال",
+    "homeLogo": "https://crests.football-data.org/86.png",
+    "homeScore": 2,
+    "homeScorers": "ألكساندر ميتروفيتش (21')، مالكوم (58')",
+    "awayTeam": "القادسية",
+    "awayLogo": "https://crests.football-data.org/81.png",
+    "awayScore": 1,
+    "awayScorers": "بيير إيميريك أوباميانغ (41')",
+    "channel": "SSC1 HD",
+    "commentator": "فهد العتيبي",
+    "stadium": "استاد الأمير محمد بن فهد",
+    "round": "الجولة 8 - قمة دوري روشن",
+    "featured": true,
+    "events": [
+      {
+        "time": "21'",
+        "team": "home",
+        "player": "ألكساندر ميتروفيتش",
+        "type": "goal"
+      },
+      {
+        "time": "41'",
+        "team": "away",
+        "player": "بيير إيميريك أوباميانغ",
+        "type": "goal"
+      },
+      {
+        "time": "58'",
+        "team": "home",
+        "player": "مالكوم أوليفيرا",
+        "type": "goal"
+      }
+    ],
+    "servers": [
+      {
+        "name": "سيرفر 1 الرئيسي (4K UHD)",
+        "quality": "4K",
+        "type": "m3u8",
+        "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+      },
+      {
+        "name": "سيرفر 2 مباشر (FHD 1080p)",
+        "quality": "1080p",
+        "type": "m3u8",
+        "url": "https://assets.afcdn.com/video49/20210722/v_645516.m3u8"
+      },
+      {
+        "name": "سيرفر 3 للإنترنت الضعيف (HD 720p)",
+        "quality": "720p",
+        "type": "m3u8",
+        "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+      }
+    ]
+  },
+  {
+    "id": "m_leicester_forest",
+    "day": "today",
+    "dateLabel": "اليوم الجمعة 23 أكتوبر",
+    "league": "الدوري الإنجليزي الممتاز",
+    "leagueLogo": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+    "status": "upcoming",
+    "minute": "20:00 بتوقيت المغرب",
+    "timeGMT": "19:00",
+    "homeTeam": "ليستر سيتي",
+    "homeLogo": "https://crests.football-data.org/61.png",
+    "homeScore": 0,
+    "awayTeam": "نوتينغهام فورست",
+    "awayLogo": "https://crests.football-data.org/67.png",
+    "awayScore": 0,
+    "channel": "beIN Sports HD 1",
+    "commentator": "خليل البلوشي",
+    "stadium": "ملعب كينغ باور",
+    "round": "الأسبوع 9 - قمة الجمعة",
+    "featured": true,
+    "events": [],
+    "servers": [
+      {
+        "name": "سيرفر 1 (FHD 1080p)",
+        "quality": "1080p",
+        "type": "m3u8",
+        "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+      }
+    ]
+  },
+  {
+    "id": "m_espanyol_sevilla",
+    "day": "today",
+    "dateLabel": "اليوم الجمعة 23 أكتوبر",
+    "league": "الدوري الإسباني - لا ليغا",
+    "leagueLogo": "🇪🇸",
+    "status": "upcoming",
+    "minute": "20:00 بتوقيت المغرب",
+    "timeGMT": "19:00",
+    "homeTeam": "إسبانيول",
+    "homeLogo": "https://crests.football-data.org/81.png",
+    "homeScore": 0,
+    "awayTeam": "إشبيلية",
+    "awayLogo": "https://crests.football-data.org/78.png",
+    "awayScore": 0,
+    "channel": "beIN Sports HD 3",
+    "commentator": "حفيظ دراجي",
+    "stadium": "ملعب كورنيلا إل برات",
+    "round": "الجولة 11 - الدوري الإسباني",
+    "featured": false,
+    "events": [],
+    "servers": [
+      {
+        "name": "سيرفر 1 (FHD 1080p)",
+        "quality": "1080p",
+        "type": "m3u8",
+        "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+      }
+    ]
+  },
+  {
+    "id": "m_ahli_khaleej",
+    "day": "today",
+    "dateLabel": "اليوم الجمعة 23 أكتوبر",
+    "league": "دوري روشن السعودي للمحترفين",
+    "leagueLogo": "🇸🇦",
+    "status": "live",
+    "minute": "62'",
+    "timeGMT": "15:00",
+    "homeTeam": "الأهلي السعودي",
+    "homeLogo": "https://crests.football-data.org/86.png",
+    "homeScore": 1,
+    "homeScorers": "رياض محرز (28')",
+    "awayTeam": "الخليج",
+    "awayLogo": "https://crests.football-data.org/81.png",
+    "awayScore": 0,
+    "channel": "SSC EXTRA 1 HD",
+    "commentator": "عيسى الحربين",
+    "stadium": "مدينة الملك عبدالله الرياضية (الجوهرة)",
+    "round": "الجولة 8 - دوري روشن",
+    "featured": false,
+    "events": [
+      {
+        "time": "28'",
+        "team": "home",
+        "player": "رياض محرز",
+        "type": "goal"
+      }
+    ],
+    "servers": [
+      {
+        "name": "سيرفر 1 (FHD 1080p)",
+        "quality": "1080p",
+        "type": "m3u8",
+        "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+      }
+    ]
+  },
+  {
+    "id": "m_faisaly_nassr",
+    "day": "today",
+    "dateLabel": "اليوم الجمعة 23 أكتوبر",
+    "league": "دوري روشن السعودي للمحترفين",
+    "leagueLogo": "🇸🇦",
+    "status": "finished",
+    "minute": "انتهت",
+    "timeGMT": "10:30",
+    "homeTeam": "الفيصلي",
+    "homeLogo": "https://crests.football-data.org/78.png",
+    "homeScore": 1,
+    "homeScorers": "مارتينيز (30')",
+    "awayTeam": "النصر",
+    "awayLogo": "https://crests.football-data.org/65.png",
+    "awayScore": 2,
+    "awayScorers": "كريستيانو رونالدو (45+2')، تاليسكا (78')",
+    "channel": "SSC1 HD",
+    "commentator": "عبدالله الحربي",
+    "stadium": "مدينة المجمعة الرياضية",
+    "round": "الجولة 8 - دوري روشن",
+    "featured": false,
+    "events": [
+      {
+        "time": "30'",
+        "team": "home",
+        "player": "مارتينيز",
+        "type": "goal"
+      },
+      {
+        "time": "45+2'",
+        "team": "away",
+        "player": "كريستيانو رونالدو",
+        "type": "goal"
+      },
+      {
+        "time": "78'",
+        "team": "away",
+        "player": "أندرسون تاليسكا",
+        "type": "goal"
+      }
+    ],
+    "servers": [
+      {
+        "name": "سيرفر 1 (HD 720p)",
+        "quality": "720p",
+        "type": "m3u8",
+        "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+      }
+    ]
+  },
+  {
+    "id": "m_mainz_gladbach",
+    "day": "today",
+    "dateLabel": "اليوم الجمعة 23 أكتوبر",
+    "league": "الدوري الألماني - بوندسليغا",
+    "leagueLogo": "🇩🇪",
+    "status": "upcoming",
+    "minute": "19:30 بتوقيت المغرب",
+    "timeGMT": "18:30",
+    "homeTeam": "ماينز",
+    "homeLogo": "https://crests.football-data.org/3.png",
+    "homeScore": 0,
+    "awayTeam": "بوروسيا مونشنغلادباخ",
+    "awayLogo": "https://crests.football-data.org/4.png",
+    "awayScore": 0,
+    "channel": "beIN Sports HD 5",
+    "commentator": "أحمد البلوشي",
+    "stadium": "ميوا أرينا",
+    "round": "الأسبوع 8 - البوندسليغا",
+    "featured": false,
+    "events": [],
+    "servers": [
+      {
+        "name": "سيرفر 1 (FHD 1080p)",
+        "quality": "1080p",
+        "type": "m3u8",
+        "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+      }
+    ]
+  },
+  {
+    "id": "m_rennes_lehavre",
+    "day": "today",
+    "dateLabel": "اليوم الجمعة 23 أكتوبر",
+    "league": "الدوري الفرنسي - ليغ 1",
+    "leagueLogo": "🇫🇷",
+    "status": "upcoming",
+    "minute": "19:45 بتوقيت المغرب",
+    "timeGMT": "18:45",
+    "homeTeam": "رين",
+    "homeLogo": "https://crests.football-data.org/524.png",
+    "homeScore": 0,
+    "awayTeam": "لوهافر",
+    "awayLogo": "https://crests.football-data.org/524.png",
+    "awayScore": 0,
+    "channel": "beIN Sports HD 4",
+    "commentator": "جواد بدة",
+    "stadium": "رويزون بارك",
+    "round": "الجولة 9 - الدوري الفرنسي",
+    "featured": false,
+    "events": [],
+    "servers": [
+      {
+        "name": "سيرفر 1 (FHD 1080p)",
+        "quality": "1080p",
+        "type": "m3u8",
+        "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+      }
+    ]
+  },
+  {
+    "id": "m_torino_como",
+    "day": "today",
+    "dateLabel": "اليوم الجمعة 23 أكتوبر",
+    "league": "الدوري الإيطالي - سيري آ",
+    "leagueLogo": "🇮🇹",
+    "status": "upcoming",
+    "minute": "19:45 بتوقيت المغرب",
+    "timeGMT": "18:45",
+    "homeTeam": "تورينو",
+    "homeLogo": "https://crests.football-data.org/108.png",
+    "homeScore": 0,
+    "awayTeam": "كومو",
+    "awayLogo": "https://crests.football-data.org/98.png",
+    "awayScore": 0,
+    "channel": "AD SPORTS Premium 1",
+    "commentator": "بلال علام",
+    "stadium": "استاد أولمبيكو دي تورينو",
+    "round": "الجولة 9 - الكالتشيو",
+    "featured": false,
+    "events": [],
+    "servers": [
+      {
+        "name": "سيرفر 1 (FHD 1080p)",
+        "quality": "1080p",
+        "type": "m3u8",
+        "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+      }
+    ]
+  },
+  {
+    "id": "m_clasico_sat",
+    "day": "tomorrow",
+    "dateLabel": "غداً السبت 24 أكتوبر",
+    "league": "الدوري الإسباني - لا ليغا",
+    "leagueLogo": "🇪🇸",
+    "status": "upcoming",
+    "minute": "غداً 20:00 بتوقيت المغرب",
+    "timeGMT": "19:00",
+    "homeTeam": "ريال مدريد",
+    "homeLogo": "https://crests.football-data.org/86.png",
+    "homeScore": 0,
+    "awayTeam": "برشلونة",
+    "awayLogo": "https://crests.football-data.org/81.png",
+    "awayScore": 0,
+    "channel": "beIN Sports HD 1",
+    "commentator": "عصام الشوالي",
+    "stadium": "سانتياغو برنابيو - مدريد",
+    "round": "الجولة 11 - كلاسيكو الأرض المرتقب",
+    "featured": true,
+    "events": [],
+    "servers": [
+      {
+        "name": "سيرفر 1 الرئيسي (4K UHD)",
+        "quality": "4K",
+        "type": "m3u8",
+        "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+      }
+    ]
+  },
+  {
+    "id": "m_arsenal_liverpool",
+    "day": "tomorrow",
+    "dateLabel": "غداً السبت 24 أكتوبر",
+    "league": "الدوري الإنجليزي الممتاز",
+    "leagueLogo": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+    "status": "upcoming",
+    "minute": "غداً 16:30 بتوقيت المغرب",
+    "timeGMT": "15:30",
+    "homeTeam": "أرسنال",
+    "homeLogo": "https://crests.football-data.org/57.png",
+    "homeScore": 0,
+    "awayTeam": "ليفربول",
+    "awayLogo": "https://crests.football-data.org/64.png",
+    "awayScore": 0,
+    "channel": "beIN Sports HD 1",
+    "commentator": "خليل البلوشي",
+    "stadium": "استاد الإمارات - لندن",
+    "round": "قمة الجولة 9 - البريميرليج",
+    "featured": true,
+    "events": [],
+    "servers": [
+      {
+        "name": "سيرفر 1 (FHD 1080p)",
+        "quality": "1080p",
+        "type": "m3u8",
+        "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+      }
+    ]
+  },
+  {
+    "id": "m_raja_wydad",
+    "day": "tomorrow",
+    "dateLabel": "غداً السبت 24 أكتوبر",
+    "league": "البطولة المغربية الاحترافية Inwi",
+    "leagueLogo": "🇲🇦",
+    "status": "upcoming",
+    "minute": "غداً 17:00 بتوقيت المغرب",
+    "timeGMT": "16:00",
+    "homeTeam": "الرجاء الرياضي",
+    "homeLogo": "https://crests.football-data.org/86.png",
+    "homeScore": 0,
+    "awayTeam": "الوداد الرياضي",
+    "awayLogo": "https://crests.football-data.org/81.png",
+    "awayScore": 0,
+    "channel": "الرياضية المغربية TNT",
+    "commentator": "هشام فرج",
+    "stadium": "المركب الرياضي محمد الخامس",
+    "round": "الجولة 24 - ديربي الدار البيضاء",
+    "featured": false,
+    "events": [],
+    "servers": [
+      {
+        "name": "سيرفر 1 (FHD 1080p)",
+        "quality": "1080p",
+        "type": "m3u8",
+        "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+      }
+    ]
+  },
+  {
+    "id": "m_mancity_southampton",
+    "day": "tomorrow",
+    "dateLabel": "غداً السبت 24 أكتوبر",
+    "league": "الدوري الإنجليزي الممتاز",
+    "leagueLogo": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+    "status": "upcoming",
+    "minute": "غداً 14:00 بتوقيت المغرب",
+    "timeGMT": "13:00",
+    "homeTeam": "مانشستر سيتي",
+    "homeLogo": "https://crests.football-data.org/65.png",
+    "homeScore": 0,
+    "awayTeam": "ساوثهامبتون",
+    "awayLogo": "https://crests.football-data.org/67.png",
+    "awayScore": 0,
+    "channel": "beIN Sports HD 2",
+    "commentator": "عامر الخوذيري",
+    "stadium": "استاد الاتحاد",
+    "round": "الجولة 9",
+    "featured": false,
+    "events": [],
+    "servers": [
+      {
+        "name": "سيرفر 1 (HD 720p)",
+        "quality": "720p",
+        "type": "m3u8",
+        "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+      }
+    ]
+  },
+  {
+    "id": "m_fenerbahce_manu",
+    "day": "yesterday",
+    "dateLabel": "أمس الخميس 22 أكتوبر",
+    "league": "الدوري الأوروبي",
+    "leagueLogo": "🏆",
+    "status": "finished",
+    "minute": "انتهت",
+    "timeGMT": "19:00",
+    "homeTeam": "فنربخشة",
+    "homeLogo": "https://crests.football-data.org/86.png",
+    "homeScore": 1,
+    "homeScorers": "يوسف النصيري (49')",
+    "awayTeam": "مانشستر يونايتد",
+    "awayLogo": "https://crests.football-data.org/66.png",
+    "awayScore": 1,
+    "awayScorers": "كريستيان إريكسن (15')",
+    "channel": "beIN Sports HD 1",
+    "commentator": "علي محمد علي",
+    "stadium": "ملعب شكري سراج أوغلو",
+    "round": "الجولة 3 - الدوري الأوروبي",
+    "featured": false,
+    "events": [
+      {
+        "time": "15'",
+        "team": "away",
+        "player": "كريستيان إريكسن",
+        "type": "goal"
+      },
+      {
+        "time": "49'",
+        "team": "home",
+        "player": "يوسف النصيري",
+        "type": "goal"
+      }
+    ],
+    "servers": [
+      {
+        "name": "ملخص المباراة HD",
+        "quality": "1080p",
+        "type": "m3u8",
+        "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+      }
+    ]
+  },
+  {
+    "id": "m_roma_kyiv",
+    "day": "yesterday",
+    "dateLabel": "أمس الخميس 22 أكتوبر",
+    "league": "الدوري الأوروبي",
+    "leagueLogo": "🏆",
+    "status": "finished",
+    "minute": "انتهت",
+    "timeGMT": "16:45",
+    "homeTeam": "روما",
+    "homeLogo": "https://crests.football-data.org/108.png",
+    "homeScore": 1,
+    "homeScorers": "أرتيم دوفبيك (23' ركلة جزاء)",
+    "awayTeam": "دينامو كييف",
+    "awayLogo": "https://crests.football-data.org/524.png",
+    "awayScore": 0,
+    "channel": "beIN Sports HD 2",
+    "commentator": "أحمد عبده",
+    "stadium": "ملعب أولمبيكو - روما",
+    "round": "الجولة 3",
+    "featured": false,
+    "events": [
+      {
+        "time": "23'",
+        "team": "home",
+        "player": "أرتيم دوفبيك",
+        "type": "goal"
+      }
+    ],
+    "servers": [
+      {
+        "name": "أهداف المباراة HD",
+        "quality": "720p",
+        "type": "m3u8",
+        "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+      }
+    ]
+  },
+  {
+    "id": "m_tottenham_alkmaar",
+    "day": "yesterday",
+    "dateLabel": "أمس الخميس 22 أكتوبر",
+    "league": "الدوري الأوروبي",
+    "leagueLogo": "🏆",
+    "status": "finished",
+    "minute": "انتهت",
+    "timeGMT": "19:00",
+    "homeTeam": "توتنهام",
+    "homeLogo": "https://crests.football-data.org/73.png",
+    "homeScore": 1,
+    "homeScorers": "ريتشارليسون (53' ركلة جزاء)",
+    "awayTeam": "إي زد ألكمار",
+    "awayLogo": "https://crests.football-data.org/67.png",
+    "awayScore": 0,
+    "channel": "beIN Sports HD 2",
+    "commentator": "محمد بركات",
+    "stadium": "استاد توتنهام هوتسبير",
+    "round": "الجولة 3",
+    "featured": false,
+    "events": [
+      {
+        "time": "53'",
+        "team": "home",
+        "player": "ريتشارليسون",
+        "type": "goal"
+      }
+    ],
+    "servers": [
+      {
+        "name": "ملخص اللقاء HD",
+        "quality": "720p",
+        "type": "m3u8",
+        "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+      }
+    ]
+  }
+],
   channels: [
     {
       id: "ch1",
