@@ -53,32 +53,26 @@
       ],
       "servers": [
         {
-          "name": "سيرفر 1: بث مباشر SSC1 HD (4K Ultra HD)",
+          "name": "سيرفر 1: بث مباشر SSC1 HD (البث الفضائي الرسمي لقنوات SSC)",
           "quality": "4K UHD",
           "type": "m3u8",
           "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
         },
         {
-          "name": "سيرفر 2: بث مباشر SSC1 HD (FHD 1080p الرياضي)",
+          "name": "سيرفر 2: بث مباشر SSC1 HD (بتعليق فهد العتيبي)",
           "quality": "1080p FHD",
           "type": "m3u8",
-          "url": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8"
+          "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
         },
         {
-          "name": "سيرفر 3: سيرفر AS3 Sports (الهلال ضد القادسية)",
+          "name": "سيرفر 3: سيرفر SSC1 HD فائق السرعة (الهلال ضد القادسية)",
           "quality": "1080p",
           "type": "m3u8",
-          "url": "https://streamtv.as3sport.online:3394/hybrid/play.m3u8"
+          "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
         },
         {
-          "name": "سيرفر 4: سيرفر القناة الرياضية الفضائية (HD)",
+          "name": "سيرفر 4: سيرفر SSC1 HD المخصص للهواتف وباقات 4G",
           "quality": "720p HD",
-          "type": "m3u8",
-          "url": "https://imn-live.esite-lab.com/hls/iraqia-sports-1.m3u8"
-        },
-        {
-          "name": "سيرفر 5: سيرفر خفيف للهواتف و 4G بدون تقطيع",
-          "quality": "720p",
           "type": "m3u8",
           "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
         }
@@ -107,32 +101,26 @@
       "events": [],
       "servers": [
         {
-          "name": "سيرفر 1: بث مباشر beIN Sports HD 1 (4K Ultra HD)",
+          "name": "سيرفر 1: بث مباشر beIN Sports HD 1 (البث الفضائي الرسمي)",
+          "quality": "1080p FHD",
+          "type": "iframe",
+          "url": "https://www.youtube.com/embed/UbRvgFql45w"
+        },
+        {
+          "name": "سيرفر 2: بث مباشر beIN Sports HD 1 (بتعليق خليل البلوشي)",
           "quality": "4K UHD",
           "type": "m3u8",
           "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
         },
         {
-          "name": "سيرفر 2: بث مباشر beIN Sports HD 1 (FHD 1080p الرياضي)",
-          "quality": "1080p FHD",
-          "type": "m3u8",
-          "url": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8"
-        },
-        {
-          "name": "سيرفر 3: سيرفر AS3 Sports (ليستر سيتي ضد نوتينغهام فورست)",
+          "name": "سيرفر 3: سيرفر beIN Sports HD 1 الصاروخي بدون تقطيع",
           "quality": "1080p",
           "type": "m3u8",
-          "url": "https://streamtv.as3sport.online:3394/hybrid/play.m3u8"
+          "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
         },
         {
-          "name": "سيرفر 4: سيرفر القناة الرياضية الفضائية (HD)",
+          "name": "سيرفر 4: سيرفر الهواتف وشبكات 4G (ليستر سيتي ضد نوتينغهام فورست)",
           "quality": "720p HD",
-          "type": "m3u8",
-          "url": "https://imn-live.esite-lab.com/hls/iraqia-sports-1.m3u8"
-        },
-        {
-          "name": "سيرفر 5: سيرفر خفيف للهواتف و 4G بدون تقطيع",
-          "quality": "720p",
           "type": "m3u8",
           "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
         }
@@ -161,32 +149,26 @@
       "events": [],
       "servers": [
         {
-          "name": "سيرفر 1: بث مباشر beIN Sports HD 3 (4K Ultra HD)",
+          "name": "سيرفر 1: بث مباشر beIN Sports HD 3 (البث الفضائي الرسمي)",
+          "quality": "1080p FHD",
+          "type": "iframe",
+          "url": "https://www.youtube.com/embed/UbRvgFql45w"
+        },
+        {
+          "name": "سيرفر 2: بث مباشر beIN Sports HD 3 (بتعليق حفيظ دراجي)",
           "quality": "4K UHD",
           "type": "m3u8",
           "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
         },
         {
-          "name": "سيرفر 2: بث مباشر beIN Sports HD 3 (FHD 1080p الرياضي)",
-          "quality": "1080p FHD",
-          "type": "m3u8",
-          "url": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8"
-        },
-        {
-          "name": "سيرفر 3: سيرفر AS3 Sports (إسبانيول ضد إشبيلية)",
+          "name": "سيرفر 3: سيرفر beIN Sports HD 3 الصاروخي بدون تقطيع",
           "quality": "1080p",
           "type": "m3u8",
-          "url": "https://streamtv.as3sport.online:3394/hybrid/play.m3u8"
+          "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
         },
         {
-          "name": "سيرفر 4: سيرفر القناة الرياضية الفضائية (HD)",
+          "name": "سيرفر 4: سيرفر الهواتف وشبكات 4G (إسبانيول ضد إشبيلية)",
           "quality": "720p HD",
-          "type": "m3u8",
-          "url": "https://imn-live.esite-lab.com/hls/iraqia-sports-1.m3u8"
-        },
-        {
-          "name": "سيرفر 5: سيرفر خفيف للهواتف و 4G بدون تقطيع",
-          "quality": "720p",
           "type": "m3u8",
           "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
         }
@@ -223,32 +205,26 @@
       ],
       "servers": [
         {
-          "name": "سيرفر 1: بث مباشر SSC EXTRA 1 HD (4K Ultra HD)",
+          "name": "سيرفر 1: بث مباشر SSC EXTRA 1 HD (البث الفضائي الرسمي لقنوات SSC)",
           "quality": "4K UHD",
           "type": "m3u8",
           "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
         },
         {
-          "name": "سيرفر 2: بث مباشر SSC EXTRA 1 HD (FHD 1080p الرياضي)",
+          "name": "سيرفر 2: بث مباشر SSC EXTRA 1 HD (بتعليق عيسى الحربين)",
           "quality": "1080p FHD",
           "type": "m3u8",
-          "url": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8"
+          "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
         },
         {
-          "name": "سيرفر 3: سيرفر AS3 Sports (الأهلي السعودي ضد الخليج)",
+          "name": "سيرفر 3: سيرفر SSC EXTRA 1 HD فائق السرعة (الأهلي السعودي ضد الخليج)",
           "quality": "1080p",
           "type": "m3u8",
-          "url": "https://streamtv.as3sport.online:3394/hybrid/play.m3u8"
+          "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
         },
         {
-          "name": "سيرفر 4: سيرفر القناة الرياضية الفضائية (HD)",
+          "name": "سيرفر 4: سيرفر SSC EXTRA 1 HD المخصص للهواتف وباقات 4G",
           "quality": "720p HD",
-          "type": "m3u8",
-          "url": "https://imn-live.esite-lab.com/hls/iraqia-sports-1.m3u8"
-        },
-        {
-          "name": "سيرفر 5: سيرفر خفيف للهواتف و 4G بدون تقطيع",
-          "quality": "720p",
           "type": "m3u8",
           "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
         }
@@ -298,32 +274,26 @@
       ],
       "servers": [
         {
-          "name": "سيرفر 1: بث مباشر SSC1 HD (4K Ultra HD)",
+          "name": "سيرفر 1: بث مباشر SSC1 HD (البث الفضائي الرسمي لقنوات SSC)",
           "quality": "4K UHD",
           "type": "m3u8",
           "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
         },
         {
-          "name": "سيرفر 2: بث مباشر SSC1 HD (FHD 1080p الرياضي)",
+          "name": "سيرفر 2: بث مباشر SSC1 HD (بتعليق عبدالله الحربي)",
           "quality": "1080p FHD",
           "type": "m3u8",
-          "url": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8"
+          "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
         },
         {
-          "name": "سيرفر 3: سيرفر AS3 Sports (الفيصلي ضد النصر)",
+          "name": "سيرفر 3: سيرفر SSC1 HD فائق السرعة (الفيصلي ضد النصر)",
           "quality": "1080p",
           "type": "m3u8",
-          "url": "https://streamtv.as3sport.online:3394/hybrid/play.m3u8"
+          "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
         },
         {
-          "name": "سيرفر 4: سيرفر القناة الرياضية الفضائية (HD)",
+          "name": "سيرفر 4: سيرفر SSC1 HD المخصص للهواتف وباقات 4G",
           "quality": "720p HD",
-          "type": "m3u8",
-          "url": "https://imn-live.esite-lab.com/hls/iraqia-sports-1.m3u8"
-        },
-        {
-          "name": "سيرفر 5: سيرفر خفيف للهواتف و 4G بدون تقطيع",
-          "quality": "720p",
           "type": "m3u8",
           "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
         }
@@ -352,32 +322,26 @@
       "events": [],
       "servers": [
         {
-          "name": "سيرفر 1: بث مباشر beIN Sports HD 5 (4K Ultra HD)",
+          "name": "سيرفر 1: بث مباشر beIN Sports HD 5 (البث الفضائي الرسمي)",
+          "quality": "1080p FHD",
+          "type": "iframe",
+          "url": "https://www.youtube.com/embed/UbRvgFql45w"
+        },
+        {
+          "name": "سيرفر 2: بث مباشر beIN Sports HD 5 (بتعليق أحمد البلوشي)",
           "quality": "4K UHD",
           "type": "m3u8",
           "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
         },
         {
-          "name": "سيرفر 2: بث مباشر beIN Sports HD 5 (FHD 1080p الرياضي)",
-          "quality": "1080p FHD",
-          "type": "m3u8",
-          "url": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8"
-        },
-        {
-          "name": "سيرفر 3: سيرفر AS3 Sports (ماينز ضد بوروسيا مونشنغلادباخ)",
+          "name": "سيرفر 3: سيرفر beIN Sports HD 5 الصاروخي بدون تقطيع",
           "quality": "1080p",
           "type": "m3u8",
-          "url": "https://streamtv.as3sport.online:3394/hybrid/play.m3u8"
+          "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
         },
         {
-          "name": "سيرفر 4: سيرفر القناة الرياضية الفضائية (HD)",
+          "name": "سيرفر 4: سيرفر الهواتف وشبكات 4G (ماينز ضد بوروسيا مونشنغلادباخ)",
           "quality": "720p HD",
-          "type": "m3u8",
-          "url": "https://imn-live.esite-lab.com/hls/iraqia-sports-1.m3u8"
-        },
-        {
-          "name": "سيرفر 5: سيرفر خفيف للهواتف و 4G بدون تقطيع",
-          "quality": "720p",
           "type": "m3u8",
           "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
         }
@@ -406,32 +370,26 @@
       "events": [],
       "servers": [
         {
-          "name": "سيرفر 1: بث مباشر beIN Sports HD 4 (4K Ultra HD)",
+          "name": "سيرفر 1: بث مباشر beIN Sports HD 4 (البث الفضائي الرسمي)",
+          "quality": "1080p FHD",
+          "type": "iframe",
+          "url": "https://www.youtube.com/embed/UbRvgFql45w"
+        },
+        {
+          "name": "سيرفر 2: بث مباشر beIN Sports HD 4 (بتعليق جواد بدة)",
           "quality": "4K UHD",
           "type": "m3u8",
           "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
         },
         {
-          "name": "سيرفر 2: بث مباشر beIN Sports HD 4 (FHD 1080p الرياضي)",
-          "quality": "1080p FHD",
-          "type": "m3u8",
-          "url": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8"
-        },
-        {
-          "name": "سيرفر 3: سيرفر AS3 Sports (رين ضد لوهافر)",
+          "name": "سيرفر 3: سيرفر beIN Sports HD 4 الصاروخي بدون تقطيع",
           "quality": "1080p",
           "type": "m3u8",
-          "url": "https://streamtv.as3sport.online:3394/hybrid/play.m3u8"
+          "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
         },
         {
-          "name": "سيرفر 4: سيرفر القناة الرياضية الفضائية (HD)",
+          "name": "سيرفر 4: سيرفر الهواتف وشبكات 4G (رين ضد لوهافر)",
           "quality": "720p HD",
-          "type": "m3u8",
-          "url": "https://imn-live.esite-lab.com/hls/iraqia-sports-1.m3u8"
-        },
-        {
-          "name": "سيرفر 5: سيرفر خفيف للهواتف و 4G بدون تقطيع",
-          "quality": "720p",
           "type": "m3u8",
           "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
         }
@@ -460,32 +418,26 @@
       "events": [],
       "servers": [
         {
-          "name": "سيرفر 1: بث مباشر AD SPORTS Premium 1 (4K Ultra HD)",
+          "name": "سيرفر 1: بث مباشر AD SPORTS Premium 1 (البث الفضائي الرسمي لقنوات SSC)",
           "quality": "4K UHD",
           "type": "m3u8",
           "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
         },
         {
-          "name": "سيرفر 2: بث مباشر AD SPORTS Premium 1 (FHD 1080p الرياضي)",
+          "name": "سيرفر 2: بث مباشر AD SPORTS Premium 1 (بتعليق بلال علام)",
           "quality": "1080p FHD",
           "type": "m3u8",
-          "url": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8"
+          "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
         },
         {
-          "name": "سيرفر 3: سيرفر AS3 Sports (تورينو ضد كومو)",
+          "name": "سيرفر 3: سيرفر AD SPORTS Premium 1 فائق السرعة (تورينو ضد كومو)",
           "quality": "1080p",
           "type": "m3u8",
-          "url": "https://streamtv.as3sport.online:3394/hybrid/play.m3u8"
+          "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
         },
         {
-          "name": "سيرفر 4: سيرفر القناة الرياضية الفضائية (HD)",
+          "name": "سيرفر 4: سيرفر AD SPORTS Premium 1 المخصص للهواتف وباقات 4G",
           "quality": "720p HD",
-          "type": "m3u8",
-          "url": "https://imn-live.esite-lab.com/hls/iraqia-sports-1.m3u8"
-        },
-        {
-          "name": "سيرفر 5: سيرفر خفيف للهواتف و 4G بدون تقطيع",
-          "quality": "720p",
           "type": "m3u8",
           "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
         }
@@ -514,32 +466,26 @@
       "events": [],
       "servers": [
         {
-          "name": "سيرفر 1: بث مباشر beIN Sports HD 1 (4K Ultra HD)",
+          "name": "سيرفر 1: بث مباشر beIN Sports HD 1 (البث الفضائي الرسمي)",
+          "quality": "1080p FHD",
+          "type": "iframe",
+          "url": "https://www.youtube.com/embed/UbRvgFql45w"
+        },
+        {
+          "name": "سيرفر 2: بث مباشر beIN Sports HD 1 (بتعليق عصام الشوالي)",
           "quality": "4K UHD",
           "type": "m3u8",
           "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
         },
         {
-          "name": "سيرفر 2: بث مباشر beIN Sports HD 1 (FHD 1080p الرياضي)",
-          "quality": "1080p FHD",
-          "type": "m3u8",
-          "url": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8"
-        },
-        {
-          "name": "سيرفر 3: سيرفر AS3 Sports (ريال مدريد ضد برشلونة)",
+          "name": "سيرفر 3: سيرفر beIN Sports HD 1 الصاروخي بدون تقطيع",
           "quality": "1080p",
           "type": "m3u8",
-          "url": "https://streamtv.as3sport.online:3394/hybrid/play.m3u8"
+          "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
         },
         {
-          "name": "سيرفر 4: سيرفر القناة الرياضية الفضائية (HD)",
+          "name": "سيرفر 4: سيرفر الهواتف وشبكات 4G (ريال مدريد ضد برشلونة)",
           "quality": "720p HD",
-          "type": "m3u8",
-          "url": "https://imn-live.esite-lab.com/hls/iraqia-sports-1.m3u8"
-        },
-        {
-          "name": "سيرفر 5: سيرفر خفيف للهواتف و 4G بدون تقطيع",
-          "quality": "720p",
           "type": "m3u8",
           "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
         }
@@ -568,32 +514,26 @@
       "events": [],
       "servers": [
         {
-          "name": "سيرفر 1: بث مباشر beIN Sports HD 1 (4K Ultra HD)",
+          "name": "سيرفر 1: بث مباشر beIN Sports HD 1 (البث الفضائي الرسمي)",
+          "quality": "1080p FHD",
+          "type": "iframe",
+          "url": "https://www.youtube.com/embed/UbRvgFql45w"
+        },
+        {
+          "name": "سيرفر 2: بث مباشر beIN Sports HD 1 (بتعليق خليل البلوشي)",
           "quality": "4K UHD",
           "type": "m3u8",
           "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
         },
         {
-          "name": "سيرفر 2: بث مباشر beIN Sports HD 1 (FHD 1080p الرياضي)",
-          "quality": "1080p FHD",
-          "type": "m3u8",
-          "url": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8"
-        },
-        {
-          "name": "سيرفر 3: سيرفر AS3 Sports (أرسنال ضد ليفربول)",
+          "name": "سيرفر 3: سيرفر beIN Sports HD 1 الصاروخي بدون تقطيع",
           "quality": "1080p",
           "type": "m3u8",
-          "url": "https://streamtv.as3sport.online:3394/hybrid/play.m3u8"
+          "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
         },
         {
-          "name": "سيرفر 4: سيرفر القناة الرياضية الفضائية (HD)",
+          "name": "سيرفر 4: سيرفر الهواتف وشبكات 4G (أرسنال ضد ليفربول)",
           "quality": "720p HD",
-          "type": "m3u8",
-          "url": "https://imn-live.esite-lab.com/hls/iraqia-sports-1.m3u8"
-        },
-        {
-          "name": "سيرفر 5: سيرفر خفيف للهواتف و 4G بدون تقطيع",
-          "quality": "720p",
           "type": "m3u8",
           "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
         }
@@ -622,32 +562,20 @@
       "events": [],
       "servers": [
         {
-          "name": "سيرفر 1: بث مباشر الرياضية المغربية TNT (4K Ultra HD)",
+          "name": "سيرفر 1: بث مباشر الرياضية المغربية TNT (البث الفضائي الرسمي)",
+          "quality": "1080p FHD",
+          "type": "m3u8",
+          "url": "http://149.100.11.252:8000/play/a065/index.m3u8"
+        },
+        {
+          "name": "سيرفر 2: بث مباشر الرياضية المغربية TNT (4K Ultra HD)",
           "quality": "4K UHD",
           "type": "m3u8",
           "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
         },
         {
-          "name": "سيرفر 2: بث مباشر الرياضية المغربية TNT (FHD 1080p الرياضي)",
-          "quality": "1080p FHD",
-          "type": "m3u8",
-          "url": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8"
-        },
-        {
-          "name": "سيرفر 3: سيرفر AS3 Sports (الرجاء الرياضي ضد الوداد الرياضي)",
-          "quality": "1080p",
-          "type": "m3u8",
-          "url": "https://streamtv.as3sport.online:3394/hybrid/play.m3u8"
-        },
-        {
-          "name": "سيرفر 4: سيرفر القناة الرياضية الفضائية (HD)",
+          "name": "سيرفر 3: سيرفر الأجهزة الذكية وشبكات 4G",
           "quality": "720p HD",
-          "type": "m3u8",
-          "url": "https://imn-live.esite-lab.com/hls/iraqia-sports-1.m3u8"
-        },
-        {
-          "name": "سيرفر 5: سيرفر خفيف للهواتف و 4G بدون تقطيع",
-          "quality": "720p",
           "type": "m3u8",
           "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
         }
@@ -676,32 +604,26 @@
       "events": [],
       "servers": [
         {
-          "name": "سيرفر 1: بث مباشر beIN Sports HD 2 (4K Ultra HD)",
+          "name": "سيرفر 1: بث مباشر beIN Sports HD 2 (البث الفضائي الرسمي)",
+          "quality": "1080p FHD",
+          "type": "iframe",
+          "url": "https://www.youtube.com/embed/UbRvgFql45w"
+        },
+        {
+          "name": "سيرفر 2: بث مباشر beIN Sports HD 2 (بتعليق عامر الخوذيري)",
           "quality": "4K UHD",
           "type": "m3u8",
           "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
         },
         {
-          "name": "سيرفر 2: بث مباشر beIN Sports HD 2 (FHD 1080p الرياضي)",
-          "quality": "1080p FHD",
-          "type": "m3u8",
-          "url": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8"
-        },
-        {
-          "name": "سيرفر 3: سيرفر AS3 Sports (مانشستر سيتي ضد ساوثهامبتون)",
+          "name": "سيرفر 3: سيرفر beIN Sports HD 2 الصاروخي بدون تقطيع",
           "quality": "1080p",
           "type": "m3u8",
-          "url": "https://streamtv.as3sport.online:3394/hybrid/play.m3u8"
+          "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
         },
         {
-          "name": "سيرفر 4: سيرفر القناة الرياضية الفضائية (HD)",
+          "name": "سيرفر 4: سيرفر الهواتف وشبكات 4G (مانشستر سيتي ضد ساوثهامبتون)",
           "quality": "720p HD",
-          "type": "m3u8",
-          "url": "https://imn-live.esite-lab.com/hls/iraqia-sports-1.m3u8"
-        },
-        {
-          "name": "سيرفر 5: سيرفر خفيف للهواتف و 4G بدون تقطيع",
-          "quality": "720p",
           "type": "m3u8",
           "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
         }
@@ -745,32 +667,26 @@
       ],
       "servers": [
         {
-          "name": "سيرفر 1: بث مباشر beIN Sports HD 1 (4K Ultra HD)",
+          "name": "سيرفر 1: بث مباشر beIN Sports HD 1 (البث الفضائي الرسمي)",
+          "quality": "1080p FHD",
+          "type": "iframe",
+          "url": "https://www.youtube.com/embed/UbRvgFql45w"
+        },
+        {
+          "name": "سيرفر 2: بث مباشر beIN Sports HD 1 (بتعليق علي محمد علي)",
           "quality": "4K UHD",
           "type": "m3u8",
           "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
         },
         {
-          "name": "سيرفر 2: بث مباشر beIN Sports HD 1 (FHD 1080p الرياضي)",
-          "quality": "1080p FHD",
-          "type": "m3u8",
-          "url": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8"
-        },
-        {
-          "name": "سيرفر 3: سيرفر AS3 Sports (فنربخشة ضد مانشستر يونايتد)",
+          "name": "سيرفر 3: سيرفر beIN Sports HD 1 الصاروخي بدون تقطيع",
           "quality": "1080p",
           "type": "m3u8",
-          "url": "https://streamtv.as3sport.online:3394/hybrid/play.m3u8"
+          "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
         },
         {
-          "name": "سيرفر 4: سيرفر القناة الرياضية الفضائية (HD)",
+          "name": "سيرفر 4: سيرفر الهواتف وشبكات 4G (فنربخشة ضد مانشستر يونايتد)",
           "quality": "720p HD",
-          "type": "m3u8",
-          "url": "https://imn-live.esite-lab.com/hls/iraqia-sports-1.m3u8"
-        },
-        {
-          "name": "سيرفر 5: سيرفر خفيف للهواتف و 4G بدون تقطيع",
-          "quality": "720p",
           "type": "m3u8",
           "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
         }
@@ -807,32 +723,26 @@
       ],
       "servers": [
         {
-          "name": "سيرفر 1: بث مباشر beIN Sports HD 2 (4K Ultra HD)",
+          "name": "سيرفر 1: بث مباشر beIN Sports HD 2 (البث الفضائي الرسمي)",
+          "quality": "1080p FHD",
+          "type": "iframe",
+          "url": "https://www.youtube.com/embed/UbRvgFql45w"
+        },
+        {
+          "name": "سيرفر 2: بث مباشر beIN Sports HD 2 (بتعليق أحمد عبده)",
           "quality": "4K UHD",
           "type": "m3u8",
           "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
         },
         {
-          "name": "سيرفر 2: بث مباشر beIN Sports HD 2 (FHD 1080p الرياضي)",
-          "quality": "1080p FHD",
-          "type": "m3u8",
-          "url": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8"
-        },
-        {
-          "name": "سيرفر 3: سيرفر AS3 Sports (روما ضد دينامو كييف)",
+          "name": "سيرفر 3: سيرفر beIN Sports HD 2 الصاروخي بدون تقطيع",
           "quality": "1080p",
           "type": "m3u8",
-          "url": "https://streamtv.as3sport.online:3394/hybrid/play.m3u8"
+          "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
         },
         {
-          "name": "سيرفر 4: سيرفر القناة الرياضية الفضائية (HD)",
+          "name": "سيرفر 4: سيرفر الهواتف وشبكات 4G (روما ضد دينامو كييف)",
           "quality": "720p HD",
-          "type": "m3u8",
-          "url": "https://imn-live.esite-lab.com/hls/iraqia-sports-1.m3u8"
-        },
-        {
-          "name": "سيرفر 5: سيرفر خفيف للهواتف و 4G بدون تقطيع",
-          "quality": "720p",
           "type": "m3u8",
           "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
         }
@@ -869,32 +779,26 @@
       ],
       "servers": [
         {
-          "name": "سيرفر 1: بث مباشر beIN Sports HD 2 (4K Ultra HD)",
+          "name": "سيرفر 1: بث مباشر beIN Sports HD 2 (البث الفضائي الرسمي)",
+          "quality": "1080p FHD",
+          "type": "iframe",
+          "url": "https://www.youtube.com/embed/UbRvgFql45w"
+        },
+        {
+          "name": "سيرفر 2: بث مباشر beIN Sports HD 2 (بتعليق محمد بركات)",
           "quality": "4K UHD",
           "type": "m3u8",
           "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
         },
         {
-          "name": "سيرفر 2: بث مباشر beIN Sports HD 2 (FHD 1080p الرياضي)",
-          "quality": "1080p FHD",
-          "type": "m3u8",
-          "url": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8"
-        },
-        {
-          "name": "سيرفر 3: سيرفر AS3 Sports (توتنهام ضد إي زد ألكمار)",
+          "name": "سيرفر 3: سيرفر beIN Sports HD 2 الصاروخي بدون تقطيع",
           "quality": "1080p",
           "type": "m3u8",
-          "url": "https://streamtv.as3sport.online:3394/hybrid/play.m3u8"
+          "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
         },
         {
-          "name": "سيرفر 4: سيرفر القناة الرياضية الفضائية (HD)",
+          "name": "سيرفر 4: سيرفر الهواتف وشبكات 4G (توتنهام ضد إي زد ألكمار)",
           "quality": "720p HD",
-          "type": "m3u8",
-          "url": "https://imn-live.esite-lab.com/hls/iraqia-sports-1.m3u8"
-        },
-        {
-          "name": "سيرفر 5: سيرفر خفيف للهواتف و 4G بدون تقطيع",
-          "quality": "720p",
           "type": "m3u8",
           "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
         }
@@ -912,25 +816,19 @@
       "currentProgram": "استوديو الدوري الإنجليزي ودوري أبطال أوروبا",
       "servers": [
         {
-          "name": "سيرفر 1: بث مباشر beIN Sports 1 HD (4K UHD)",
+          "name": "سيرفر 1: البث الفضائي المباشر لقناة beIN Sports 1 HD",
+          "quality": "1080p FHD",
+          "type": "iframe",
+          "url": "https://www.youtube.com/embed/UbRvgFql45w"
+        },
+        {
+          "name": "سيرفر 2: سيرفر القناة فائق السرعة (4K UHD)",
           "quality": "4K UHD",
           "type": "m3u8",
           "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
         },
         {
-          "name": "سيرفر 2: بث حي مباشر (FHD 1080p)",
-          "quality": "1080p FHD",
-          "type": "m3u8",
-          "url": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8"
-        },
-        {
-          "name": "سيرفر 3: سيرفر القناة الفضائية الرياضية",
-          "quality": "1080p",
-          "type": "m3u8",
-          "url": "https://streamtv.as3sport.online:3394/hybrid/play.m3u8"
-        },
-        {
-          "name": "سيرفر 4: سيرفر خفيف للهواتف و 4G",
+          "name": "سيرفر 3: سيرفر الهواتف بدون تقطيع",
           "quality": "720p HD",
           "type": "m3u8",
           "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
@@ -947,25 +845,19 @@
       "currentProgram": "بث مباشر الدوري الإسباني لا ليغا",
       "servers": [
         {
-          "name": "سيرفر 1: بث مباشر beIN Sports 2 HD (4K UHD)",
+          "name": "سيرفر 1: البث الفضائي المباشر لقناة beIN Sports 2 HD",
+          "quality": "1080p FHD",
+          "type": "iframe",
+          "url": "https://www.youtube.com/embed/UbRvgFql45w"
+        },
+        {
+          "name": "سيرفر 2: سيرفر القناة فائق السرعة (4K UHD)",
           "quality": "4K UHD",
           "type": "m3u8",
           "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
         },
         {
-          "name": "سيرفر 2: بث حي مباشر (FHD 1080p)",
-          "quality": "1080p FHD",
-          "type": "m3u8",
-          "url": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8"
-        },
-        {
-          "name": "سيرفر 3: سيرفر القناة الفضائية الرياضية",
-          "quality": "1080p",
-          "type": "m3u8",
-          "url": "https://streamtv.as3sport.online:3394/hybrid/play.m3u8"
-        },
-        {
-          "name": "سيرفر 4: سيرفر خفيف للهواتف و 4G",
+          "name": "سيرفر 3: سيرفر الهواتف بدون تقطيع",
           "quality": "720p HD",
           "type": "m3u8",
           "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
@@ -982,25 +874,19 @@
       "currentProgram": "بث مباشر الدوري الإسباني والدوري الإيطالي",
       "servers": [
         {
-          "name": "سيرفر 1: بث مباشر beIN Sports 3 HD (4K UHD)",
+          "name": "سيرفر 1: البث الفضائي المباشر لقناة beIN Sports 3 HD",
+          "quality": "1080p FHD",
+          "type": "iframe",
+          "url": "https://www.youtube.com/embed/UbRvgFql45w"
+        },
+        {
+          "name": "سيرفر 2: سيرفر القناة فائق السرعة (4K UHD)",
           "quality": "4K UHD",
           "type": "m3u8",
           "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
         },
         {
-          "name": "سيرفر 2: بث حي مباشر (FHD 1080p)",
-          "quality": "1080p FHD",
-          "type": "m3u8",
-          "url": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8"
-        },
-        {
-          "name": "سيرفر 3: سيرفر القناة الفضائية الرياضية",
-          "quality": "1080p",
-          "type": "m3u8",
-          "url": "https://streamtv.as3sport.online:3394/hybrid/play.m3u8"
-        },
-        {
-          "name": "سيرفر 4: سيرفر خفيف للهواتف و 4G",
+          "name": "سيرفر 3: سيرفر الهواتف بدون تقطيع",
           "quality": "720p HD",
           "type": "m3u8",
           "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
@@ -1017,25 +903,19 @@
       "currentProgram": "استوديو دوري روشن السعودي للمحترفين",
       "servers": [
         {
-          "name": "سيرفر 1: بث مباشر SSC1 HD Sports (4K UHD)",
+          "name": "سيرفر 1: البث الفضائي المباشر لقناة SSC1 HD Sports",
           "quality": "4K UHD",
           "type": "m3u8",
           "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
         },
         {
-          "name": "سيرفر 2: بث حي مباشر (FHD 1080p)",
+          "name": "سيرفر 2: سيرفر القناة عالي السرعة (FHD 1080p)",
           "quality": "1080p FHD",
           "type": "m3u8",
-          "url": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8"
+          "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
         },
         {
-          "name": "سيرفر 3: سيرفر القناة الفضائية الرياضية",
-          "quality": "1080p",
-          "type": "m3u8",
-          "url": "https://streamtv.as3sport.online:3394/hybrid/play.m3u8"
-        },
-        {
-          "name": "سيرفر 4: سيرفر خفيف للهواتف و 4G",
+          "name": "سيرفر 3: سيرفر الهواتف بدون تقطيع",
           "quality": "720p HD",
           "type": "m3u8",
           "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
@@ -1052,25 +932,19 @@
       "currentProgram": "البطولة الاحترافية إنوي واستوديو الأحد الرياضي",
       "servers": [
         {
-          "name": "سيرفر 1: بث مباشر الرياضية المغربية Arryadia TNT (4K UHD)",
+          "name": "سيرفر 1: البث الفضائي الرسمي لقناة الرياضية Arryadia TNT",
+          "quality": "1080p FHD",
+          "type": "m3u8",
+          "url": "http://149.100.11.252:8000/play/a065/index.m3u8"
+        },
+        {
+          "name": "سيرفر 2: سيرفر القناة عالي السرعة (4K UHD)",
           "quality": "4K UHD",
           "type": "m3u8",
           "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
         },
         {
-          "name": "سيرفر 2: بث حي مباشر (FHD 1080p)",
-          "quality": "1080p FHD",
-          "type": "m3u8",
-          "url": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8"
-        },
-        {
-          "name": "سيرفر 3: سيرفر القناة الفضائية الرياضية",
-          "quality": "1080p",
-          "type": "m3u8",
-          "url": "https://streamtv.as3sport.online:3394/hybrid/play.m3u8"
-        },
-        {
-          "name": "سيرفر 4: سيرفر خفيف للهواتف و 4G",
+          "name": "سيرفر 3: سيرفر خفيف للأجهزة الذكية و 4G",
           "quality": "720p HD",
           "type": "m3u8",
           "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
