@@ -1372,9 +1372,12 @@ async function pingSearchEngines() {
 function injectDynamicSeoMeta(originalHtml, reqPath, searchParams) {
   let html = originalHtml;
   const matchId = searchParams.get("match") || (reqPath.startsWith("/match/") ? reqPath.replace("/match/", "") : null);
+  const allMatches = (cachedLiveState && cachedLiveState.matches && cachedLiveState.matches.length) 
+    ? cachedLiveState.matches 
+    : (customDb && customDb.matches ? customDb.matches : []);
 
-  if (matchId && cachedLiveState.matches) {
-    const m = cachedLiveState.matches.find((item) => item.id === matchId);
+  if (matchId && allMatches.length) {
+    const m = allMatches.find((item) => item.id === matchId);
     if (m) {
       const matchTitle = `مشاهدة مباراة ${m.homeTeam} ضد ${m.awayTeam} بث مباشر 4K | كورة 4k Koora4K`;
       const matchDesc = `بث مباشر مباراة ${m.homeTeam} و ${m.awayTeam} اليوم في ${m.league} عبر قناة ${m.channel} بصوت المعلق ${m.commentator}. شاهد المباراة بجودة 4K UHD فائقة الوضوح بدون تقطيع عبر موقع كورة 4k الرسمي Koora4K.net.`;
@@ -1465,6 +1468,99 @@ function injectDynamicSeoMeta(originalHtml, reqPath, searchParams) {
       };
       html = html.replace("</head>", `<script type="application/ld+json">${JSON.stringify(eventJsonLd)}</script>\n</head>`);
       return html;
+    }
+  }
+
+  // حقن Schema.org تلقائياً لكافة مباريات اليوم في الصفحة الرئيسية لتظهر مباريات اليوم كـ Google Rich Results
+  if ((reqPath === "/" || reqPath === "/matches-today" || reqPath === "") && allMatches.length) {
+    const todayIso = new Date().toISOString().split("T")[0];
+    const todayMatches = allMatches.filter((m) => m.day === "today").slice(0, 20);
+    if (todayMatches.length) {
+      const eventsGraph = todayMatches.map((m) => {
+        const timeGmt = (m.timeGMT || "19:00").padStart(5, "0");
+        const startTimeIso = `${todayIso}T${timeGmt}:00Z`;
+        const startMs = new Date(startTimeIso).getTime();
+        const endTimeIso = new Date(startMs + 2 * 60 * 60 * 1000).toISOString();
+        const matchUrl = `https://koora4k.net/?match=${encodeURIComponent(m.id)}`;
+        const matchImage = m.homeLogo || m.awayLogo || "https://koora4k.net/assets/logo.svg";
+
+        return {
+          "@type": "SportsEvent",
+          "name": `مشاهدة مباراة ${m.homeTeam} ضد ${m.awayTeam} بث مباشر`,
+          "description": `بث مباشر مباراة ${m.homeTeam} و ${m.awayTeam} اليوم في ${m.league} عبر قناة ${m.channel} بتعليق ${m.commentator} بجودة 4K بدون تقطيع على موقع كورة 4k الرسمي Koora4K.net.`,
+          "startDate": startTimeIso,
+          "endDate": endTimeIso,
+          "eventStatus": m.status === "live" ? "https://schema.org/EventScheduled" : m.status === "finished" ? "https://schema.org/EventCompleted" : "https://schema.org/EventScheduled",
+          "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+          "image": [
+            matchImage,
+            m.homeLogo || "https://koora4k.net/assets/logo.svg",
+            m.awayLogo || "https://koora4k.net/assets/logo.svg"
+          ],
+          "location": {
+            "@type": "Place",
+            "name": m.stadium || "ملعب المباراة",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": m.league || "الدوري",
+              "addressCountry": "Global"
+            }
+          },
+          "homeTeam": {
+            "@type": "SportsTeam",
+            "name": m.homeTeam,
+            "logo": m.homeLogo || "https://koora4k.net/assets/logo.svg"
+          },
+          "awayTeam": {
+            "@type": "SportsTeam",
+            "name": m.awayTeam,
+            "logo": m.awayLogo || "https://koora4k.net/assets/logo.svg"
+          },
+          "performer": [
+            {
+              "@type": "SportsTeam",
+              "name": m.homeTeam,
+              "logo": m.homeLogo || "https://koora4k.net/assets/logo.svg"
+            },
+            {
+              "@type": "SportsTeam",
+              "name": m.awayTeam,
+              "logo": m.awayLogo || "https://koora4k.net/assets/logo.svg"
+            }
+          ],
+          "organizer": {
+            "@type": "Organization",
+            "name": "كورة 4k - Koora4K",
+            "url": "https://koora4k.net"
+          },
+          "offers": {
+            "@type": "Offer",
+            "url": matchUrl,
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+            "validFrom": startTimeIso
+          },
+          "workFeatured": {
+            "@type": "BroadcastEvent",
+            "name": `بث مباشر مباراة ${m.homeTeam} ضد ${m.awayTeam} - Koora4K`,
+            "isLiveBroadcast": m.status === "live",
+            "videoFormat": "4K UHD / 1080p FHD",
+            "startDate": startTimeIso,
+            "endDate": endTimeIso
+          }
+        };
+      });
+
+      const fullSchemaJson = JSON.stringify({
+        "@context": "https://schema.org",
+        "@graph": eventsGraph
+      });
+
+      html = html.replace(
+        '<script id="dynamicMatchesSchema" type="application/ld+json"></script>',
+        `<script id="dynamicMatchesSchema" type="application/ld+json">${fullSchemaJson}</script>`
+      );
     }
   }
 
