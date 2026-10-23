@@ -92,9 +92,20 @@ function updateRadarSyncCounter() {
 }
 
 function loadAppData() {
+  // تنظيف فوري لأي نسخ قديمة مخزنة في متصفح الزائر
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved) {
+      const parsed = JSON.parse(saved);
+      if (parsed && parsed.matches && parsed.matches.some(m => m.id === "m1" && m.day === "today")) {
+        localStorage.removeItem(STORAGE_KEY);
+      }
+    }
+  } catch (_) {}
+
   appData = JSON.parse(JSON.stringify(window.DEFAULT_KOORA_DATA));
 
-  // استرجاع التعديلات اليدوية للمدير فقط (الإعدادات والمباريات اليدوية) دون تجميد البيانات اليومية
+  // استرجاع التعديلات اليدوية للمدير فقط دون تجميد المباريات القديمة
   const saved = localStorage.getItem(STORAGE_KEY);
   if (saved) {
     try {
@@ -176,8 +187,15 @@ async function syncLiveMatchesFromKooraHD(forceRefresh = false) {
     if (res.ok) {
       const syncData = await res.json();
       if (syncData && syncData.matches && syncData.matches.length > 0) {
-        const manualMatches = (appData.matches || []).filter((m) => String(m.id).startsWith("m_"));
-        appData.matches = [...manualMatches, ...syncData.matches];
+        const seenIds = new Set();
+        const mergedMatches = [];
+        for (const m of syncData.matches) {
+          if (!seenIds.has(m.id)) {
+            seenIds.add(m.id);
+            mergedMatches.push(m);
+          }
+        }
+        appData.matches = mergedMatches;
 
         if (syncData.highlights && syncData.highlights.length > 0) {
           const manualHl = (appData.highlights || []).filter(
