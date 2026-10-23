@@ -1540,7 +1540,8 @@ const server = http.createServer(async (req, res) => {
         "",
         "Sitemap: https://koora4k.net/sitemap.xml",
         "Sitemap: https://koora4k.net/news-sitemap.xml",
-        "Sitemap: https://koora4k.net/video-sitemap.xml"
+        "Sitemap: https://koora4k.net/video-sitemap.xml",
+        "Sitemap: https://koora4k.net/rss.xml"
       ].join("\n")
     );
   }
@@ -1650,6 +1651,41 @@ ${videoUrls}
 
     res.writeHead(200, { "Content-Type": "application/xml; charset=utf-8" });
     return res.end(xml);
+  }
+
+  // خلاصة الأخبار المتوافقة مع قارئ أخبار جوجل ومراكز النشر (Google Publisher Center & RSS Feed 2.0)
+  if ((parsedUrl.pathname === "/rss.xml" || parsedUrl.pathname === "/feed.xml") && req.method === "GET") {
+    const todayRfc822 = new Date().toUTCString();
+    const newsItems = (cachedLiveState.news || []).slice(0, 30);
+    const rssItems = newsItems
+      .map(
+        (n) => `    <item>
+      <title><![CDATA[${n.title}]]></title>
+      <link>https://koora4k.net/news?item=${encodeURIComponent(n.id)}</link>
+      <guid isPermaLink="false">${n.id}</guid>
+      <pubDate>${todayRfc822}</pubDate>
+      <description><![CDATA[${n.summary || n.title}]]></description>
+      <category><![CDATA[${n.category || "رياضة كرة القدم"}]]></category>
+      ${n.image ? `<enclosure url="${n.image}" type="image/jpeg" />` : ""}
+    </item>`
+      )
+      .join("\n");
+
+    const rssXml = `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>كورة فور كي - Koora4K | أخبار وبث مباشر مباريات اليوم</title>
+    <link>https://koora4k.net/</link>
+    <description>تغطية شاملة لجميع مباريات وأخبار كرة القدم العالمية والعربية بث مباشر بجودة 4K</description>
+    <language>ar</language>
+    <lastBuildDate>${todayRfc822}</lastBuildDate>
+    <atom:link href="https://koora4k.net/rss.xml" rel="self" type="application/rss+xml" />
+${rssItems}
+  </channel>
+</rss>`;
+
+    res.writeHead(200, { "Content-Type": "application/rss+xml; charset=utf-8" });
+    return res.end(rssXml);
   }
 
   // معالجة المسارات والصفحات مع الحقن التلقائي المسبق لبيانات الـ SEO (SSR Dynamic Meta)
