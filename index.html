@@ -271,9 +271,14 @@
       <div class="video-stage-wrapper" id="videoStageWrapper">
         <div class="video-stage" id="videoStage">
           <!-- HTML5 HLS Video -->
-          <video id="hlsVideoPlayer" controls playsinline poster="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1400&q=80"></video>
-          <!-- Iframe Embed Player (Sandboxed to block popups/redirects automatically) -->
-          <iframe id="iframePlayer" class="hidden" sandbox="allow-scripts allow-same-origin allow-forms" allowfullscreen allow="autoplay; fullscreen; encrypted-media"></iframe>
+          <video id="hlsVideoPlayer" controls playsinline muted poster="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1400&q=80"></video>
+          <!-- Iframe Embed Player -->
+          <iframe id="iframePlayer" class="hidden" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+          <!-- Floating Unmute Audio Callout Button -->
+          <button id="playerUnmuteBtn" class="player-unmute-floating-btn" onclick="togglePlayerAudio(event)">
+            <i class="fa-solid fa-volume-high" id="unmuteIcon"></i>
+            <span id="unmuteText">اضغط هنا لتفعيل الصوت 🔊</span>
+          </button>
           <!-- Custom Watermark -->
           <div class="stream-watermark">
             <span class="wm-dot"></span> LIVE 4K | <span id="wmSiteName">Koora4K.net</span>

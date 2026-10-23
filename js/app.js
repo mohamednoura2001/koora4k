@@ -1805,6 +1805,23 @@ function autoFailoverToNextServer(reason = "انقطاع البث") {
   selectStreamServer(nextIdx, true);
 }
 
+function togglePlayerAudio(e) {
+  if (e) e.stopPropagation();
+  const videoEl = document.getElementById("hlsVideoPlayer");
+  const btn = document.getElementById("playerUnmuteBtn");
+  if (!videoEl) return;
+
+  if (videoEl.muted) {
+    videoEl.muted = false;
+    if (btn) btn.classList.add("hidden");
+    showToast("🔊 تم تشغيل الصوت بنجاح");
+  } else {
+    videoEl.muted = true;
+    if (btn) btn.classList.remove("hidden");
+    showToast("🔇 تم كتم الصوت");
+  }
+}
+
 function loadStreamServer(srv, index = 0, isFailover = false) {
   stopVideoPlayers();
   clearTimeout(failoverWatchdogTimer);
@@ -1813,118 +1830,138 @@ function loadStreamServer(srv, index = 0, isFailover = false) {
   const videoEl = document.getElementById("hlsVideoPlayer");
   const iframeEl = document.getElementById("iframePlayer");
   const qualityBadge = document.getElementById("activeServerQualityBadge");
+  const unmuteBtn = document.getElementById("playerUnmuteBtn");
   if (qualityBadge) qualityBadge.textContent = srv.quality || "FHD 1080p";
 
-  // دائماً نفضل مشغل HLS الداخلي النظيف بدون إعلانات وبدون روابط ميتة
-  if (srv.type === "iframe" && srv.url && (srv.url.includes("youtube.com") || srv.url.includes("scorebat.com"))) {
-    videoEl.classList.add("hidden");
-    iframeEl.classList.remove("hidden");
-    iframeEl.setAttribute("allow", "autoplay; fullscreen; encrypted-media; picture-in-picture");
-    iframeEl.setAttribute("allowfullscreen", "true");
-    iframeEl.removeAttribute("sandbox");
-    iframeEl.src = srv.url;
-    failoverWatchdogTimer = setTimeout(() => { markServerSuccess(index); }, 6000);
+  // إذا كان السيرفر عبارة عن مشغل فيديو أو إطار خارجي معتمد (YouTube / Embed)
+  if (srv.type === "iframe" || (srv.url && srv.url.includes("youtube.com"))) {
+    if (videoEl) videoEl.classList.add("hidden");
+    if (unmuteBtn) unmuteBtn.classList.add("hidden");
+    if (iframeEl) {
+      iframeEl.classList.remove("hidden");
+      iframeEl.removeAttribute("sandbox");
+      iframeEl.setAttribute("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share");
+      iframeEl.setAttribute("allowfullscreen", "true");
+      iframeEl.src = srv.url;
+    }
+    failoverWatchdogTimer = setTimeout(() => { markServerSuccess(index); }, 4000);
     return;
   }
 
-  // الوضع الافتراضي والأقوى: مشغل HLS الداخلي المباشر
+  // الوضع الافتراضي: مشغل HLS الداخلي النظيف
   if (iframeEl) {
     iframeEl.classList.add("hidden");
     iframeEl.src = "";
   }
-  videoEl.classList.remove("hidden");
+  if (videoEl) {
+    videoEl.classList.remove("hidden");
+    // المكتوم إجبارياً للالتزام بسياسة المتصفحات وتفادي حظر التشغيل التلقائي
+    videoEl.muted = true;
+    if (unmuteBtn) {
+      unmuteBtn.classList.remove("hidden");
+    }
 
-  // 1. مراقبة أخطاء الفيديو الأصلي
-  videoEl.onerror = (e) => {
-    console.warn("Native video error event on server", index, e);
-    autoFailoverToNextServer("انقطاع مسار الفيديو");
-  };
+    // 1. مراقبة أخطاء الفيديو الأصلي
+    videoEl.onerror = (e) => {
+      console.warn("Native video error event on server", index);
+      autoFailoverToNextServer("انقطاع مسار الفيديو");
+    };
 
-  // 2. مراقبة التوقف أو التعليق (Stall / Buffering Watchdog)
-  videoEl.onwaiting = () => {
-    clearTimeout(stallWatchdogTimer);
-    stallWatchdogTimer = setTimeout(() => {
-      console.warn("Video waiting/stalled for >4.5s on server", index);
-      autoFailoverToNextServer("توقف البث والانتظار لأكثر من 4 ثوانٍ");
-    }, 4500);
-  };
+    // 2. مراقبة التوقف أو التعليق (Stall / Buffering Watchdog)
+    videoEl.onwaiting = () => {
+      clearTimeout(stallWatchdogTimer);
+      stallWatchdogTimer = setTimeout(() => {
+        console.warn("Video waiting/stalled for >6s on server", index);
+        autoFailoverToNextServer("توقف تدفق البث لأكثر من 6 ثوانٍ");
+      }, 6000);
+    };
 
-  videoEl.onstalled = () => {
-    clearTimeout(stallWatchdogTimer);
-    stallWatchdogTimer = setTimeout(() => {
-      console.warn("Video stalled event on server", index);
-      autoFailoverToNextServer("توقف تدفق بيانات السيرفر");
-    }, 4500);
-  };
+    videoEl.onstalled = () => {
+      clearTimeout(stallWatchdogTimer);
+      stallWatchdogTimer = setTimeout(() => {
+        console.warn("Video stalled event on server", index);
+        autoFailoverToNextServer("توقف تدفق بيانات السيرفر");
+      }, 6000);
+    };
 
-  // 3. تأكيد نجاح التشغيل وإلغاء مؤقتات الطوارئ فور بدء البث
-  videoEl.onplaying = () => {
-    clearTimeout(failoverWatchdogTimer);
-    clearTimeout(stallWatchdogTimer);
-    markServerSuccess(index);
-  };
-
-  videoEl.ontimeupdate = () => {
-    clearTimeout(failoverWatchdogTimer);
-    clearTimeout(stallWatchdogTimer);
-    if (videoEl.currentTime > 0.4) {
+    // 3. تأكيد نجاح التشغيل وإلغاء مؤقتات الطوارئ فور بدء البث
+    videoEl.onplaying = () => {
+      clearTimeout(failoverWatchdogTimer);
+      clearTimeout(stallWatchdogTimer);
       markServerSuccess(index);
-    }
-  };
+    };
 
-  // 4. مؤقت أمان: إذا لم يبدأ الفيديو خلال 5.5 ثانية ينتقل تلقائياً للسيرفر التالي
-  failoverWatchdogTimer = setTimeout(() => {
-    if (videoEl.currentTime === 0 && !videoEl.ended) {
-      console.warn("Initial playback timeout (>5.5s) on server", index);
-      autoFailoverToNextServer("تأخر استجابة السيرفر عن 5 ثوانٍ");
-    }
-  }, 5500);
-
-  // تشغيل عبر HLS.js
-  if (window.Hls && Hls.isSupported()) {
-    hlsInstance = new Hls({
-      maxBufferLength: 30,
-      maxMaxBufferLength: 60,
-      manifestLoadingTimeOut: 5000,
-      manifestLoadingMaxRetry: 1,
-      levelLoadingTimeOut: 5000,
-      levelLoadingMaxRetry: 1,
-      fragLoadingTimeOut: 6000,
-      fragLoadingMaxRetry: 2
-    });
-
-    hlsInstance.loadSource(srv.url);
-    hlsInstance.attachMedia(videoEl);
-
-    hlsInstance.on(Hls.Events.MANIFEST_PARSED, () => {
-      videoEl.play().catch(() => {});
-    });
-
-    // رصد أخطاء HLS وتغيير السيرفر فورياً
-    hlsInstance.on(Hls.Events.ERROR, (event, data) => {
-      if (data) {
-        if (data.fatal) {
-          console.warn("Fatal HLS error encountered:", data.type, data.details);
-          switch (data.type) {
-            case Hls.ErrorTypes.NETWORK_ERROR:
-              autoFailoverToNextServer("انقطاع شبكة السيرفر");
-              break;
-            case Hls.ErrorTypes.MEDIA_ERROR:
-              hlsInstance.recoverMediaError();
-              break;
-            default:
-              autoFailoverToNextServer("توقف بث السيرفر");
-              break;
-          }
-        } else if (data.type === Hls.ErrorTypes.NETWORK_ERROR && data.response && data.response.code >= 400) {
-          autoFailoverToNextServer(`تعذر الاتصال بالسيرفر (HTTP ${data.response.code})`);
-        }
+    videoEl.ontimeupdate = () => {
+      clearTimeout(failoverWatchdogTimer);
+      clearTimeout(stallWatchdogTimer);
+      if (videoEl.currentTime > 0.3) {
+        markServerSuccess(index);
       }
-    });
-  } else {
-    // Safari / iOS Native HLS
-    videoEl.src = srv.url;
-    videoEl.play().catch(() => {});
+    };
+
+    // 4. مؤقت أمان ذكي: لا ينتقل للسيرفر التالي إلا إذا كان هناك عطب حقيقي في جلب البيانات
+    failoverWatchdogTimer = setTimeout(() => {
+      if (hlsInstance && hlsInstance.levels && hlsInstance.levels.length > 0) {
+        // البث شغال والبيانات جاهزة!
+        markServerSuccess(index);
+        return;
+      }
+      if (videoEl.readyState >= 2 || videoEl.currentTime > 0) {
+        markServerSuccess(index);
+        return;
+      }
+      console.warn("Server connection timeout (>8s) on server", index);
+      autoFailoverToNextServer("تأخر استجابة السيرفر عن 8 ثوانٍ");
+    }, 8000);
+
+    // تشغيل عبر HLS.js
+    if (window.Hls && Hls.isSupported()) {
+      hlsInstance = new Hls({
+        maxBufferLength: 30,
+        maxMaxBufferLength: 60,
+        manifestLoadingTimeOut: 6000,
+        manifestLoadingMaxRetry: 1,
+        levelLoadingTimeOut: 6000,
+        levelLoadingMaxRetry: 1,
+        fragLoadingTimeOut: 8000,
+        fragLoadingMaxRetry: 2
+      });
+
+      hlsInstance.loadSource(srv.url);
+      hlsInstance.attachMedia(videoEl);
+
+      hlsInstance.on(Hls.Events.MANIFEST_PARSED, () => {
+        videoEl.play().catch(err => {
+          console.warn("Muted play blocked, waiting for tap", err);
+        });
+      });
+
+      // رصد أخطاء HLS وتغيير السيرفر فورياً
+      hlsInstance.on(Hls.Events.ERROR, (event, data) => {
+        if (data) {
+          if (data.fatal) {
+            console.warn("Fatal HLS error encountered:", data.type, data.details);
+            switch (data.type) {
+              case Hls.ErrorTypes.NETWORK_ERROR:
+                autoFailoverToNextServer("انقطاع شبكة السيرفر");
+                break;
+              case Hls.ErrorTypes.MEDIA_ERROR:
+                hlsInstance.recoverMediaError();
+                break;
+              default:
+                autoFailoverToNextServer("توقف بث السيرفر");
+                break;
+            }
+          } else if (data.type === Hls.ErrorTypes.NETWORK_ERROR && data.response && data.response.code >= 400) {
+            autoFailoverToNextServer(`تعذر الاتصال بالسيرفر (HTTP ${data.response.code})`);
+          }
+        }
+      });
+    } else {
+      // Safari / iOS Native HLS
+      videoEl.src = srv.url;
+      videoEl.play().catch(() => {});
+    }
   }
 }
 
