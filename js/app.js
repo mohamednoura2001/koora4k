@@ -1678,18 +1678,142 @@ function selectStreamServer(index, isFailover = false) {
   loadStreamServer(srv, index, isFailover);
 }
 
+// ==================== SELF-HEALING AUTO-FAILOVER VIDEO ENGINE ====================
+let failoverWatchdogTimer = null;
+let stallWatchdogTimer = null;
+let lastFailoverTime = 0;
+let serverFailuresMap = {};
+
+const EMERGENCY_SPORTS_SERVERS = [
+  {
+    name: "⚡ سيرفر الطوارئ الفوري (Akamai Sports)",
+    quality: "1080p",
+    type: "m3u8",
+    url: "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
+  },
+  {
+    name: "⚡ سيرفر الطوارئ 2 (Red Bull TV Sports)",
+    quality: "1080p",
+    type: "m3u8",
+    url: "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8"
+  },
+  {
+    name: "⚡ سيرفر البث التلفزيوني البديل",
+    quality: "720p",
+    type: "iframe",
+    url: "https://www.youtube.com/embed/live_stream?channel=UCfdv_q4kX88z_3N_n4WbY_g"
+  }
+];
+
+function showPlayerFailoverToast(reason, targetServerName) {
+  const stage = document.getElementById("videoStage");
+  if (!stage) return;
+  const existing = document.getElementById("playerFailoverToast");
+  if (existing) existing.remove();
+
+  const toast = document.createElement("div");
+  toast.id = "playerFailoverToast";
+  toast.className = "player-failover-toast";
+  toast.innerHTML = `
+    <div style="display:flex; align-items:center; gap:8px;">
+      <i class="fa-solid fa-arrows-rotate spinner-icon"></i>
+      <span>⚡ تم رصد توقف البث (${reason}) — جاري التبديل التلقائي إلى: <strong style="color:#34d399;">${targetServerName}</strong></span>
+    </div>
+  `;
+  stage.appendChild(toast);
+
+  setTimeout(() => {
+    if (toast.parentNode) toast.remove();
+  }, 4500);
+}
+
+function renderServerTabs(servers) {
+  const container = document.getElementById("serverTabsContainer");
+  if (!container) return;
+  container.innerHTML = servers
+    .map(
+      (srv, idx) => `
+      <button class="server-tab-btn ${idx === (activePlayContext?.serverIndex || 0) ? "active" : ""}" id="srvBtn_${idx}" onclick="selectStreamServer(${idx})" title="سيرفر ${srv.name}">
+        <span class="srv-status-dot"></span>
+        <span>${srv.name}</span>
+        <span class="srv-q">${srv.quality || "HD"}</span>
+      </button>
+    `
+    )
+    .join("");
+}
+
+function selectStreamServer(index, isFailover = false) {
+  if (!activePlayContext || !activePlayContext.item) return;
+  const item = activePlayContext.item;
+  const servers = item.servers || [];
+  const srv = servers[index];
+  if (!srv) return;
+
+  activePlayContext.serverIndex = index;
+  document.querySelectorAll(".server-tab-btn").forEach((b, i) => {
+    b.classList.toggle("active", i === index);
+  });
+  loadStreamServer(srv, index, isFailover);
+}
+
+function markServerSuccess(index) {
+  const btn = document.getElementById(`srvBtn_${index}`);
+  if (btn) {
+    btn.classList.remove("server-failed");
+    btn.classList.add("server-live");
+  }
+}
+
+function markServerFailed(index) {
+  const btn = document.getElementById(`srvBtn_${index}`);
+  if (btn) {
+    btn.classList.add("server-failed");
+    btn.classList.remove("server-live");
+  }
+}
+
+function autoFailoverToNextServer(reason = "انقطاع البث") {
+  const now = Date.now();
+  if (now - lastFailoverTime < 2000) return; // منع التكرار العشوائي خلال ثانيتين
+  lastFailoverTime = now;
+
+  if (!activePlayContext || !activePlayContext.item) return;
+  const servers = activePlayContext.item.servers || [];
+  if (servers.length === 0) return;
+
+  const currentIdx = activePlayContext.serverIndex || 0;
+  markServerFailed(currentIdx);
+
+  let nextIdx = (currentIdx + 1) % servers.length;
+
+  // إذا تم تجربة كافة السيرفرات وكلها بها مشاكل، نضيف سيرفرات الطوارئ العالمية تلقائياً
+  if (nextIdx === 0 && servers.length <= 4) {
+    console.warn("All match servers cycled. Injecting emergency fallback servers...");
+    EMERGENCY_SPORTS_SERVERS.forEach((es) => {
+      if (!servers.some((s) => s.url === es.url)) {
+        servers.push(es);
+      }
+    });
+    renderServerTabs(servers);
+    nextIdx = currentIdx + 1;
+  }
+
+  const targetServer = servers[nextIdx] || servers[0];
+  console.log(`⚡ Auto-failover triggered (${reason}). Moving from server ${currentIdx} to ${nextIdx}: ${targetServer.name}`);
+  showPlayerFailoverToast(reason, targetServer.name);
+  selectStreamServer(nextIdx, true);
+}
+
 function loadStreamServer(srv, index = 0, isFailover = false) {
   stopVideoPlayers();
   clearTimeout(failoverWatchdogTimer);
+  clearTimeout(stallWatchdogTimer);
 
   const videoEl = document.getElementById("hlsVideoPlayer");
   const iframeEl = document.getElementById("iframePlayer");
   const qualityBadge = document.getElementById("activeServerQualityBadge");
   if (qualityBadge) qualityBadge.textContent = srv.quality || "FHD 1080p";
-
-  if (isFailover) {
-    showToast(`⚡ تم التبديل التلقائي الذكي إلى: ${srv.name}`);
-  }
 
   if (srv.type === "iframe") {
     videoEl.classList.add("hidden");
@@ -1701,35 +1825,79 @@ function loadStreamServer(srv, index = 0, isFailover = false) {
       iframeEl.setAttribute("sandbox", "allow-scripts allow-same-origin allow-forms");
     }
 
-    // تعقب أخطاء تحميل السيرفر لتفعيل التبديل التلقائي
     iframeEl.onerror = () => {
-      console.warn("Iframe load error on server", index);
-      autoFailoverToNextServer("تعذر تحميل السيرفر الحالي");
+      console.warn("Iframe server load error on server", index);
+      autoFailoverToNextServer("تعذر استجابة المشغل");
     };
 
     iframeEl.src = srv.url;
 
-    // مؤقت ذكي لمراقبة استجابة السيرفر
+    // مراقبة استقرار الإطار
     failoverWatchdogTimer = setTimeout(() => {
-      // السيرفر شغال ومستقر
-    }, 12000);
+      markServerSuccess(index);
+    }, 6000);
   } else {
     iframeEl.classList.add("hidden");
     videoEl.classList.remove("hidden");
 
-    // مراقبة أخطاء الفيديو الأصلي للتبديل الفوري
-    videoEl.onerror = () => {
-      console.warn("Native video error on server", index);
-      autoFailoverToNextServer("انقطاع في استجابة رابط البث");
+    // 1. مراقبة أخطاء الفيديو الأصلي
+    videoEl.onerror = (e) => {
+      console.warn("Native video error event on server", index, e);
+      autoFailoverToNextServer("انقطاع مسار الفيديو");
     };
 
-    if (srv.url.endsWith(".m3u8") && window.Hls && Hls.isSupported()) {
+    // 2. مراقبة التوقف أو التعليق (Stall / Buffering Watchdog)
+    videoEl.onwaiting = () => {
+      clearTimeout(stallWatchdogTimer);
+      stallWatchdogTimer = setTimeout(() => {
+        console.warn("Video waiting/stalled for >5.5s on server", index);
+        autoFailoverToNextServer("توقف البث والانتظار لأكثر من 5 ثوانٍ");
+      }, 5500);
+    };
+
+    videoEl.onstalled = () => {
+      clearTimeout(stallWatchdogTimer);
+      stallWatchdogTimer = setTimeout(() => {
+        console.warn("Video stalled event on server", index);
+        autoFailoverToNextServer("توقف تدفق بيانات السيرفر");
+      }, 5500);
+    };
+
+    // 3. تأكيد نجاح التشغيل وإلغاء مؤقتات الطوارئ فور بدء البث
+    videoEl.onplaying = () => {
+      clearTimeout(failoverWatchdogTimer);
+      clearTimeout(stallWatchdogTimer);
+      markServerSuccess(index);
+    };
+
+    videoEl.ontimeupdate = () => {
+      clearTimeout(failoverWatchdogTimer);
+      clearTimeout(stallWatchdogTimer);
+      if (videoEl.currentTime > 0.5) {
+        markServerSuccess(index);
+      }
+    };
+
+    // 4. مؤقت أمان: إذا لم يبدأ الفيديو خلال 7.5 ثانية ينتقل تلقائياً للسيرفر التالي
+    failoverWatchdogTimer = setTimeout(() => {
+      if (videoEl.currentTime === 0 && !videoEl.ended) {
+        console.warn("Initial playback timeout (>7.5s) on server", index);
+        autoFailoverToNextServer("تأخر استجابة السيرفر عن 7 ثوانٍ");
+      }
+    }, 7500);
+
+    const isM3U8 = srv.type === "m3u8" || (srv.url && srv.url.includes(".m3u8"));
+
+    if (isM3U8 && window.Hls && Hls.isSupported()) {
       hlsInstance = new Hls({
         maxBufferLength: 30,
         maxMaxBufferLength: 60,
-        manifestLoadingTimeOut: 7000,
-        manifestLoadingMaxRetry: 2,
-        levelLoadingTimeOut: 7000
+        manifestLoadingTimeOut: 6000,
+        manifestLoadingMaxRetry: 1,
+        levelLoadingTimeOut: 6000,
+        levelLoadingMaxRetry: 1,
+        fragLoadingTimeOut: 8000,
+        fragLoadingMaxRetry: 2
       });
 
       hlsInstance.loadSource(srv.url);
@@ -1739,21 +1907,24 @@ function loadStreamServer(srv, index = 0, isFailover = false) {
         videoEl.play().catch(() => {});
       });
 
-      // التقاط أي انقطاع أو خطأ قاتل في HLS والتبديل فوراً
+      // رصد أخطاء HLS القاتلة وتغيير السيرفر فورياً
       hlsInstance.on(Hls.Events.ERROR, (event, data) => {
-        if (data && data.fatal) {
-          console.warn("Fatal HLS error encountered:", data.type);
-          switch (data.type) {
-            case Hls.ErrorTypes.NETWORK_ERROR:
-              hlsInstance.startLoad();
-              autoFailoverToNextServer("بطء أو انقطاع شبكة السيرفر");
-              break;
-            case Hls.ErrorTypes.MEDIA_ERROR:
-              hlsInstance.recoverMediaError();
-              break;
-            default:
-              autoFailoverToNextServer("توقف بث السيرفر الرئيسي");
-              break;
+        if (data) {
+          if (data.fatal) {
+            console.warn("Fatal HLS error encountered:", data.type, data.details);
+            switch (data.type) {
+              case Hls.ErrorTypes.NETWORK_ERROR:
+                autoFailoverToNextServer("انقطاع شبكة السيرفر (Network Error)");
+                break;
+              case Hls.ErrorTypes.MEDIA_ERROR:
+                hlsInstance.recoverMediaError();
+                break;
+              default:
+                autoFailoverToNextServer("توقف بث السيرفر (Fatal)");
+                break;
+            }
+          } else if (data.type === Hls.ErrorTypes.NETWORK_ERROR && data.response && data.response.code >= 400) {
+            autoFailoverToNextServer(`تعذر الاتصال بالسيرفر (HTTP ${data.response.code})`);
           }
         }
       });
@@ -1764,33 +1935,9 @@ function loadStreamServer(srv, index = 0, isFailover = false) {
   }
 }
 
-// ==================== SELF-HEALING AUTO-FAILOVER ENGINE ====================
-function autoFailoverToNextServer(reason = "انقطاع البث") {
-  const now = Date.now();
-  if (now - lastFailoverTime < 3500) return; // منع التبديل المتكرر العشوائي
-  lastFailoverTime = now;
-
-  if (!activePlayContext || !activePlayContext.item) return;
-  const servers = activePlayContext.item.servers || [];
-  if (servers.length <= 1) {
-    showToast("🔄 جاري تحديث وفحص روابط البث من المصدر تلقائياً...");
-    triggerLiveSyncNow();
-    return;
-  }
-
-  const currentIdx = activePlayContext.serverIndex || 0;
-  const failedBtn = document.getElementById(`srvBtn_${currentIdx}`);
-  if (failedBtn) {
-    failedBtn.classList.add("server-failed");
-  }
-
-  const nextIdx = (currentIdx + 1) % servers.length;
-  console.log(`Auto-failover triggered (${reason}). Moving from server ${currentIdx} to ${nextIdx}`);
-  selectStreamServer(nextIdx, true);
-}
-
 function stopVideoPlayers() {
   clearTimeout(failoverWatchdogTimer);
+  clearTimeout(stallWatchdogTimer);
   if (hlsInstance) {
     hlsInstance.destroy();
     hlsInstance = null;
@@ -1799,9 +1946,15 @@ function stopVideoPlayers() {
   const iframeEl = document.getElementById("iframePlayer");
   if (videoEl) {
     videoEl.pause();
+    videoEl.onwaiting = null;
+    videoEl.onstalled = null;
+    videoEl.onplaying = null;
+    videoEl.ontimeupdate = null;
+    videoEl.onerror = null;
     videoEl.removeAttribute("src");
   }
   if (iframeEl) {
+    iframeEl.onerror = null;
     iframeEl.src = "";
   }
 }

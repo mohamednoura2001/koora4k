@@ -56,19 +56,31 @@
           "name": "سيرفر 1 الرئيسي (4K UHD)",
           "quality": "4K",
           "type": "m3u8",
-          "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+          "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
         },
         {
-          "name": "سيرفر 2 مباشر (FHD 1080p)",
+          "name": "سيرفر 2 مباشر (FHD 1080p - متعدد الجودات)",
           "quality": "1080p",
           "type": "m3u8",
-          "url": "https://assets.afcdn.com/video49/20210722/v_645516.m3u8"
+          "url": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8"
         },
         {
           "name": "سيرفر 3 للإنترنت الضعيف (HD 720p)",
           "quality": "720p",
           "type": "m3u8",
           "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+        },
+        {
+          "name": "سيرفر 4 مباشر (قناة احتياطية)",
+          "quality": "1080p",
+          "type": "m3u8",
+          "url": "https://static.france24.com/live/F24_AR_HI_HLS/live_tv.m3u8"
+        },
+        {
+          "name": "سيرفر 5 التلفزيوني (YouTube Live HD)",
+          "quality": "720p",
+          "type": "iframe",
+          "url": "https://www.youtube.com/embed/live_stream?channel=UCfdv_q4kX88z_3N_n4WbY_g"
         }
       ]
     },
@@ -95,10 +107,34 @@
       "events": [],
       "servers": [
         {
-          "name": "سيرفر 1 (FHD 1080p)",
+          "name": "سيرفر 1 الرئيسي (4K UHD)",
+          "quality": "4K",
+          "type": "m3u8",
+          "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
+        },
+        {
+          "name": "سيرفر 2 مباشر (FHD 1080p - متعدد الجودات)",
           "quality": "1080p",
           "type": "m3u8",
+          "url": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8"
+        },
+        {
+          "name": "سيرفر 3 للإنترنت الضعيف (HD 720p)",
+          "quality": "720p",
+          "type": "m3u8",
           "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+        },
+        {
+          "name": "سيرفر 4 مباشر (قناة احتياطية)",
+          "quality": "1080p",
+          "type": "m3u8",
+          "url": "https://static.france24.com/live/F24_AR_HI_HLS/live_tv.m3u8"
+        },
+        {
+          "name": "سيرفر 5 التلفزيوني (YouTube Live HD)",
+          "quality": "720p",
+          "type": "iframe",
+          "url": "https://www.youtube.com/embed/live_stream?channel=UCfdv_q4kX88z_3N_n4WbY_g"
         }
       ]
     },
@@ -125,10 +161,34 @@
       "events": [],
       "servers": [
         {
-          "name": "سيرفر 1 (FHD 1080p)",
+          "name": "سيرفر 1 الرئيسي (4K UHD)",
+          "quality": "4K",
+          "type": "m3u8",
+          "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
+        },
+        {
+          "name": "سيرفر 2 مباشر (FHD 1080p - متعدد الجودات)",
           "quality": "1080p",
           "type": "m3u8",
+          "url": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8"
+        },
+        {
+          "name": "سيرفر 3 للإنترنت الضعيف (HD 720p)",
+          "quality": "720p",
+          "type": "m3u8",
           "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+        },
+        {
+          "name": "سيرفر 4 مباشر (قناة احتياطية)",
+          "quality": "1080p",
+          "type": "m3u8",
+          "url": "https://static.france24.com/live/F24_AR_HI_HLS/live_tv.m3u8"
+        },
+        {
+          "name": "سيرفر 5 التلفزيوني (YouTube Live HD)",
+          "quality": "720p",
+          "type": "iframe",
+          "url": "https://www.youtube.com/embed/live_stream?channel=UCfdv_q4kX88z_3N_n4WbY_g"
         }
       ]
     },
@@ -163,10 +223,34 @@
       ],
       "servers": [
         {
-          "name": "سيرفر 1 (FHD 1080p)",
+          "name": "سيرفر 1 الرئيسي (4K UHD)",
+          "quality": "4K",
+          "type": "m3u8",
+          "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
+        },
+        {
+          "name": "سيرفر 2 مباشر (FHD 1080p - متعدد الجودات)",
           "quality": "1080p",
           "type": "m3u8",
+          "url": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8"
+        },
+        {
+          "name": "سيرفر 3 للإنترنت الضعيف (HD 720p)",
+          "quality": "720p",
+          "type": "m3u8",
           "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+        },
+        {
+          "name": "سيرفر 4 مباشر (قناة احتياطية)",
+          "quality": "1080p",
+          "type": "m3u8",
+          "url": "https://static.france24.com/live/F24_AR_HI_HLS/live_tv.m3u8"
+        },
+        {
+          "name": "سيرفر 5 التلفزيوني (YouTube Live HD)",
+          "quality": "720p",
+          "type": "iframe",
+          "url": "https://www.youtube.com/embed/live_stream?channel=UCfdv_q4kX88z_3N_n4WbY_g"
         }
       ]
     },
@@ -214,10 +298,34 @@
       ],
       "servers": [
         {
-          "name": "سيرفر 1 (HD 720p)",
+          "name": "سيرفر 1 الرئيسي (4K UHD)",
+          "quality": "4K",
+          "type": "m3u8",
+          "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
+        },
+        {
+          "name": "سيرفر 2 مباشر (FHD 1080p - متعدد الجودات)",
+          "quality": "1080p",
+          "type": "m3u8",
+          "url": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8"
+        },
+        {
+          "name": "سيرفر 3 للإنترنت الضعيف (HD 720p)",
           "quality": "720p",
           "type": "m3u8",
           "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+        },
+        {
+          "name": "سيرفر 4 مباشر (قناة احتياطية)",
+          "quality": "1080p",
+          "type": "m3u8",
+          "url": "https://static.france24.com/live/F24_AR_HI_HLS/live_tv.m3u8"
+        },
+        {
+          "name": "سيرفر 5 التلفزيوني (YouTube Live HD)",
+          "quality": "720p",
+          "type": "iframe",
+          "url": "https://www.youtube.com/embed/live_stream?channel=UCfdv_q4kX88z_3N_n4WbY_g"
         }
       ]
     },
@@ -244,10 +352,34 @@
       "events": [],
       "servers": [
         {
-          "name": "سيرفر 1 (FHD 1080p)",
+          "name": "سيرفر 1 الرئيسي (4K UHD)",
+          "quality": "4K",
+          "type": "m3u8",
+          "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
+        },
+        {
+          "name": "سيرفر 2 مباشر (FHD 1080p - متعدد الجودات)",
           "quality": "1080p",
           "type": "m3u8",
+          "url": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8"
+        },
+        {
+          "name": "سيرفر 3 للإنترنت الضعيف (HD 720p)",
+          "quality": "720p",
+          "type": "m3u8",
           "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+        },
+        {
+          "name": "سيرفر 4 مباشر (قناة احتياطية)",
+          "quality": "1080p",
+          "type": "m3u8",
+          "url": "https://static.france24.com/live/F24_AR_HI_HLS/live_tv.m3u8"
+        },
+        {
+          "name": "سيرفر 5 التلفزيوني (YouTube Live HD)",
+          "quality": "720p",
+          "type": "iframe",
+          "url": "https://www.youtube.com/embed/live_stream?channel=UCfdv_q4kX88z_3N_n4WbY_g"
         }
       ]
     },
@@ -274,10 +406,34 @@
       "events": [],
       "servers": [
         {
-          "name": "سيرفر 1 (FHD 1080p)",
+          "name": "سيرفر 1 الرئيسي (4K UHD)",
+          "quality": "4K",
+          "type": "m3u8",
+          "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
+        },
+        {
+          "name": "سيرفر 2 مباشر (FHD 1080p - متعدد الجودات)",
           "quality": "1080p",
           "type": "m3u8",
+          "url": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8"
+        },
+        {
+          "name": "سيرفر 3 للإنترنت الضعيف (HD 720p)",
+          "quality": "720p",
+          "type": "m3u8",
           "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+        },
+        {
+          "name": "سيرفر 4 مباشر (قناة احتياطية)",
+          "quality": "1080p",
+          "type": "m3u8",
+          "url": "https://static.france24.com/live/F24_AR_HI_HLS/live_tv.m3u8"
+        },
+        {
+          "name": "سيرفر 5 التلفزيوني (YouTube Live HD)",
+          "quality": "720p",
+          "type": "iframe",
+          "url": "https://www.youtube.com/embed/live_stream?channel=UCfdv_q4kX88z_3N_n4WbY_g"
         }
       ]
     },
@@ -304,10 +460,34 @@
       "events": [],
       "servers": [
         {
-          "name": "سيرفر 1 (FHD 1080p)",
+          "name": "سيرفر 1 الرئيسي (4K UHD)",
+          "quality": "4K",
+          "type": "m3u8",
+          "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
+        },
+        {
+          "name": "سيرفر 2 مباشر (FHD 1080p - متعدد الجودات)",
           "quality": "1080p",
           "type": "m3u8",
+          "url": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8"
+        },
+        {
+          "name": "سيرفر 3 للإنترنت الضعيف (HD 720p)",
+          "quality": "720p",
+          "type": "m3u8",
           "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+        },
+        {
+          "name": "سيرفر 4 مباشر (قناة احتياطية)",
+          "quality": "1080p",
+          "type": "m3u8",
+          "url": "https://static.france24.com/live/F24_AR_HI_HLS/live_tv.m3u8"
+        },
+        {
+          "name": "سيرفر 5 التلفزيوني (YouTube Live HD)",
+          "quality": "720p",
+          "type": "iframe",
+          "url": "https://www.youtube.com/embed/live_stream?channel=UCfdv_q4kX88z_3N_n4WbY_g"
         }
       ]
     },
@@ -337,7 +517,31 @@
           "name": "سيرفر 1 الرئيسي (4K UHD)",
           "quality": "4K",
           "type": "m3u8",
+          "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
+        },
+        {
+          "name": "سيرفر 2 مباشر (FHD 1080p - متعدد الجودات)",
+          "quality": "1080p",
+          "type": "m3u8",
+          "url": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8"
+        },
+        {
+          "name": "سيرفر 3 للإنترنت الضعيف (HD 720p)",
+          "quality": "720p",
+          "type": "m3u8",
           "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+        },
+        {
+          "name": "سيرفر 4 مباشر (قناة احتياطية)",
+          "quality": "1080p",
+          "type": "m3u8",
+          "url": "https://static.france24.com/live/F24_AR_HI_HLS/live_tv.m3u8"
+        },
+        {
+          "name": "سيرفر 5 التلفزيوني (YouTube Live HD)",
+          "quality": "720p",
+          "type": "iframe",
+          "url": "https://www.youtube.com/embed/live_stream?channel=UCfdv_q4kX88z_3N_n4WbY_g"
         }
       ]
     },
@@ -364,10 +568,34 @@
       "events": [],
       "servers": [
         {
-          "name": "سيرفر 1 (FHD 1080p)",
+          "name": "سيرفر 1 الرئيسي (4K UHD)",
+          "quality": "4K",
+          "type": "m3u8",
+          "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
+        },
+        {
+          "name": "سيرفر 2 مباشر (FHD 1080p - متعدد الجودات)",
           "quality": "1080p",
           "type": "m3u8",
+          "url": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8"
+        },
+        {
+          "name": "سيرفر 3 للإنترنت الضعيف (HD 720p)",
+          "quality": "720p",
+          "type": "m3u8",
           "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+        },
+        {
+          "name": "سيرفر 4 مباشر (قناة احتياطية)",
+          "quality": "1080p",
+          "type": "m3u8",
+          "url": "https://static.france24.com/live/F24_AR_HI_HLS/live_tv.m3u8"
+        },
+        {
+          "name": "سيرفر 5 التلفزيوني (YouTube Live HD)",
+          "quality": "720p",
+          "type": "iframe",
+          "url": "https://www.youtube.com/embed/live_stream?channel=UCfdv_q4kX88z_3N_n4WbY_g"
         }
       ]
     },
@@ -394,10 +622,34 @@
       "events": [],
       "servers": [
         {
-          "name": "سيرفر 1 (FHD 1080p)",
+          "name": "سيرفر 1 الرئيسي (4K UHD)",
+          "quality": "4K",
+          "type": "m3u8",
+          "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
+        },
+        {
+          "name": "سيرفر 2 مباشر (FHD 1080p - متعدد الجودات)",
           "quality": "1080p",
           "type": "m3u8",
+          "url": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8"
+        },
+        {
+          "name": "سيرفر 3 للإنترنت الضعيف (HD 720p)",
+          "quality": "720p",
+          "type": "m3u8",
           "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+        },
+        {
+          "name": "سيرفر 4 مباشر (قناة احتياطية)",
+          "quality": "1080p",
+          "type": "m3u8",
+          "url": "https://static.france24.com/live/F24_AR_HI_HLS/live_tv.m3u8"
+        },
+        {
+          "name": "سيرفر 5 التلفزيوني (YouTube Live HD)",
+          "quality": "720p",
+          "type": "iframe",
+          "url": "https://www.youtube.com/embed/live_stream?channel=UCfdv_q4kX88z_3N_n4WbY_g"
         }
       ]
     },
@@ -424,10 +676,34 @@
       "events": [],
       "servers": [
         {
-          "name": "سيرفر 1 (HD 720p)",
+          "name": "سيرفر 1 الرئيسي (4K UHD)",
+          "quality": "4K",
+          "type": "m3u8",
+          "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
+        },
+        {
+          "name": "سيرفر 2 مباشر (FHD 1080p - متعدد الجودات)",
+          "quality": "1080p",
+          "type": "m3u8",
+          "url": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8"
+        },
+        {
+          "name": "سيرفر 3 للإنترنت الضعيف (HD 720p)",
           "quality": "720p",
           "type": "m3u8",
           "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+        },
+        {
+          "name": "سيرفر 4 مباشر (قناة احتياطية)",
+          "quality": "1080p",
+          "type": "m3u8",
+          "url": "https://static.france24.com/live/F24_AR_HI_HLS/live_tv.m3u8"
+        },
+        {
+          "name": "سيرفر 5 التلفزيوني (YouTube Live HD)",
+          "quality": "720p",
+          "type": "iframe",
+          "url": "https://www.youtube.com/embed/live_stream?channel=UCfdv_q4kX88z_3N_n4WbY_g"
         }
       ]
     },
@@ -469,10 +745,34 @@
       ],
       "servers": [
         {
-          "name": "ملخص المباراة HD",
+          "name": "سيرفر 1 الرئيسي (4K UHD)",
+          "quality": "4K",
+          "type": "m3u8",
+          "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
+        },
+        {
+          "name": "سيرفر 2 مباشر (FHD 1080p - متعدد الجودات)",
           "quality": "1080p",
           "type": "m3u8",
+          "url": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8"
+        },
+        {
+          "name": "سيرفر 3 للإنترنت الضعيف (HD 720p)",
+          "quality": "720p",
+          "type": "m3u8",
           "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+        },
+        {
+          "name": "سيرفر 4 مباشر (قناة احتياطية)",
+          "quality": "1080p",
+          "type": "m3u8",
+          "url": "https://static.france24.com/live/F24_AR_HI_HLS/live_tv.m3u8"
+        },
+        {
+          "name": "سيرفر 5 التلفزيوني (YouTube Live HD)",
+          "quality": "720p",
+          "type": "iframe",
+          "url": "https://www.youtube.com/embed/live_stream?channel=UCfdv_q4kX88z_3N_n4WbY_g"
         }
       ]
     },
@@ -507,10 +807,34 @@
       ],
       "servers": [
         {
-          "name": "أهداف المباراة HD",
+          "name": "سيرفر 1 الرئيسي (4K UHD)",
+          "quality": "4K",
+          "type": "m3u8",
+          "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
+        },
+        {
+          "name": "سيرفر 2 مباشر (FHD 1080p - متعدد الجودات)",
+          "quality": "1080p",
+          "type": "m3u8",
+          "url": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8"
+        },
+        {
+          "name": "سيرفر 3 للإنترنت الضعيف (HD 720p)",
           "quality": "720p",
           "type": "m3u8",
           "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+        },
+        {
+          "name": "سيرفر 4 مباشر (قناة احتياطية)",
+          "quality": "1080p",
+          "type": "m3u8",
+          "url": "https://static.france24.com/live/F24_AR_HI_HLS/live_tv.m3u8"
+        },
+        {
+          "name": "سيرفر 5 التلفزيوني (YouTube Live HD)",
+          "quality": "720p",
+          "type": "iframe",
+          "url": "https://www.youtube.com/embed/live_stream?channel=UCfdv_q4kX88z_3N_n4WbY_g"
         }
       ]
     },
@@ -545,10 +869,34 @@
       ],
       "servers": [
         {
-          "name": "ملخص اللقاء HD",
+          "name": "سيرفر 1 الرئيسي (4K UHD)",
+          "quality": "4K",
+          "type": "m3u8",
+          "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
+        },
+        {
+          "name": "سيرفر 2 مباشر (FHD 1080p - متعدد الجودات)",
+          "quality": "1080p",
+          "type": "m3u8",
+          "url": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8"
+        },
+        {
+          "name": "سيرفر 3 للإنترنت الضعيف (HD 720p)",
           "quality": "720p",
           "type": "m3u8",
           "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+        },
+        {
+          "name": "سيرفر 4 مباشر (قناة احتياطية)",
+          "quality": "1080p",
+          "type": "m3u8",
+          "url": "https://static.france24.com/live/F24_AR_HI_HLS/live_tv.m3u8"
+        },
+        {
+          "name": "سيرفر 5 التلفزيوني (YouTube Live HD)",
+          "quality": "720p",
+          "type": "iframe",
+          "url": "https://www.youtube.com/embed/live_stream?channel=UCfdv_q4kX88z_3N_n4WbY_g"
         }
       ]
     }
@@ -564,16 +912,28 @@
       "currentProgram": "استوديو دوري أبطال أوروبا",
       "servers": [
         {
-          "name": "سيرفر 1 (FHD 1080p)",
+          "name": "سيرفر القناة الرئيسي (FHD 1080p)",
           "quality": "1080p",
+          "type": "m3u8",
+          "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
+        },
+        {
+          "name": "سيرفر البث الرياضي الحي (Red Bull TV Sports)",
+          "quality": "1080p",
+          "type": "m3u8",
+          "url": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8"
+        },
+        {
+          "name": "سيرفر الجودة المتوسطة (HD 720p)",
+          "quality": "720p",
           "type": "m3u8",
           "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
         },
         {
-          "name": "سيرفر 2 احتياطي (HD 720p)",
+          "name": "سيرفر البث التلفزيوني (YouTube Live)",
           "quality": "720p",
-          "type": "m3u8",
-          "url": "https://assets.afcdn.com/video49/20210722/v_645516.m3u8"
+          "type": "iframe",
+          "url": "https://www.youtube.com/embed/live_stream?channel=UCfdv_q4kX88z_3N_n4WbY_g"
         }
       ]
     },
@@ -587,10 +947,28 @@
       "currentProgram": "الدوري الإنجليزي الممتاز",
       "servers": [
         {
-          "name": "سيرفر 1 (FHD 1080p)",
+          "name": "سيرفر القناة الرئيسي (FHD 1080p)",
           "quality": "1080p",
           "type": "m3u8",
+          "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
+        },
+        {
+          "name": "سيرفر البث الرياضي الحي (Red Bull TV Sports)",
+          "quality": "1080p",
+          "type": "m3u8",
+          "url": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8"
+        },
+        {
+          "name": "سيرفر الجودة المتوسطة (HD 720p)",
+          "quality": "720p",
+          "type": "m3u8",
           "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+        },
+        {
+          "name": "سيرفر البث التلفزيوني (YouTube Live)",
+          "quality": "720p",
+          "type": "iframe",
+          "url": "https://www.youtube.com/embed/live_stream?channel=UCfdv_q4kX88z_3N_n4WbY_g"
         }
       ]
     },
@@ -604,10 +982,28 @@
       "currentProgram": "البطولة المغربية الاحترافية Inwi",
       "servers": [
         {
-          "name": "سيرفر الرياضية الرسمي",
+          "name": "سيرفر القناة الرئيسي (FHD 1080p)",
           "quality": "1080p",
           "type": "m3u8",
+          "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
+        },
+        {
+          "name": "سيرفر البث الرياضي الحي (Red Bull TV Sports)",
+          "quality": "1080p",
+          "type": "m3u8",
+          "url": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8"
+        },
+        {
+          "name": "سيرفر الجودة المتوسطة (HD 720p)",
+          "quality": "720p",
+          "type": "m3u8",
           "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+        },
+        {
+          "name": "سيرفر البث التلفزيوني (YouTube Live)",
+          "quality": "720p",
+          "type": "iframe",
+          "url": "https://www.youtube.com/embed/live_stream?channel=UCfdv_q4kX88z_3N_n4WbY_g"
         }
       ]
     },
@@ -621,10 +1017,28 @@
       "currentProgram": "دوري روشن السعودي",
       "servers": [
         {
-          "name": "سيرفر SSC الرئيسي",
+          "name": "سيرفر القناة الرئيسي (FHD 1080p)",
           "quality": "1080p",
           "type": "m3u8",
+          "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
+        },
+        {
+          "name": "سيرفر البث الرياضي الحي (Red Bull TV Sports)",
+          "quality": "1080p",
+          "type": "m3u8",
+          "url": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8"
+        },
+        {
+          "name": "سيرفر الجودة المتوسطة (HD 720p)",
+          "quality": "720p",
+          "type": "m3u8",
           "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+        },
+        {
+          "name": "سيرفر البث التلفزيوني (YouTube Live)",
+          "quality": "720p",
+          "type": "iframe",
+          "url": "https://www.youtube.com/embed/live_stream?channel=UCfdv_q4kX88z_3N_n4WbY_g"
         }
       ]
     },
@@ -638,10 +1052,28 @@
       "currentProgram": "الدوري الإسباني LaLiga",
       "servers": [
         {
-          "name": "سيرفر 1 (HD)",
+          "name": "سيرفر القناة الرئيسي (FHD 1080p)",
           "quality": "1080p",
           "type": "m3u8",
+          "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
+        },
+        {
+          "name": "سيرفر البث الرياضي الحي (Red Bull TV Sports)",
+          "quality": "1080p",
+          "type": "m3u8",
+          "url": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8"
+        },
+        {
+          "name": "سيرفر الجودة المتوسطة (HD 720p)",
+          "quality": "720p",
+          "type": "m3u8",
           "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+        },
+        {
+          "name": "سيرفر البث التلفزيوني (YouTube Live)",
+          "quality": "720p",
+          "type": "iframe",
+          "url": "https://www.youtube.com/embed/live_stream?channel=UCfdv_q4kX88z_3N_n4WbY_g"
         }
       ]
     },
@@ -655,10 +1087,28 @@
       "currentProgram": "الدوري الإيطالي والاستوديو التحليلي",
       "servers": [
         {
-          "name": "سيرفر 1 (HD)",
+          "name": "سيرفر القناة الرئيسي (FHD 1080p)",
           "quality": "1080p",
           "type": "m3u8",
+          "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
+        },
+        {
+          "name": "سيرفر البث الرياضي الحي (Red Bull TV Sports)",
+          "quality": "1080p",
+          "type": "m3u8",
+          "url": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8"
+        },
+        {
+          "name": "سيرفر الجودة المتوسطة (HD 720p)",
+          "quality": "720p",
+          "type": "m3u8",
           "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+        },
+        {
+          "name": "سيرفر البث التلفزيوني (YouTube Live)",
+          "quality": "720p",
+          "type": "iframe",
+          "url": "https://www.youtube.com/embed/live_stream?channel=UCfdv_q4kX88z_3N_n4WbY_g"
         }
       ]
     }
