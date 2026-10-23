@@ -1815,122 +1815,116 @@ function loadStreamServer(srv, index = 0, isFailover = false) {
   const qualityBadge = document.getElementById("activeServerQualityBadge");
   if (qualityBadge) qualityBadge.textContent = srv.quality || "FHD 1080p";
 
-  if (srv.type === "iframe") {
+  // دائماً نفضل مشغل HLS الداخلي النظيف بدون إعلانات وبدون روابط ميتة
+  if (srv.type === "iframe" && srv.url && (srv.url.includes("youtube.com") || srv.url.includes("scorebat.com"))) {
     videoEl.classList.add("hidden");
     iframeEl.classList.remove("hidden");
-
-    // إعطاء أذونات كاملة لمشغلات بث المباريات (كورة لايف، يلا شوت، وغيرها)
     iframeEl.setAttribute("allow", "autoplay; fullscreen; encrypted-media; picture-in-picture");
     iframeEl.setAttribute("allowfullscreen", "true");
     iframeEl.removeAttribute("sandbox");
-
-    iframeEl.onerror = () => {
-      console.warn("Iframe server load error on server", index);
-      autoFailoverToNextServer("تعذر استجابة المشغل");
-    };
-
     iframeEl.src = srv.url;
+    failoverWatchdogTimer = setTimeout(() => { markServerSuccess(index); }, 6000);
+    return;
+  }
 
-    // مراقبة استقرار الإطار
-    failoverWatchdogTimer = setTimeout(() => {
-      markServerSuccess(index);
-    }, 6000);
-  } else {
+  // الوضع الافتراضي والأقوى: مشغل HLS الداخلي المباشر
+  if (iframeEl) {
     iframeEl.classList.add("hidden");
-    videoEl.classList.remove("hidden");
+    iframeEl.src = "";
+  }
+  videoEl.classList.remove("hidden");
 
-    // 1. مراقبة أخطاء الفيديو الأصلي
-    videoEl.onerror = (e) => {
-      console.warn("Native video error event on server", index, e);
-      autoFailoverToNextServer("انقطاع مسار الفيديو");
-    };
+  // 1. مراقبة أخطاء الفيديو الأصلي
+  videoEl.onerror = (e) => {
+    console.warn("Native video error event on server", index, e);
+    autoFailoverToNextServer("انقطاع مسار الفيديو");
+  };
 
-    // 2. مراقبة التوقف أو التعليق (Stall / Buffering Watchdog)
-    videoEl.onwaiting = () => {
-      clearTimeout(stallWatchdogTimer);
-      stallWatchdogTimer = setTimeout(() => {
-        console.warn("Video waiting/stalled for >5.5s on server", index);
-        autoFailoverToNextServer("توقف البث والانتظار لأكثر من 5 ثوانٍ");
-      }, 5500);
-    };
+  // 2. مراقبة التوقف أو التعليق (Stall / Buffering Watchdog)
+  videoEl.onwaiting = () => {
+    clearTimeout(stallWatchdogTimer);
+    stallWatchdogTimer = setTimeout(() => {
+      console.warn("Video waiting/stalled for >4.5s on server", index);
+      autoFailoverToNextServer("توقف البث والانتظار لأكثر من 4 ثوانٍ");
+    }, 4500);
+  };
 
-    videoEl.onstalled = () => {
-      clearTimeout(stallWatchdogTimer);
-      stallWatchdogTimer = setTimeout(() => {
-        console.warn("Video stalled event on server", index);
-        autoFailoverToNextServer("توقف تدفق بيانات السيرفر");
-      }, 5500);
-    };
+  videoEl.onstalled = () => {
+    clearTimeout(stallWatchdogTimer);
+    stallWatchdogTimer = setTimeout(() => {
+      console.warn("Video stalled event on server", index);
+      autoFailoverToNextServer("توقف تدفق بيانات السيرفر");
+    }, 4500);
+  };
 
-    // 3. تأكيد نجاح التشغيل وإلغاء مؤقتات الطوارئ فور بدء البث
-    videoEl.onplaying = () => {
-      clearTimeout(failoverWatchdogTimer);
-      clearTimeout(stallWatchdogTimer);
+  // 3. تأكيد نجاح التشغيل وإلغاء مؤقتات الطوارئ فور بدء البث
+  videoEl.onplaying = () => {
+    clearTimeout(failoverWatchdogTimer);
+    clearTimeout(stallWatchdogTimer);
+    markServerSuccess(index);
+  };
+
+  videoEl.ontimeupdate = () => {
+    clearTimeout(failoverWatchdogTimer);
+    clearTimeout(stallWatchdogTimer);
+    if (videoEl.currentTime > 0.4) {
       markServerSuccess(index);
-    };
-
-    videoEl.ontimeupdate = () => {
-      clearTimeout(failoverWatchdogTimer);
-      clearTimeout(stallWatchdogTimer);
-      if (videoEl.currentTime > 0.5) {
-        markServerSuccess(index);
-      }
-    };
-
-    // 4. مؤقت أمان: إذا لم يبدأ الفيديو خلال 7.5 ثانية ينتقل تلقائياً للسيرفر التالي
-    failoverWatchdogTimer = setTimeout(() => {
-      if (videoEl.currentTime === 0 && !videoEl.ended) {
-        console.warn("Initial playback timeout (>7.5s) on server", index);
-        autoFailoverToNextServer("تأخر استجابة السيرفر عن 7 ثوانٍ");
-      }
-    }, 7500);
-
-    const isM3U8 = srv.type === "m3u8" || (srv.url && srv.url.includes(".m3u8"));
-
-    if (isM3U8 && window.Hls && Hls.isSupported()) {
-      hlsInstance = new Hls({
-        maxBufferLength: 30,
-        maxMaxBufferLength: 60,
-        manifestLoadingTimeOut: 6000,
-        manifestLoadingMaxRetry: 1,
-        levelLoadingTimeOut: 6000,
-        levelLoadingMaxRetry: 1,
-        fragLoadingTimeOut: 8000,
-        fragLoadingMaxRetry: 2
-      });
-
-      hlsInstance.loadSource(srv.url);
-      hlsInstance.attachMedia(videoEl);
-
-      hlsInstance.on(Hls.Events.MANIFEST_PARSED, () => {
-        videoEl.play().catch(() => {});
-      });
-
-      // رصد أخطاء HLS القاتلة وتغيير السيرفر فورياً
-      hlsInstance.on(Hls.Events.ERROR, (event, data) => {
-        if (data) {
-          if (data.fatal) {
-            console.warn("Fatal HLS error encountered:", data.type, data.details);
-            switch (data.type) {
-              case Hls.ErrorTypes.NETWORK_ERROR:
-                autoFailoverToNextServer("انقطاع شبكة السيرفر (Network Error)");
-                break;
-              case Hls.ErrorTypes.MEDIA_ERROR:
-                hlsInstance.recoverMediaError();
-                break;
-              default:
-                autoFailoverToNextServer("توقف بث السيرفر (Fatal)");
-                break;
-            }
-          } else if (data.type === Hls.ErrorTypes.NETWORK_ERROR && data.response && data.response.code >= 400) {
-            autoFailoverToNextServer(`تعذر الاتصال بالسيرفر (HTTP ${data.response.code})`);
-          }
-        }
-      });
-    } else {
-      videoEl.src = srv.url;
-      videoEl.play().catch(() => {});
     }
+  };
+
+  // 4. مؤقت أمان: إذا لم يبدأ الفيديو خلال 5.5 ثانية ينتقل تلقائياً للسيرفر التالي
+  failoverWatchdogTimer = setTimeout(() => {
+    if (videoEl.currentTime === 0 && !videoEl.ended) {
+      console.warn("Initial playback timeout (>5.5s) on server", index);
+      autoFailoverToNextServer("تأخر استجابة السيرفر عن 5 ثوانٍ");
+    }
+  }, 5500);
+
+  // تشغيل عبر HLS.js
+  if (window.Hls && Hls.isSupported()) {
+    hlsInstance = new Hls({
+      maxBufferLength: 30,
+      maxMaxBufferLength: 60,
+      manifestLoadingTimeOut: 5000,
+      manifestLoadingMaxRetry: 1,
+      levelLoadingTimeOut: 5000,
+      levelLoadingMaxRetry: 1,
+      fragLoadingTimeOut: 6000,
+      fragLoadingMaxRetry: 2
+    });
+
+    hlsInstance.loadSource(srv.url);
+    hlsInstance.attachMedia(videoEl);
+
+    hlsInstance.on(Hls.Events.MANIFEST_PARSED, () => {
+      videoEl.play().catch(() => {});
+    });
+
+    // رصد أخطاء HLS وتغيير السيرفر فورياً
+    hlsInstance.on(Hls.Events.ERROR, (event, data) => {
+      if (data) {
+        if (data.fatal) {
+          console.warn("Fatal HLS error encountered:", data.type, data.details);
+          switch (data.type) {
+            case Hls.ErrorTypes.NETWORK_ERROR:
+              autoFailoverToNextServer("انقطاع شبكة السيرفر");
+              break;
+            case Hls.ErrorTypes.MEDIA_ERROR:
+              hlsInstance.recoverMediaError();
+              break;
+            default:
+              autoFailoverToNextServer("توقف بث السيرفر");
+              break;
+          }
+        } else if (data.type === Hls.ErrorTypes.NETWORK_ERROR && data.response && data.response.code >= 400) {
+          autoFailoverToNextServer(`تعذر الاتصال بالسيرفر (HTTP ${data.response.code})`);
+        }
+      }
+    });
+  } else {
+    // Safari / iOS Native HLS
+    videoEl.src = srv.url;
+    videoEl.play().catch(() => {});
   }
 }
 
