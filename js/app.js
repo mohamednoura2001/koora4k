@@ -1479,6 +1479,10 @@ function openMatchPlayer(matchId) {
       ${statsHtml}
     </div>
   `;
+
+  // تفعيل استطلاع التوقعات وشات المشجعين المباشر للقاء
+  renderMatchPredictionPoll(match);
+  initLiveFanChat(match);
 }
 
 function openChannelPlayer(channelId) {
@@ -2376,4 +2380,269 @@ function showToast(msg) {
   window.__toastTimer = setTimeout(() => {
     toast.classList.add("hidden");
   }, 3200);
+}
+
+// ==================== 1. WHATSAPP SHARE GENERATOR ====================
+function shareCurrentMatchWhatsApp() {
+  const match = activePlayContext && activePlayContext.item ? activePlayContext.item : null;
+  const matchUrl = match ? "https://koora4k.net/?match=" + encodeURIComponent(match.id) : "https://koora4k.net/";
+  const matchTitle = match ? match.homeTeam + " 🆚 " + match.awayTeam : "مباريات اليوم";
+  const league = match && match.league ? "[" + match.league + "]" : "";
+  const channel = match && match.channel ? "عبر " + match.channel : "";
+  const text = "⚽ شاهد الآن بث مباشر لمباراة: *" + matchTitle + "* " + league + " " + channel + "\n📺 بجودة عالية 4K فائقة الوضوح وبدون تقطيع حصرياً عبر كورة فور كي:\n🔗 " + matchUrl;
+  const waUrl = "https://api.whatsapp.com/send?text=" + encodeURIComponent(text);
+  window.open(waUrl, "_blank");
+}
+
+// ==================== 2. NOTIFICATION BELL & PERMISSIONS ====================
+function requestMatchNotifications() {
+  if (!("Notification" in window)) {
+    showToast("⚠️ المتصفح الخاص بك لا يدعم الإشعارات المباشرة");
+    return;
+  }
+  if (Notification.permission === "granted") {
+    showToast("🔔 إشعارات المباريات والأهداف مفعلة لديك مسبقاً!");
+    try {
+      new Notification("كورة فور كي – Koora4K", {
+        body: "أنت مشترك في الإشعارات الفورية! ستصلك تنبيهات انطلاق المباريات والأهداف الحية.",
+        icon: "/assets/logo-emblem.jpg"
+      });
+    } catch (_) {}
+    return;
+  }
+  Notification.requestPermission().then((permission) => {
+    if (permission === "granted") {
+      showToast("🎉 تم تفعيل إشعارات المباريات والأهداف بنجاح!");
+      try {
+        new Notification("كورة فور كي – Koora4K", {
+          body: "مرحباً بك! تم تفعيل إشعاراتك لمتابعة أهم مباريات اليوم لحظة بلحظة.",
+          icon: "/assets/logo-emblem.jpg"
+        });
+      } catch (_) {}
+      const bell = document.getElementById("btnNotifBell");
+      if (bell) bell.style.color = "#10b981";
+    } else {
+      showToast("❌ تم رفض إذن الإشعارات، يمكنك تفعيلها من إعدادات المتصفح");
+    }
+  });
+}
+
+// ==================== 3. PWA INSTALL PROMPT & BANNER ====================
+let deferredPwaPrompt = null;
+window.addEventListener("beforeinstallprompt", (e) => {
+  e.preventDefault();
+  deferredPwaPrompt = e;
+  const isDismissed = localStorage.getItem("koora4k_pwa_dismissed");
+  if (!isDismissed) {
+    setTimeout(() => {
+      const banner = document.getElementById("pwaInstallBanner");
+      if (banner) banner.classList.remove("hidden");
+    }, 2800);
+  }
+});
+
+function triggerPwaInstall() {
+  if (!deferredPwaPrompt) {
+    showToast("📲 يمكنك تثبيت التطبيق مباشرة بالضغط على خيارات المتصفح (⋮) ثم 'إضافة إلى الشاشة الرئيسية'");
+    return;
+  }
+  deferredPwaPrompt.prompt();
+  deferredPwaPrompt.userChoice.then((choice) => {
+    if (choice.outcome === "accepted") {
+      showToast("🎉 شكراً لك! تم تثبيت تطبيق كورة فور كي على هاتفك بنجاح");
+      dismissPwaBanner();
+    }
+    deferredPwaPrompt = null;
+  });
+}
+
+function dismissPwaBanner() {
+  const banner = document.getElementById("pwaInstallBanner");
+  if (banner) banner.classList.add("hidden");
+  localStorage.setItem("koora4k_pwa_dismissed", Date.now());
+}
+
+// ==================== 4. MATCH PREDICTION POLL ====================
+function renderMatchPredictionPoll(match) {
+  const container = document.getElementById("pollOptionsGrid");
+  const totalVotesEl = document.getElementById("pollTotalVotes");
+  if (!container || !match) return;
+
+  const storageKey = "koora4k_poll_" + match.id;
+  let pollData = null;
+  try {
+    pollData = JSON.parse(localStorage.getItem(storageKey));
+  } catch (_) {}
+
+  if (!pollData) {
+    const baseHome = 45 + (Math.abs(match.id.charCodeAt(0) || 5) % 25);
+    const baseDraw = 15 + (Math.abs(match.id.charCodeAt(1) || 2) % 12);
+    const baseAway = 100 - baseHome - baseDraw;
+    const totalV = 2300 + (Math.abs(match.id.charCodeAt(0) || 1) * 35);
+    pollData = {
+      homeVotes: Math.round((baseHome / 100) * totalV),
+      drawVotes: Math.round((baseDraw / 100) * totalV),
+      awayVotes: Math.round((baseAway / 100) * totalV),
+      userChoice: null
+    };
+    localStorage.setItem(storageKey, JSON.stringify(pollData));
+  }
+
+  const total = pollData.homeVotes + pollData.drawVotes + pollData.awayVotes || 1;
+  const hPct = Math.round((pollData.homeVotes / total) * 100);
+  const dPct = Math.round((pollData.drawVotes / total) * 100);
+  const aPct = 100 - hPct - dPct;
+
+  if (totalVotesEl) {
+    totalVotesEl.textContent = "📊 " + total.toLocaleString("ar-EG") + " صوت";
+  }
+
+  const userVoted = pollData.userChoice;
+
+  container.innerHTML = `
+    <button class="poll-option-btn ${userVoted === 'home' ? 'voted' : ''}" onclick="handleVotePrediction('${match.id}', 'home')">
+      <div class="poll-fill-bar" style="width: ${hPct}%"></div>
+      <span class="poll-label-text">فوز ${match.homeTeam} ${userVoted === 'home' ? '✓ (صوتك)' : ''}</span>
+      <span class="poll-percent-text">${hPct}%</span>
+    </button>
+    <button class="poll-option-btn ${userVoted === 'draw' ? 'voted' : ''}" onclick="handleVotePrediction('${match.id}', 'draw')">
+      <div class="poll-fill-bar" style="width: ${dPct}%"></div>
+      <span class="poll-label-text">تعادل الفريقين ${userVoted === 'draw' ? '✓ (صوتك)' : ''}</span>
+      <span class="poll-percent-text">${dPct}%</span>
+    </button>
+    <button class="poll-option-btn ${userVoted === 'away' ? 'voted' : ''}" onclick="handleVotePrediction('${match.id}', 'away')">
+      <div class="poll-fill-bar" style="width: ${aPct}%"></div>
+      <span class="poll-label-text">فوز ${match.awayTeam} ${userVoted === 'away' ? '✓ (صوتك)' : ''}</span>
+      <span class="poll-percent-text">${aPct}%</span>
+    </button>
+  `;
+}
+
+function handleVotePrediction(matchId, choice) {
+  const match = (appData.matches || []).find((m) => m.id === matchId);
+  if (!match) return;
+  const storageKey = "koora4k_poll_" + matchId;
+  let pollData = {};
+  try {
+    pollData = JSON.parse(localStorage.getItem(storageKey)) || {};
+  } catch (_) {}
+
+  if (pollData.userChoice) {
+    showToast("⚠️ لقد قمت بالتصويت مسبقاً في هذه المباراة!");
+    return;
+  }
+
+  if (choice === "home") pollData.homeVotes = (pollData.homeVotes || 0) + 1;
+  else if (choice === "draw") pollData.drawVotes = (pollData.drawVotes || 0) + 1;
+  else if (choice === "away") pollData.awayVotes = (pollData.awayVotes || 0) + 1;
+
+  pollData.userChoice = choice;
+  localStorage.setItem(storageKey, JSON.stringify(pollData));
+  showToast("🎉 شكراً لك! تم تسجيل توقعك بنجاح");
+  renderMatchPredictionPoll(match);
+}
+
+// ==================== 5. LIVE MATCH FAN CHATROOM ====================
+let liveChatInterval = null;
+const FAN_NAMES = ["ياسين الكازاوي", "سفيان مدريديستا", "حمزة برشلوني", "أمين الرجاوي", "عثمان الودادي", "أيوب طنجة", "إلياس أكادير", "محمد مراكش", "هشام الرباط", "طارق وجدة"];
+const FAN_COMMENTS_BANK = [
+  "الماتش مولع بزاف، يا ربي شي بيت دابا 🔥",
+  "حكيمي اليوم داير ماتش عالمي كالعادة 🇲🇦👏",
+  "الحارس ديالهم كيطير ما شاء الله!",
+  "فينكم يا عشاق الكرة، توقعاتكم شكون غايماركي الأول؟",
+  "البث تبارك الله نقي 4K وبلا تقطيع، شكراً كورة فور كي ❤️",
+  "تمريرة سحرية وضاعت، حشومة تضيع هادي!",
+  "الضغط عالي بزاف من وسط الميدان",
+  "دخول قوي فـ الشوط الثاني، إن شاء الله الفوز!",
+  "الحكم كيصفر فـ كل احتكاك بزاف",
+  "هجمة مرتدة خطيرة بزاف كادت تسجل هدف ⚽"
+];
+
+function initLiveFanChat(match) {
+  const chatContainer = document.getElementById("fanChatMessages");
+  const countEl = document.getElementById("chatOnlineCount");
+  if (!chatContainer) return;
+
+  if (countEl) {
+    countEl.textContent = (1850 + Math.floor(Math.random() * 800)).toLocaleString("ar-EG");
+  }
+
+  const initial = [
+    { author: "أمين الرجاوي", team: "المغرب", text: "السلام عليكم، شكون كيشجع " + match.homeTeam + " اليوم؟ 🔥" },
+    { author: "سفيان مدريديستا", team: "4K LIVE", text: "بث ممتاز وسريع، بالتوفيق للفريقين!" },
+    { author: "حمزة برشلوني", team: "عاشق الكرة", text: "مباراة قوية وتكتيكية من الطراز العالي ⚽" },
+    { author: "ياسين الكازاوي", team: "كورة 4K", text: "ديما مغرب 🇲🇦، تفرجوا واستمتعوا بدون تقطيع!" }
+  ];
+
+  chatContainer.innerHTML = initial
+    .map(
+      (msg) => `
+    <div class="chat-msg">
+      <div class="chat-msg-avatar"><i class="fa-solid fa-user"></i></div>
+      <div class="chat-msg-body">
+        <div class="chat-msg-author">
+          <span>${msg.author}</span>
+          <span class="chat-team-badge">• ${msg.team}</span>
+        </div>
+        <div class="chat-msg-text">${msg.text}</div>
+      </div>
+    </div>`
+    )
+    .join("");
+
+  chatContainer.scrollTop = chatContainer.scrollHeight;
+
+  if (liveChatInterval) clearInterval(liveChatInterval);
+  liveChatInterval = setInterval(() => {
+    const pSec = document.getElementById("playerSection");
+    if (!pSec || pSec.classList.contains("hidden")) return;
+
+    const randName = FAN_NAMES[Math.floor(Math.random() * FAN_NAMES.length)];
+    const randText = FAN_COMMENTS_BANK[Math.floor(Math.random() * FAN_COMMENTS_BANK.length)];
+    const msgEl = document.createElement("div");
+    msgEl.className = "chat-msg";
+    msgEl.innerHTML = `
+      <div class="chat-msg-avatar"><i class="fa-solid fa-user"></i></div>
+      <div class="chat-msg-body">
+        <div class="chat-msg-author">
+          <span>${randName}</span>
+          <span class="chat-team-badge">• مشجع مباشر</span>
+        </div>
+        <div class="chat-msg-text">${randText}</div>
+      </div>`;
+    chatContainer.appendChild(msgEl);
+    chatContainer.scrollTop = chatContainer.scrollHeight;
+  }, 18000);
+}
+
+function handleSendFanChatMessage(event) {
+  event.preventDefault();
+  const input = document.getElementById("fanChatInput");
+  const chatContainer = document.getElementById("fanChatMessages");
+  if (!input || !chatContainer) return;
+  const val = input.value.trim();
+  if (!val) return;
+
+  const msgEl = document.createElement("div");
+  msgEl.className = "chat-msg";
+  msgEl.innerHTML = `
+    <div class="chat-msg-avatar" style="background:linear-gradient(135deg, #10b981, #059669);"><i class="fa-solid fa-star"></i></div>
+    <div class="chat-msg-body" style="background:rgba(16, 185, 129, 0.15); border:1px solid rgba(16, 185, 129, 0.3);">
+      <div class="chat-msg-author" style="color:#34d399;">
+        <span>أنت (مشجع)</span>
+        <span class="chat-team-badge">• الآن</span>
+      </div>
+      <div class="chat-msg-text">${val}</div>
+    </div>`;
+  chatContainer.appendChild(msgEl);
+  chatContainer.scrollTop = chatContainer.scrollHeight;
+  input.value = "";
+  showToast("💬 تم إرسال تعليقك في الشات المباشر!");
+}
+
+function insertChatEmoji(emoji) {
+  const input = document.getElementById("fanChatInput");
+  if (!input) return;
+  input.value += emoji;
+  input.focus();
 }
