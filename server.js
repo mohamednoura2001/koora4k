@@ -1682,10 +1682,29 @@ const server = http.createServer(async (req, res) => {
 
   if (parsedUrl.pathname === "/api/live-sync" && req.method === "GET") {
     const force = parsedUrl.searchParams.get("force") === "1";
-    if (force || cachedLiveState.matches.length === 0 || Date.now() - cachedLiveState.lastSync > 40000) {
-      await performLiveSync();
+
+    // إذا كانت الذاكرة فارغة في البداية، املأها فوراً من قاعدة البيانات المحلية في 0ms
+    if (cachedLiveState.matches.length === 0 && fs.existsSync(DB_FILE)) {
+      try {
+        const localDb = JSON.parse(fs.readFileSync(DB_FILE, "utf8"));
+        if (localDb.matches && localDb.matches.length) {
+          cachedLiveState.matches = localDb.matches;
+          cachedLiveState.highlights = localDb.highlights || [];
+          cachedLiveState.standings = localDb.standings || {};
+          cachedLiveState.news = localDb.news || [];
+        }
+      } catch (_) {}
     }
-    res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
+
+    // إطلاق المزامنة الحية في الخلفية بهدوء بدون حجب استجابة المتصفح (Non-blocking Stale-While-Revalidate)
+    if (force || Date.now() - cachedLiveState.lastSync > 60000) {
+      performLiveSync().catch(() => {});
+    }
+
+    res.writeHead(200, {
+      "Content-Type": "application/json; charset=utf-8",
+      "Cache-Control": "public, max-age=15, stale-while-revalidate=60"
+    });
     return res.end(
       JSON.stringify({
         ok: true,
@@ -1700,15 +1719,19 @@ const server = http.createServer(async (req, res) => {
   }
 
   if (parsedUrl.pathname === "/api/data" && req.method === "GET") {
-    if (cachedLiveState.matches.length === 0) {
-      await performLiveSync();
-    }
-
     let customDb = {};
     if (fs.existsSync(DB_FILE)) {
       try {
         customDb = JSON.parse(fs.readFileSync(DB_FILE, "utf8"));
       } catch (_) {}
+    }
+
+    if (cachedLiveState.matches.length === 0 && customDb.matches && customDb.matches.length) {
+      cachedLiveState.matches = customDb.matches;
+      cachedLiveState.highlights = customDb.highlights || [];
+      cachedLiveState.standings = customDb.standings || {};
+      cachedLiveState.news = customDb.news || [];
+      performLiveSync().catch(() => {});
     }
 
     const manualMatches = (customDb.matches || []).filter((m) => String(m.id).startsWith("m_"));
@@ -1719,7 +1742,10 @@ const server = http.createServer(async (req, res) => {
     );
     const mergedHighlights = [...manualHighlights, ...cachedLiveState.highlights];
 
-    res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
+    res.writeHead(200, {
+      "Content-Type": "application/json; charset=utf-8",
+      "Cache-Control": "public, max-age=15, stale-while-revalidate=60"
+    });
     return res.end(
       JSON.stringify({
         ...customDb,
@@ -1972,7 +1998,10 @@ ${rssItems}
         return res.end("Error loading page");
       }
       const renderedHtml = injectDynamicSeoMeta(content, parsedUrl.pathname, parsedUrl.searchParams);
-      res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
+      res.writeHead(200, {
+        "Content-Type": "text/html; charset=utf-8",
+        "Cache-Control": "public, max-age=0, s-maxage=60, stale-while-revalidate=300"
+      });
       return res.end(renderedHtml);
     });
     return;
@@ -1993,7 +2022,13 @@ ${rssItems}
       return res.end("404 Not Found");
     }
     const ext = path.extname(filePath).toLowerCase();
-    res.writeHead(200, { "Content-Type": MIME_TYPES[ext] || "application/octet-stream" });
+    const cacheHeader = [".css", ".js", ".svg", ".png", ".jpg", ".webp", ".woff2", ".ico", ".webmanifest"].includes(ext)
+      ? "public, max-age=86400, stale-while-revalidate=604800"
+      : "public, max-age=3600";
+    res.writeHead(200, {
+      "Content-Type": MIME_TYPES[ext] || "application/octet-stream",
+      "Cache-Control": cacheHeader
+    });
     res.end(content);
   });
 });
