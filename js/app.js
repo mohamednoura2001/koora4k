@@ -1819,11 +1819,10 @@ function loadStreamServer(srv, index = 0, isFailover = false) {
     videoEl.classList.add("hidden");
     iframeEl.classList.remove("hidden");
 
-    if (srv.url.includes("youtube.com") || srv.url.includes("scorebat.com")) {
-      iframeEl.removeAttribute("sandbox");
-    } else {
-      iframeEl.setAttribute("sandbox", "allow-scripts allow-same-origin allow-forms");
-    }
+    // إعطاء أذونات كاملة لمشغلات بث المباريات (كورة لايف، يلا شوت، وغيرها)
+    iframeEl.setAttribute("allow", "autoplay; fullscreen; encrypted-media; picture-in-picture");
+    iframeEl.setAttribute("allowfullscreen", "true");
+    iframeEl.removeAttribute("sandbox");
 
     iframeEl.onerror = () => {
       console.warn("Iframe server load error on server", index);
