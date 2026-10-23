@@ -2920,3 +2920,116 @@ html {
   transform: translateY(-1px);
   box-shadow: 0 4px 18px rgba(245, 158, 11, 0.65);
 }
+
+/* ==================== LEGAL PAGES STYLES (ADSENSE COMPLIANT) ==================== */
+.legal-page-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  margin-bottom: 30px;
+  box-shadow: var(--shadow-card);
+}
+.legal-page-nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-color);
+}
+.legal-nav-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  padding: 6px 14px;
+  border-radius: 99px;
+  font-size: 0.85rem;
+  font-family: 'Cairo', sans-serif;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.legal-nav-btn:hover,
+.legal-nav-btn.active {
+  background: var(--accent-green);
+  color: #000;
+  border-color: var(--accent-green);
+  font-weight: 700;
+}
+.legal-content h3 {
+  color: var(--gold);
+  font-size: 1.25rem;
+  margin: 24px 0 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.legal-content h4 {
+  color: #fff;
+  font-size: 1.05rem;
+  margin: 18px 0 8px;
+}
+.legal-content p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin-bottom: 14px;
+}
+.legal-content ul {
+  list-style: disc;
+  padding-right: 25px;
+  margin-bottom: 16px;
+}
+.legal-content ul li {
+  color: var(--text-secondary);
+  font-size: 0.93rem;
+  line-height: 1.8;
+  margin-bottom: 8px;
+}
+.legal-highlight-box {
+  background: rgba(16, 185, 129, 0.08);
+  border-right: 4px solid var(--accent-green);
+  border-radius: 4px;
+  padding: 16px 20px;
+  margin: 20px 0;
+}
+.legal-highlight-box p {
+  margin: 0;
+  color: #e2e8f0;
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 20px;
+}
+.contact-info-card {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 24px;
+}
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+.contact-item i {
+  color: var(--accent-green);
+  font-size: 1.3rem;
+  margin-top: 4px;
+}
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  .legal-page-card {
+    padding: 20px;
+  }
+}
