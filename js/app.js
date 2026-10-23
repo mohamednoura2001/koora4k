@@ -32,24 +32,28 @@ let activeStandingLeague = null;
 let hlsInstance = null;
 let activePlayContext = null; // { type: 'match'|'channel'|'highlight', item, serverIndex }
 
-// ==================== INITIALIZATION ====================
-document.addEventListener("DOMContentLoaded", async () => {
+// ==================== INITIALIZATION (INSTANT 0.1s RENDER) ====================
+document.addEventListener("DOMContentLoaded", () => {
   loadUserPreferences();
   initTimezoneAndClock();
-  detectVisitorLocationAndTimezone();
-  await loadAppData();
+  loadAppData(); // تحميل فوري للبيانات الأولية في أجزاء من المليثانية
   applySiteSettingsToUI();
   populateLeagueFilterDropdown();
-  renderAllViews();
+  renderAllViews(); // رسم الواجهة فوراً وظهور الموقع مباشرة للمستخدم بدون أي تأخير!
   resetMatchForm();
   handleDeepLinksFromUrl();
 
-  // مزامنة تلقائية دورية كل 40 ثانية لتحديث النتائج والمباريات والترتيب والملخصات والأخبار أوتوماتيكياً بدون توقف
+  // المهام الخلفية التي تعمل بعد ظهور الموقع للمشاهد دون تجميد الشاشة
+  setTimeout(() => {
+    detectVisitorLocationAndTimezone();
+  }, 100);
+
+  // مزامنة تلقائية دورية كل 40 ثانية لتحديث النتائج والمباريات والترتيب والملخصات والأخبار أوتوماتيكياً
   setInterval(() => {
     silentBackgroundSync();
   }, 40000);
 
-  // فحص تلقائي كل 15 ثانية لتحويل حالة المباريات التي حان وقتها إلى "جارية الآن" وحساب الدقيقة الحية والعداد التنازلي
+  // فحص تلقائي كل 15 ثانية لحساب الدقيقة الحية للمباريات
   setInterval(() => {
     autoUpdateMatchStatesByClock();
     updateRadarSyncCounter();
@@ -87,7 +91,7 @@ function updateRadarSyncCounter() {
   badge.innerHTML = `<i class="fa-solid fa-clock-rotate-left"></i> آخر تحديث تلقائي: ${label} • (${totalMatches} مباراة نشطة)`;
 }
 
-async function loadAppData() {
+function loadAppData() {
   appData = JSON.parse(JSON.stringify(window.DEFAULT_KOORA_DATA));
 
   // استرجاع التعديلات اليدوية للمدير فقط (الإعدادات والمباريات اليدوية) دون تجميد البيانات اليومية
@@ -101,8 +105,13 @@ async function loadAppData() {
     } catch (_) {}
   }
 
-  // سحب أحدث جدول مباريات ونتائج وسيرفرات وترتيب وملخصات لهذا اليوم تلقائياً
-  await syncLiveMatchesFromKooraHD(false);
+  // سحب أحدث البيانات والمزامنة في الخلفية بهدوء بعد ظهور الموقع للمشاهد
+  setTimeout(() => {
+    syncLiveMatchesFromKooraHD(false).then(() => {
+      renderAllViews();
+    }).catch(() => {});
+  }, 350);
+
   autoUpdateMatchStatesByClock();
 }
 
