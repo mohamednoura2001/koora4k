@@ -1368,13 +1368,25 @@ async function pingSearchEngines() {
   } catch (_) {}
 }
 
+// استرجاع المباريات المحلية المحفوظة في حالة كانت الذاكرة فارغة
+function getLocalDbMatches() {
+  if (fs.existsSync(DB_FILE)) {
+    try {
+      const parsed = JSON.parse(fs.readFileSync(DB_FILE, "utf8"));
+      return parsed.matches || [];
+    } catch (_) {}
+  }
+  return [];
+}
+
 // محرك الحقن المسبق للـ SEO (SSR Dynamic Meta Injection) للأرشفة الفورية على Google ومواقع التواصل
 function injectDynamicSeoMeta(originalHtml, reqPath, searchParams) {
   let html = originalHtml;
-  const matchId = searchParams.get("match") || (reqPath.startsWith("/match/") ? reqPath.replace("/match/", "") : null);
-  const allMatches = (cachedLiveState && cachedLiveState.matches && cachedLiveState.matches.length) 
-    ? cachedLiveState.matches 
-    : (customDb && customDb.matches ? customDb.matches : []);
+  try {
+    const matchId = searchParams.get("match") || (reqPath.startsWith("/match/") ? reqPath.replace("/match/", "") : null);
+    const allMatches = (cachedLiveState && cachedLiveState.matches && cachedLiveState.matches.length) 
+      ? cachedLiveState.matches 
+      : getLocalDbMatches();
 
   if (matchId && allMatches.length) {
     const m = allMatches.find((item) => item.id === matchId);
@@ -1624,6 +1636,9 @@ function injectDynamicSeoMeta(originalHtml, reqPath, searchParams) {
     html = html.replace(/<meta\s+property=["']og:description["'][^>]*>/i, `<meta property="og:description" content="${matchedSec.desc}" />`);
   }
 
+  } catch (_) {
+    return originalHtml;
+  }
   return html;
 }
 
@@ -1997,7 +2012,12 @@ ${rssItems}
         res.writeHead(500, { "Content-Type": "text/plain; charset=utf-8" });
         return res.end("Error loading page");
       }
-      const renderedHtml = injectDynamicSeoMeta(content, parsedUrl.pathname, parsedUrl.searchParams);
+      let renderedHtml = content;
+      try {
+        renderedHtml = injectDynamicSeoMeta(content, parsedUrl.pathname, parsedUrl.searchParams);
+      } catch (_) {
+        renderedHtml = content;
+      }
       res.writeHead(200, {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "public, max-age=0, s-maxage=60, stale-while-revalidate=300"
