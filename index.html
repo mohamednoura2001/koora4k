@@ -194,6 +194,10 @@
       </nav>
 
       <div class="header-actions" style="display:flex; align-items:center; gap:8px;">
+        <button class="btn-notif-bell" id="btnNotifBell" onclick="requestMatchNotifications()" title="تفعيل إشعارات الأهداف وبدء المباريات">
+          <i class="fa-solid fa-bell"></i>
+          <span class="bell-dot"></span>
+        </button>
         <a href="https://t.me/+_wHGd3-w4ZRlM2Q0" target="_blank" rel="noopener noreferrer" class="btn-telegram-header" title="انضم لقناة التليجرام الرسمية لتنبيهات البث المباشر">
           <i class="fa-brands fa-telegram"></i>
           <span>قناة التليجرام</span>
@@ -231,6 +235,9 @@
           </button>
           <button class="btn-Action" onclick="shareCurrentMatch()">
             <i class="fa-solid fa-share-nodes"></i> مشاركة البث
+          </button>
+          <button class="btn-Action btn-whatsapp-share" onclick="shareCurrentMatchWhatsApp()" title="مشاركة البث في واتساب مع أصدقائك">
+            <i class="fa-brands fa-whatsapp" style="color:#25D366;"></i> واتساب
           </button>
           <button class="btn-Action" onclick="reloadCurrentStream()">
             <i class="fa-solid fa-rotate-right"></i> تحديث البث
@@ -293,6 +300,48 @@
 
       <!-- Match Details & Events Card -->
       <div id="playerDetailsGrid" class="player-details-grid"></div>
+
+      <!-- Interactive Fan Hub (Prediction Poll & Live Fan Chatroom) -->
+      <div class="player-fan-hub-grid">
+        <!-- 1. Prediction Poll Card -->
+        <div class="fan-hub-card" id="matchPollCard">
+          <div class="fan-hub-header">
+            <h4><i class="fa-solid fa-chart-pie" style="color:var(--gold);"></i> توقع نتيجة المباراة (Match Prediction)</h4>
+            <span class="poll-votes-count" id="pollTotalVotes">📊 4,820 صوت</span>
+          </div>
+          <p class="poll-question">من في رأيك سيحسم هذه المواجهة لصالحه؟ صوت الآن وشاهد التوقعات المباشرة:</p>
+          <div class="poll-options-grid" id="pollOptionsGrid">
+            <!-- Dynamically populated when match opens -->
+          </div>
+        </div>
+
+        <!-- 2. Live Match Fan Chatroom -->
+        <div class="fan-hub-card" id="matchLiveChatCard">
+          <div class="fan-hub-header">
+            <h4><i class="fa-solid fa-comments" style="color:var(--accent-green);"></i> شات المشجعين المباشر (Live Fan Chat)</h4>
+            <span class="chat-live-badge"><span class="pulse-green"></span> <span id="chatOnlineCount">2,148</span> متصل</span>
+          </div>
+          <div class="fan-chat-messages" id="fanChatMessages">
+            <!-- Messages rendered dynamically -->
+          </div>
+          <div class="fan-chat-input-bar">
+            <div class="chat-quick-emojis">
+              <button type="button" onclick="insertChatEmoji('⚽')">⚽</button>
+              <button type="button" onclick="insertChatEmoji('🔥')">🔥</button>
+              <button type="button" onclick="insertChatEmoji('🏆')">🏆</button>
+              <button type="button" onclick="insertChatEmoji('👏')">👏</button>
+              <button type="button" onclick="insertChatEmoji('🇲🇦')">🇲🇦</button>
+              <button type="button" onclick="insertChatEmoji('❤️')">❤️</button>
+            </div>
+            <form id="fanChatForm" onsubmit="handleSendFanChatMessage(event)" class="fan-chat-form">
+              <input type="text" id="fanChatInput" placeholder="اكتب تعليقك هنا وشجع فريقك..." maxlength="120" autocomplete="off" required />
+              <button type="submit" class="btn-send-chat" title="إرسال التعليق">
+                <i class="fa-solid fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- ==================== 2. MATCHES SCHEDULE SECTION ==================== -->
@@ -1260,6 +1309,25 @@
       </div>
     </div>
   </footer>
+
+  <!-- PWA Mobile Install Smart Banner -->
+  <div id="pwaInstallBanner" class="pwa-install-banner hidden">
+    <button class="pwa-close-btn" onclick="dismissPwaBanner()"><i class="fa-solid fa-xmark"></i></button>
+    <div class="pwa-app-icon">
+      <img src="assets/logo-emblem.jpg" alt="Koora4K App" />
+    </div>
+    <div class="pwa-app-info">
+      <div class="pwa-app-title">تطبيق كورة فور كي 4K</div>
+      <div class="pwa-app-desc">بث مباشر للمباريات وإشعارات الأهداف مجاناً</div>
+      <div class="pwa-app-rating">
+        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        <span>4.9 • تثبيت سريع</span>
+      </div>
+    </div>
+    <button class="btn-pwa-install" id="btnPwaInstall" onclick="triggerPwaInstall()">
+      <i class="fa-solid fa-download"></i> تثبيت التطبيق
+    </button>
+  </div>
 
   <!-- Toast Notification -->
   <div id="toastNotification" class="toast-notification hidden"></div>
